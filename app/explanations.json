@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "Why strengthening takes time",
+    "shortVersion": "Your body is not a light switch. It is a garden.",
+    "fullText": "Many people expect quick changes. They come in after a week and ask, 'Why am I not better yet?' Here is the truth: building strength and healing tissue happens slowly — not because your body is failing, but because that is how bodies work. Think of it like planting a seed. You do not dig it up every day to check if it is growing. You water it. You give it sun. You wait. Your body is the same. The work you do today will show up weeks from now. Trust the process.",
+    "script": "Your body is adapting at its own pace. The work you do today will show up weeks from now. Trust the process. Keep showing up.",
+    "patientHandout": "Your body heals and strengthens gradually — like a garden, not a light switch. Consistent small actions over time produce lasting change. Do not expect overnight results. Expect steady progress.",
+    "tags": ["healing", "patience", "expectations"]
+  },
+  {
+    "id": 2,
+    "title": "Why 2-4 exercises is often enough",
+    "shortVersion": "Doing a few things well beats doing many things poorly.",
+    "fullText": "Patients often think more is better. They want the full list. They want to feel like they are working hard. But research shows the opposite. When patients are given too many exercises or asked to do them too often, they actually do less. It becomes overwhelming. They skip days. They forget. They give up. Fewer exercises, done consistently, produce better results than many exercises, done sporadically.",
+    "script": "I am giving you just a few key movements. I want these to feel easy to fit into your day. Research shows people actually do better with fewer exercises done consistently.",
+    "patientHandout": "Fewer exercises, done regularly, beat many exercises done occasionally. Focus on quality and consistency — not quantity. Two to four movements, done well, is often the sweet spot.",
+    "tags": ["HEP", "adherence", "simplicity"]
+  },
+  {
+    "id": 3,
+    "title": "Why pain doesn't always mean damage",
+    "shortVersion": "Pain is your body's alarm system, not always a damage indicator.",
+    "fullText": "Many patients believe: pain = injury. If it hurts, something must be wrong. That belief can freeze them. They stop moving. They stop doing their exercises. They get scared. Here is what we know: pain is the brain's opinion about danger to body tissues. Sometimes that opinion is accurate. Sometimes it is overprotective — like a smoke alarm going off from burnt toast. Your body can produce pain without active tissue damage. This is called 'sensitization.' It does not mean you are broken. It means your nervous system is on high alert. The solution is not to stop moving. It is to move in ways that feel safe, at a dose that does not trigger the alarm.",
+    "script": "Pain is your body's alarm system. It does not always mean damage — sometimes it just means sensitivity. We will find movements that do not set off the alarm.",
+    "patientHandout": "Pain is not always a sign of harm. Sometimes your nervous system is just on high alert. Gentle, safe movement often helps turn down the volume.",
+    "tags": ["pain", "fear", "neuroscience"]
+  },
+  {
+    "id": 4,
+    "title": "Why consistency beats intensity",
+    "shortVersion": "Small, regular actions beat occasional heroic efforts.",
+    "fullText": "Patients often wait to feel motivated. They plan to do a big workout. They go all in for a day or two. Then life gets busy. They miss a day. Then another. Then they feel guilty, and the guilt makes it even harder to start again. The alternative is not glamorous, but it works: small actions, done almost every day. Five minutes of movement every day beats 60 minutes once a week. Not because five minutes is better exercise — because five minutes keeps the habit alive.",
+    "script": "Motivation comes and goes. Habits stay. Let us find a version of this that you can do on your worst day, not just your best day.",
+    "patientHandout": "Small actions every day beat heroic efforts once a week. Build a habit you can do on low-energy days. That is how lasting change happens.",
+    "tags": ["habits", "motivation", "consistency"]
+  },
+  {
+    "id": 5,
+    "title": "Why flare-ups happen",
+    "shortVersion": "Flare-ups are normal. They do not erase your progress.",
+    "fullText": "The patient who was doing well suddenly feels worse. They panic. They think, 'I am back to square one.' They get discouraged. Sometimes they stop coming. Here is the truth: flare-ups are not failures. They are part of the process. Recovery is not a straight line. It has ups and downs, good weeks and hard weeks. A flare-up does not mean you are starting over. It means your body is sensitive right now. That sensitivity will settle — usually within days, not weeks — if you respond wisely instead of panicking.",
+    "script": "This is normal. Recovery has ups and downs. We have not lost our progress. We are just pausing until your body settles.",
+    "patientHandout": "Flare-ups happen. They do not erase your hard work. Recovery is not a straight line — it has good weeks and harder weeks. Respond with rest, then gradual return. Do not panic.",
+    "tags": ["flare-ups", "setbacks", "resilience"]
+  },
+  {
+    "id": 6,
+    "title": "Why rest days matter",
+    "shortVersion": "Rest is not laziness. It is when your body repairs and strengthens.",
+    "fullText": "The 'no pain no gain' culture runs deep. Patients think rest is weakness. They push through. They never take a day off. Then they get injured, burned out, or stuck. Here is what actually happens: you do not get stronger during exercise. You get stronger during the rest afterward. Your muscles need time to repair. Your nervous system needs time to reset. Rest days are not wasted days. They are the days your body charges back up.",
+    "script": "You do not get stronger during the workout. You get stronger during the rest after. Rest days are part of the plan, not a failure of the plan.",
+    "patientHandout": "Rest is when your body repairs and strengthens. You are not being lazy. You are following the plan. Elite athletes take rest days. So should you.",
+    "tags": ["rest", "recovery", "muscle"]
+  },
+  {
+    "id": 7,
+    "title": "Why progress isn't linear",
+    "shortVersion": "Two steps forward, one step back is still one step forward.",
+    "fullText": "Patients expect a straight line: every week better than the last. When they plateau or dip, they think something is wrong. Here is the reality: progress almost never looks like a straight line. It looks like stairs — flat periods followed by jumps. It looks like waves — ups and downs that trend upward over time. The patient who understands this keeps going through the flat periods. The patient who does not understand quits.",
+    "script": "This is normal. Recovery is not a straight line. We are still moving in the right direction. The line just looks different than you expected.",
+    "patientHandout": "Progress is rarely a straight line. Plateaus and small setbacks are normal. Look at the trend over weeks, not days. Two steps forward, one step back is still forward.",
+    "tags": ["progress", "expectations", "plateaus"]
+  },
+  {
+    "id": 8,
+    "title": "Why posture isn't the enemy",
+    "shortVersion": "There is no single perfect posture. Variety is what your body needs.",
+    "fullText": "Patients worry about 'bad posture.' They try to sit perfectly straight. They feel guilty when they slouch. They think posture is the cause of all their pain. Here is what the evidence actually says: there is no single 'perfect' posture that prevents pain. Your body is designed to move and change positions throughout the day. The problem is not 'bad posture.' The problem is staying in any one position too long. Motion is lotion. Variety protects you.",
+    "script": "There is no perfect way to sit. Your body wants to move. Change positions often. That is what keeps you comfortable.",
+    "patientHandout": "There is no single perfect posture. Your body needs variety — different positions, frequent movement, regular changes. Motion is lotion.",
+    "tags": ["posture", "ergonomics", "movement"]
+  },
+  {
+    "id": 9,
+    "title": "Why warm-ups help",
+    "shortVersion": "Warming up tells your body, 'Get ready to move.'",
+    "fullText": "Patients skip warm-ups. They are busy. They want to get to the 'real' work. They think warm-ups are optional. Here is why they matter: muscles, tendons, and joints respond better when they are prepared. Blood flow increases. Tissue elasticity improves. Nervous system activation happens. A cold start is a risky start. Two minutes of easy movement before harder movement reduces injury risk and improves performance.",
+    "script": "Think of warming up like letting a car warm up on a cold morning. It just runs better. Two minutes is all you need.",
+    "patientHandout": "Warm-ups prepare your body to move safely. Two minutes of easy movement reduces injury risk and improves how you feel during exercise. Do not skip it.",
+    "tags": ["warm-up", "injury prevention", "preparation"]
+  },
+  {
+    "id": 10,
+    "title": "Why small wins matter",
+    "shortVersion": "Small progress, noticed daily, builds the confidence to keep going.",
+    "fullText": "Patients focus on the big goal: 'I want to run again.' 'I want to be pain-free.' Those goals are important, but they take time. In between, there is a long stretch with no obvious milestones. Small wins fill that gap. They are tiny pieces of evidence that you are moving in the right direction. They build self-efficacy — the belief that you can do what you set out to do. Celebrate the small things. Did you do your exercises three days in a row? That is a win.",
+    "script": "Let us notice the small wins. They feel small now, but they add up. They also build the confidence you will need for the bigger challenges.",
+    "patientHandout": "Small wins build confidence. Did you do your exercises today? That is a win. Did you show up when you did not want to? Bigger win. Notice them. Celebrate them.",
+    "tags": ["motivation", "self-efficacy", "progress"]
+  },
+  {
+    "id": 11,
+    "title": "Why movement helps recovery",
+    "shortVersion": "Rest is good. Too much rest makes things worse.",
+    "fullText": "When patients are in pain, their natural instinct is to stop moving. 'I will rest until it feels better.' But prolonged rest can weaken muscles, stiffen joints, and actually increase pain sensitivity over time. Gentle, graded movement — within a comfortable range — helps the body regulate inflammation, maintain mobility, and remind the nervous system that movement is safe. The goal is not to power through pain. The goal is to find the 'just right' amount of movement.",
+    "script": "Complete rest often backfires. Let us find the smallest amount of movement that feels okay — and start there. Something is better than nothing.",
+    "patientHandout": "Too much rest can weaken muscles and stiffen joints. Gentle, regular movement helps recovery. Find the 'just right' amount — not too much, not too little.",
+    "tags": ["movement", "recovery", "pain"]
+  },
+  {
+    "id": 12,
+    "title": "Why habits beat motivation",
+    "shortVersion": "Motivation fades. Habits stay.",
+    "fullText": "Patients wait to feel motivated. They think, 'When I feel ready, I will start.' But motivation is an emotion, and emotions are unreliable. It comes and goes. Habits do not require motivation. They require repetition and environment. You do not need to feel like brushing your teeth. You just do it because it is part of your routine. The same is true for exercise and movement. Attach it to something you already do. Make it small. Do not wait to feel like it.",
+    "script": "Do not wait until you feel motivated. Motivation comes after you start, not before. Pick a trigger — after breakfast, before bed — and just do two minutes.",
+    "patientHandout": "Motivation is an emotion. It comes and goes. Habits do not need motivation — they need repetition. Attach movement to something you already do. Start small. Do not wait.",
+    "tags": ["habits", "motivation", "behavior change"]
+  },
+  {
+    "id": 13,
+    "title": "Why fear of movement makes pain worse (kinesiophobia)",
+    "shortVersion": "Avoiding movement because you are afraid of pain often creates more pain.",
+    "fullText": "This cycle is common: you felt pain. You got scared. You stopped moving. Your body got weaker and stiffer. Then normal movements started to hurt more — not because of damage, but because your body forgot how to move safely. This is called kinesiophobia: fear of movement. It is not 'all in your head.' It is real. But the solution is not more rest. The solution is safe, graded exposure to movement — proving to your brain that movement is safe.",
+    "script": "Your body learned to be afraid of movement because movement hurt. That was a smart response. Now we need to teach your body that safe movement does not hurt. We go slowly. You are in control.",
+    "patientHandout": "Fear of movement is real — and it can make pain worse over time. The solution is not pushing through pain. It is finding safe movements that prove to your brain that moving is okay.",
+    "tags": ["fear", "kinesiophobia", "psychology"]
+  },
+  {
+    "id": 14,
+    "title": "Why sleep is essential for recovery",
+    "shortVersion": "You cannot out-exercise bad sleep. Recovery happens while you rest.",
+    "fullText": "Patients focus on exercises. They track reps. They log minutes. But they ignore sleep. Here is what happens during sleep: tissue repair accelerates, inflammation regulates, pain sensitivity decreases, and the brain consolidates movement patterns. Poor sleep does not just make you tired. It makes you heal slower, hurt more, and stick to your plan less consistently.",
+    "script": "Your exercises matter. But your sleep matters just as much. If you have to choose between a workout and an extra hour of sleep, choose sleep. Recovery happens while you rest.",
+    "patientHandout": "Sleep is when your body repairs itself. Poor sleep means slower recovery, more pain, and less progress. Prioritize rest as much as exercise.",
+    "tags": ["sleep", "recovery", "health"]
+  },
+  {
+    "id": 15,
+    "title": "Why stress and mood affect physical recovery",
+    "shortVersion": "Your brain and body are not separate. What affects one affects the other.",
+    "fullText": "Patients sometimes say, 'My pain is real. It is not in my head.' And they are right. But pain is processed in the brain. Stress, anxiety, and low mood change how the brain processes signals from the body. When you are stressed, your nervous system is on higher alert. The same movement that felt fine on a calm day might hurt on a stressful day — not because your body changed, but because your brain turned up the volume.",
+    "script": "Stress and mood affect how your brain processes pain. If you are having a hard week, your body may feel it. That is normal. Let us factor that into our plan.",
+    "patientHandout": "Your brain and body work together. Stress, worry, and low mood can make pain feel worse — not because the damage increased, but because your nervous system is more sensitive. Taking care of your mental health is part of physical recovery.",
+    "tags": ["stress", "mental health", "pain"]
+  },
+  {
+    "id": 16,
+    "title": "Why 'listening to your body' sometimes backfires",
+    "shortVersion": "Listening to your body is good — if you understand what your body is saying.",
+    "fullText": "'Listen to your body' sounds like good advice. But here is the problem: patients interpret this as 'stop if you feel anything.' Your body sends two kinds of signals. Some mean 'stop' (sharp, tearing, worsening). Others mean 'slow down but keep going' (ache, fatigue, discomfort). Patients who do not know the difference stop at the first sign of discomfort. Then they never build tolerance. Then they never get better.",
+    "script": "Let us be more specific than 'listen to your body.' There is good pain — discomfort that means you are working. And bad pain — sharp, tearing, or worsening. Tell me what you feel, and I will help you decide.",
+    "patientHandout": "'Listen to your body' is vague. There is a difference between discomfort (normal, safe, part of progress) and damage (sharp, tearing, worsening). Learn the difference.",
+    "tags": ["pain", "education", "self-management"]
+  },
+  {
+    "id": 17,
+    "title": "Why expectations matter (how hope affects outcomes)",
+    "shortVersion": "What you expect to happen influences what actually happens.",
+    "fullText": "This is not magical thinking. It is biology. Your brain releases chemicals based on what it expects. If you expect movement to hurt, your brain prepares for pain — and you feel more pain. If you expect to get better, your brain activates healing pathways. Placebo and nocebo effects are real. They are not 'fake.' They are your brain's expectation machinery at work. This does not mean you should pretend everything is fine. It means hope matters.",
+    "script": "What you expect to happen influences what happens. Not because of magic — because your brain prepares your body based on what it believes. Let us build realistic, hopeful expectations together.",
+    "patientHandout": "Hope is not denial. Realistic optimism — believing you can get better — actually changes how your brain and body respond. Your mindset matters.",
+    "tags": ["placebo", "expectations", "mindset"]
+  },
+  {
+    "id": 18,
+    "title": "Why comparing to others hurts recovery",
+    "shortVersion": "Your only competition is yourself from last week.",
+    "fullText": "'My friend had the same thing and recovered in three weeks.' 'I saw someone on TikTok doing this exercise.' 'Why am I not like them?' Comparison is a trap. Every body is different. Age, genetics, starting fitness, tissue involvement, stress, sleep, nutrition, and even personality affect recovery speed. Comparing yourself to others does not motivate you. It discourages you. And discouragement reduces adherence.",
+    "script": "I hear you comparing yourself to someone else. That person is not you. Let us compare you to you from last week. That is the only meaningful comparison.",
+    "patientHandout": "Comparison steals hope. Your body is on its own timeline. Compare yourself to yourself — last week, last month — not to anyone else.",
+    "tags": ["comparison", "motivation", "self-compassion"]
+  },
+  {
+    "id": 19,
+    "title": "Why strength training protects joints",
+    "shortVersion": "Strong muscles take pressure off joints. Weak muscles leave joints exposed.",
+    "fullText": "Patients with joint pain often worry that strength training will make it worse. 'My knee hurts. Why would I squat?' But the opposite is often true. Your muscles are your joint's armor. When muscles are weak, every load goes straight to the joint. When muscles are strong, they absorb force before it reaches the joint. Building strength around a painful joint — carefully, gradually — is often the best protection.",
+    "script": "Your muscles protect your joints. If your muscles are weak, your joints take all the force. Strengthening around the joint — carefully — is how we build armor.",
+    "patientHandout": "Strong muscles protect joints. Weak muscles leave joints exposed. Building strength around a painful joint — done carefully — is often the best treatment.",
+    "tags": ["strength", "joints", "arthritis"]
+  },
+  {
+    "id": 20,
+    "title": "Why balance and falls prevention starts earlier than you think",
+    "shortVersion": "You do not wait until you fall to work on balance. You work on balance so you do not fall.",
+    "fullText": "Patients wait until after a fall to care about balance. By then, fear is high, confidence is low, and the risk of another fall is even higher. Balance is a skill. Like any skill, it declines without practice. You can maintain and improve balance at any age — but you have to start before you need it.",
+    "script": "We do not wait until you fall to work on balance. We work on balance so you do not fall. Prevention starts now, not after something happens.",
+    "patientHandout": "Balance is a skill that needs practice. Do not wait until you fall to care about it. Start now — small challenges, done safely — to prevent falls later.",
+    "tags": ["balance", "falls", "geriatrics"]
+  },
+  {
+    "id": 21,
+    "title": "Why surgery is not always the answer",
+    "shortVersion": "Surgery is a tool. It is not always the right tool.",
+    "fullText": "Patients sometimes believe surgery is the 'real' fix and physical therapy is just something to try first. But research shows that for many conditions — including back pain, knee arthritis, and rotator cuff tears — physical therapy produces outcomes equal to surgery, with fewer risks. Surgery is essential for some conditions. For others, it is optional. And for many, it is no better than a good conservative program.",
+    "script": "Surgery is a tool. It is not always the best tool. For your condition, research shows that physical therapy works as well as surgery for most people — with fewer risks. Let us try the conservative path first.",
+    "patientHandout": "Surgery is not always better. For many conditions, physical therapy works as well — with fewer risks and less recovery time. Try conservative care first.",
+    "tags": ["surgery", "conservative care", "evidence"]
+  },
+  {
+    "id": 22,
+    "title": "Why aging is not a disease",
+    "shortVersion": "Getting older changes your body. It does not sentence you to pain.",
+    "fullText": "Patients blame everything on age. 'I am just getting old.' 'What do you expect at my age?' Age is a risk factor — not a diagnosis. Yes, tissues change with age. But function can improve at any age. Strength, balance, and mobility can all be trained. The oldest Olympic weightlifter? 73. The oldest marathoner? 100. Aging is not a disease. It is a variable. You still have control.",
+    "script": "Your age matters. But it is not the boss of you. I have worked with 80-year-olds who are stronger than 40-year-olds. Age is a number. Your choices matter more.",
+    "patientHandout": "Aging changes your body. It does not sentence you to pain or decline. Strength, balance, and mobility can improve at any age. You have more control than you think.",
+    "tags": ["aging", "expectations", "empowerment"]
+  },
+  {
+    "id": 23,
+    "title": "Why you need a flare-up plan before the flare-up happens",
+    "shortVersion": "Panic makes flare-ups worse. A plan turns panic into action.",
+    "fullText": "Flare-ups are predictable. If you have a chronic condition, you will have bad days. The question is not 'if' — it is 'when' and 'how you respond.' Patients who do not have a plan panic. They catastrophize. They stop moving. They call the doctor. They spiral. Patients who have a plan say: 'I know what this is. Here is what I do.' They rest briefly. They resume gently. They wait it out. They get better faster.",
+    "script": "Let us make a flare-up plan now — before you need it. What will you do when pain spikes? Write it down. Keep it on your fridge.",
+    "patientHandout": "Flare-ups will happen. Panic makes them worse. A plan makes them manageable. Write down: what to do, what not to do, when to call, when to rest, when to resume.",
+    "tags": ["flare-ups", "planning", "self-management"]
+  },
+  {
+    "id": 24,
+    "title": "Why PTs seem rushed (admin burden) — for patients",
+    "shortVersion": "Your PT wants to give you more time. Their paperwork often decides otherwise.",
+    "fullText": "You might notice your PT typing during your session. You might feel rushed. You might wonder, 'Do they actually care?' Here is what is happening behind the scenes: documentation, prior authorizations, and insurance requirements consume roughly 35% of a PT's clinical time. That is time not spent with you. Your PT is not ignoring you. They are buried in paperwork.",
+    "script": "This section is written for patients — PTs can share it directly.",
+    "patientHandout": "Your PT is not ignoring you. Insurance paperwork takes up to 35% of their clinical time. Show up on time, do your exercises, ask clear questions — that protects your time together.",
+    "tags": ["admin", "burnout", "patient education"]
+  },
+  {
+    "id": 25,
+    "title": "Why some exercises feel 'too easy' — for patients",
+    "shortVersion": "Easy exercises build foundations. Boring is often the point.",
+    "fullText": "You want to feel challenged. You want to sweat. You ask, 'Is this even doing anything?' when the exercise feels simple. Here is what you do not see: foundational exercises teach your brain and body how to move correctly before adding load. If you skip the easy stage, you compensate through the hard stage — and get injured. Easy is not useless. Easy is preparation.",
+    "script": "This feels easy because your body is learning the pattern. Once the pattern is automatic, we will add challenge. Right now, we build the foundation.",
+    "patientHandout": "Easy exercises build correct movement patterns. Do not skip the foundation. The challenge comes later. Trust the process.",
+    "tags": ["foundations", "patient education", "progression"]
+  },
+  {
+    "id": 26,
+    "title": "Why you should not ignore 'minor' symptoms",
+    "shortVersion": "Small symptoms are often early warnings. Do not wait until they become big problems.",
+    "fullText": "Patients often ignore mild pain, stiffness, or limited range of motion. 'It is not that bad.' 'It will go away on its own.' Sometimes it does. But often, those small symptoms are early warnings — your body telling you something is off. Addressing a small problem takes weeks. Addressing the same problem after it becomes chronic takes months. Listen early. Act early.",
+    "script": "You do not need to be in crisis to come see me. Small aches, subtle stiffness, 'something just feels off' — those are valid reasons to check in.",
+    "patientHandout": "Do not wait until pain is severe. Small symptoms are often early warnings. Address them early — it takes less time and works better.",
+    "tags": ["early intervention", "prevention", "symptoms"]
+  },
+  {
+    "id": 27,
+    "title": "Why good days and bad days are both normal",
+    "shortVersion": "Recovery is not all or nothing. Good days and bad days are part of being human.",
+    "fullText": "Patients often feel discouraged on bad days. 'I was doing so well. What happened?' They think a bad day erases a good week. It does not. Your body fluctuates. Sleep, stress, nutrition, activity, weather — everything affects how you feel. A bad day is not a reset button. It is just a bad day. Tomorrow can be better.",
+    "script": "A bad day does not erase a good week. Your body fluctuates. That is normal. Let us look at the trend, not today's snapshot.",
+    "patientHandout": "Good days and bad days are both normal. One bad day does not erase your progress. Look at the trend over weeks, not today's blip.",
+    "tags": ["variability", "expectations", "resilience"]
+  },
+  {
+    "id": 28,
+    "title": "Why you need to track progress (even if it feels silly)",
+    "shortVersion": "What gets measured gets managed. What gets noticed gets repeated.",
+    "fullText": "Patients resist tracking. 'I will just know if I am getting better.' But memory is unreliable. Pain skews your perception. What feels like 'no progress' often hides small wins. Tracking — even a simple number each week — gives you evidence. Evidence builds confidence. Confidence fuels persistence. It is not silly. It is strategic.",
+    "script": "I want you to track one thing this week. Just one. Pain level. How many minutes you walked. How many times you did your exercises. Small data. Big clarity.",
+    "patientHandout": "Tracking your progress builds confidence. Pick one thing to track each week. You will see wins you would have missed otherwise.",
+    "tags": ["tracking", "self-monitoring", "progress"]
+  },
+  {
+    "id": 29,
+    "title": "Why your PT is not your enemy (when they push you)",
+    "shortVersion": "When we push you, it is because we believe you can handle it — not because we do not believe your pain.",
+    "fullText": "Patients sometimes feel their PT does not believe them. 'They keep asking me to do more. Do they think I am faking?' The truth is the opposite. We push because we have seen thousands of patients. We know what is possible. We know fear often exaggerates risk. And we know that the patient who tries — even scared — gets better faster than the patient who stays still.",
+    "script": "I push you because I believe in you. I have seen people with harder cases than yours succeed. You can do more than you think. Let me prove it to you.",
+    "patientHandout": "Your PT pushes you because they believe you can do it — not because they doubt your pain. Trust their experience. Try. You might surprise yourself.",
+    "tags": ["trust", "therapeutic alliance", "motivation"]
+  },
+  {
+    "id": 30,
+    "title": "Why this will take as long as it takes",
+    "shortVersion": "There are no shortcuts to lasting change. But every day of effort moves the finish line closer.",
+    "fullText": "Patients want a date. 'When will I be better?' The honest answer: no one knows. Bodies heal on their own schedule. But here is what we do know: every day you do your exercises, the finish line moves closer. Every day you skip, it moves farther away. You do not control the speed. You control whether you keep moving.",
+    "script": "I cannot tell you exactly when. But I can promise that quitting guarantees you never get there. Showing up — even on slow days — guarantees you will.",
+    "patientHandout": "There are no shortcuts. But every day of effort — even small effort — moves you forward. Keep going. The finish line is closer than you think.",
+    "tags": ["patience", "commitment", "realistic expectations"]
+  }
+]

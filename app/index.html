@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2B5C5C" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C1C1C" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PT Comm Lab">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>PT Comm Lab — Communication Tools for PTs</title>
+  
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2035990150320727');
+  fbq('set', 'agent', 'ptcommlab-pwa', '2035990150320727');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2035990150320727&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #FDFBF7;
+      --bg-secondary: #FFFFFF;
+      --bg-tertiary: #F8F5F0;
+      --text-primary: #1F1F1F;
+      --text-secondary: #4A4A4A;
+      --text-tertiary: #7A7A7A;
+      --accent-teal: #2B5C5C;
+      --accent-teal-light: rgba(43, 92, 92, 0.12);
+      --accent-sage: #7A9E7E;
+      --accent-sage-light: rgba(122, 158, 126, 0.08);
+      --border: #E8E2D8;
+      --border-light: #F0EBE4;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+    body.dark {
+      --bg-primary: #121212;
+      --bg-secondary: #1C1C1E;
+      --bg-tertiary: #252528;
+      --text-primary: #F5F5F0;
+      --text-secondary: #C5C5C0;
+      --text-tertiary: #8A8A8A;
+      --accent-teal: #4A7A7A;
+      --accent-teal-light: rgba(43, 92, 92, 0.15);
+      --accent-sage: #9BB89F;
+      --accent-sage-light: rgba(122, 158, 126, 0.1);
+      --border: #2C2C2E;
+      --border-light: #252528;
+    }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.2s ease;
+    }
+    .app-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--bg-primary);
+      padding: 16px 24px 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .header-title h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      letter-spacing: -0.3px;
+      font-weight: 600;
+    }
+    .header-title p {
+      font-size: 0.6rem;
+      color: var(--accent-teal);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .header-date {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      text-align: right;
+    }
+    .date-day-large {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--accent-teal);
+      line-height: 1;
+    }
+    .date-month-year {
+      font-size: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px;
+      padding-bottom: 100px;
+    }
+    .section-header {
+      margin: 28px 0 12px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-teal);
+      font-weight: 600;
+    }
+    .search-bar {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .item-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      cursor: pointer;
+      gap: 12px;
+    }
+    .item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    .expand-icon {
+      font-size: 1rem;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+    }
+    .item-card.open .expand-icon { transform: rotate(180deg); }
+    .item-content {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+    .item-card.open .item-content { display: block; }
+    .item-text {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .qa-question {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .qa-answer {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .script-box {
+      background: var(--accent-teal-light);
+      border-left: 3px solid var(--accent-teal);
+      padding: 12px;
+      border-radius: 8px;
+      font-style: italic;
+      margin: 12px 0;
+      font-size: 0.85rem;
+    }
+    .copy-btn {
+      background: var(--accent-sage-light);
+      border: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      color: var(--accent-sage);
+      font-weight: 500;
+    }
+    .copy-btn:hover { background: var(--accent-sage); color: white; }
+    .upgrade-button {
+      display: block;
+      width: 100%;
+      background: var(--accent-teal);
+      color: white;
+      text-align: center;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin: 20px 0 10px;
+      transition: all 0.2s;
+    }
+    .upgrade-button:hover {
+      background: var(--accent-sage);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .premium-badge {
+      background: var(--accent-sage);
+      color: white;
+      font-size: 0.65rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .website-link {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.7rem;
+    }
+    .website-link a { color: var(--text-tertiary); text-decoration: none; }
+    .website-link a:hover { color: var(--accent-teal); }
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .qr-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .qr-card:hover { border-color: var(--accent-teal); transform: translateY(-2px); }
+    .qr-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .qr-title { font-size: 0.75rem; font-weight: 600; color: var(--text-primary); }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: var(--bg-primary);
+      border-radius: var(--radius-md);
+      max-width: 500px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-tertiary);
+    }
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--accent-teal);
+      margin-bottom: 16px;
+    }
+    .checkin-question { margin-bottom: 20px; }
+    .checkin-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .rating-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .rating-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .rating-btn.selected {
+      background: var(--accent-teal);
+      border-color: var(--accent-teal);
+      color: white;
+    }
+    .yesno-group {
+      display: flex;
+      gap: 12px;
+    }
+    .yesno-btn {
+      padding: 8px 16px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .yesno-btn.selected {
+      background: var(--accent-teal);
+      border-color: var(--accent-teal);
+      color: white;
+    }
+    .win-input {
+      width: 100%;
+      padding: 12px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+    .checkin-save {
+      width: 100%;
+      background: var(--accent-teal);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .trend-stats {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .trend-card {
+      flex: 1;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      text-align: center;
+    }
+    .trend-number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent-teal);
+    }
+    .weekly-item {
+      display: flex;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .weekly-check {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1.5px solid var(--text-tertiary);
+      margin-right: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+    .weekly-check.checked {
+      background: var(--accent-teal);
+      border-color: var(--accent-teal);
+      color: white;
+    }
+    .weekly-text {
+      font-size: 0.85rem;
+      color: var(--text-primary);
+    }
+    .bottom-tab-bar {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 560px;
+      background: rgba(28, 28, 30, 0.92);
+      backdrop-filter: blur(20px);
+      display: flex;
+      padding: 8px 24px;
+      border-radius: 60px;
+      gap: 16px;
+      z-index: 40;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+    }
+    body:not(.dark) .bottom-tab-bar { background: rgba(255, 255, 255, 0.92); }
+    .bottom-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      border-radius: 40px;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+      position: relative;
+    }
+    .bottom-tab.active {
+      color: var(--accent-teal);
+      font-weight: 600;
+    }
+    .bottom-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: var(--accent-teal);
+      border-radius: 2px;
+    }
+    .fab-toggle {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 50;
+      background: rgba(28, 28, 30, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-light);
+      border-radius: 48px;
+      padding: 12px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-md);
+      font-size: 1rem;
+    }
+    .fab-toggle:active { transform: scale(0.94); }
+    .tab-content { display: none; animation: fadeIn 0.25s ease; }
+    .tab-content.active-tab { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .usage-counter {
+      background: var(--accent-teal-light);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      color: var(--accent-teal);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .request-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.7rem;
+      color: var(--accent-teal);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--accent-teal);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .gate-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .gate-modal.active { display: flex; }
+    .gate-content {
+      position: relative;
+      background: white;
+      border-radius: 16px;
+      max-width: 400px;
+      width: 100%;
+      padding: 32px 24px 24px;
+      text-align: center;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #9A9A9A;
+    }
+    .close-modal:hover { color: #2B5C5C; }
+    .gate-input {
+      width: 100%;
+      padding: 12px;
+      margin: 16px 0;
+      border: 1px solid #E8E2D8;
+      border-radius: 8px;
+    }
+    .gate-submit {
+      background: #2B5C5C;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .gate-skip { margin-top: 12px; font-size: 0.7rem; }
+    .gate-skip a { color: #2B5C5C; }
+    .suggested-section {
+      margin: 16px 0 20px;
+      padding: 12px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .suggested-title {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .suggested-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .suggested-btn {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      color: var(--accent-teal);
+      transition: all 0.2s;
+      font-family: inherit;
+      font-weight: 500;
+    }
+    .suggested-btn:hover {
+      background: var(--accent-teal);
+      color: white;
+      border-color: var(--accent-teal);
+      transform: translateY(-1px);
+    }
+    #aiInput {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      resize: vertical;
+      font-family: inherit;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+    }
+    @media (max-width: 480px) {
+      .scroll-content { padding: 16px; padding-bottom: 80px; }
+      .bottom-tab-bar { padding: 6px 12px; gap: 8px; }
+      .qr-grid { grid-template-columns: 1fr; }
+      .bottom-tab { font-size: 0.65rem; }
+    }
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      .bottom-tab-bar { margin-bottom: env(safe-area-inset-bottom); }
+      .fab-toggle { bottom: calc(70px + env(safe-area-inset-bottom)); }
+    }
+  </style>
+</head>
+<body>
+<div class="app-container">
+  <div class="sticky-header">
+    <div class="header-title"><h1>PT Comm Lab</h1><p>Communication Tools for PTs</p></div>
+    <div class="header-date"><div class="date-day-large" id="dateDay">7</div><div class="date-month-year" id="dateFull">Jun 2026</div></div>
+  </div>
+
+  <!-- TAB 1: SCRIPTS -->
+  <div id="scriptsTab" class="tab-content active-tab">
+    <div class="scroll-content">
+      <div id="premiumScriptBadge" class="premium-badge" style="display: none;">⭐ Full Access (35 scripts)</div>
+      <div id="freeScriptBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">📘 Free Preview (5 of 35 scripts)</div>
+      <input type="text" id="scriptSearch" class="search-bar" placeholder="🔍 Search scripts...">
+      <div id="scriptsList"></div>
+      <div id="scriptUpgradeMsg" class="upgrade-button" style="display: none; margin-top: 20px;">
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to Full for 35 Scripts ✨</a>
+      </div>
+      <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
+    </div>
+  </div>
+
+  <!-- TAB 2: EXPLANATIONS -->
+  <div id="explanationsTab" class="tab-content">
+    <div class="scroll-content">
+      <div id="premiumExplainBadge" class="premium-badge" style="display: none;">⭐ Full Access (25 explanations)</div>
+      <div id="freeExplainBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">📘 Free Preview (5 of 25 explanations)</div>
+      <input type="text" id="explanationSearch" class="search-bar" placeholder="🔍 Search explanations...">
+      <div id="explanationsList"></div>
+      <div id="explainUpgradeMsg" class="upgrade-button" style="display: none; margin-top: 20px;">
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to Full for 25 Explanations ✨</a>
+      </div>
+      <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
+    </div>
+  </div>
+
+  <!-- TAB 3: QUICKREFS -->
+  <div id="quickrefsTab" class="tab-content">
+    <div class="scroll-content">
+      <div id="premiumQrBadge" class="premium-badge" style="display: none;">⭐ Full Access (15 quick references)</div>
+      <div id="freeQrBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">📘 Free Preview (5 of 15 quick references)</div>
+      <div class="qr-grid" id="qrGrid"></div>
+      <div id="qrUpgradeMsg" class="upgrade-button" style="display: none; margin-top: 20px;">
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to Full for 15 Quick References ✨</a>
+      </div>
+      <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
+    </div>
+  </div>
+
+  <!-- TAB 4: CHECK-IN -->
+  <div id="checkinTab" class="tab-content">
+    <div class="scroll-content">
+      <div class="section-header">💚 How are you doing today?</div>
+      <div id="checkinQuestions"></div>
+      <button class="checkin-save" id="saveCheckinBtn">Save Today's Check-in</button>
+      <div class="section-header" style="margin-top: 30px;">📊 Your Trends (Last 7 Days)</div>
+      <div class="trend-stats" id="trendStats"></div>
+      <div class="section-header" style="margin-top: 30px;">📋 WEEKLY REVIEW</div>
+      <div id="weeklyList"></div>
+      <button class="checkin-save" id="weeklyReviewBtn" style="margin-top: 12px;">Save Weekly Review</button>
+      <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
+    </div>
+  </div>
+
+  <!-- TAB 5: AI -->
+  <div id="aiTab" class="tab-content">
+    <div class="scroll-content">
+      <div class="section-header">✨ AI Explain Rephraser</div>
+      <div id="premiumAiBadge" class="premium-badge" style="display: none;">⭐ Unlimited AI (Full Access)</div>
+      <div id="freeAiBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">📘 3 free uses/day</div>
+      <div id="aiUsageCounter" class="usage-counter" style="display: none;"></div>
+      <div id="requestExtensionBtn" class="request-link" style="display: none;">🔄 Request Extension →</div>
+      <div class="suggested-section">
+        <div class="suggested-title">💡 Try asking:</div>
+        <div class="suggested-buttons">
+          <button class="suggested-btn" data-question="How do I explain rest days to a patient?">Rest days</button>
+          <button class="suggested-btn" data-question="Patient is afraid to move. What do I say?">Fear of movement</button>
+          <button class="suggested-btn" data-question="Why are 2-4 exercises enough?">Exercise quantity</button>
+          <button class="suggested-btn" data-question="Patient hasn't done their exercises. Help?">Non-adherence</button>
+          <button class="suggested-btn" data-question="How to explain flare-ups to a patient?">Flare-ups</button>
+          <button class="suggested-btn" data-question="Patient is frustrated with slow progress">Slow progress</button>
+        </div>
+      </div>
+      <textarea id="aiInput" rows="6" placeholder="Paste your clinical note or ask a question..."></textarea>
+      <button id="aiGenerateBtn">Generate Patient-Friendly Version</button>
+      <div id="aiOutput" class="script-box" style="margin-top: 16px; display: none;"></div>
+      
+      <!-- AI DISCLAIMER (Combined) -->
+      <div style="margin-top: 16px; padding: 12px; background: var(--accent-teal-light); border-radius: 8px; font-size: 0.7rem; color: var(--text-tertiary); text-align: center;">
+        For informational and educational purposes only. Not medical advice. Clinical judgment remains with licensed PTs. Do not enter patient names or health information. Anonymized questions help improve our AI.
+      </div>
+      
+      <div id="aiUpgradeMsg" class="upgrade-button" style="display: none; margin-top: 20px;">
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to Full for Unlimited AI ✨</a>
+      </div>
+      <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
+    </div>
+  </div>
+
+  <!-- TAB 6: Q&A (NEW - Full access only) -->
+  <div id="qaTab" class="tab-content">
+    <div class="scroll-content">
+      <div id="premiumQaBadge" class="premium-badge" style="display: none;">⭐ Full Access (30 Q&As)</div>
+      <div id="freeQaBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">🔒 Full Version Only</div>
+      <input type="text" id="qaSearch" class="search-bar" placeholder="🔍 Search Q&As...">
+      <div id="qaList"></div>
+      <div id="qaUpgradeMsg" class="upgrade-button" style="display: none; margin-top: 20px;">
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to Full for 30 Q&As ✨</a>
+      </div>
+      <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
+    </div>
+  </div>
+
+  <div class="bottom-tab-bar">
+    <div class="bottom-tab active" data-tab="scripts">Scripts</div>
+    <div class="bottom-tab" data-tab="explanations">Explain</div>
+    <div class="bottom-tab" data-tab="quickrefs">QuickRefs</div>
+    <div class="bottom-tab" data-tab="checkin">Check-in</div>
+    <div class="bottom-tab" data-tab="ai">✨ AI</div>
+    <div class="bottom-tab" data-tab="qa">Q&A</div>
+  </div>
+</div>
+<div class="fab-toggle" id="darkModeFab"><span>🌙</span></div>
+<div id="qrModal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-content"><button class="modal-close" onclick="closeModal()">✕</button><div class="modal-title" id="qrModalTitle"></div><div id="qrModalContent"></div></div></div>
+
+<div id="emailGate" class="gate-modal">
+  <div class="gate-content">
+    <button class="close-modal" id="closeGateBtn">&times;</button>
+    <h3>🔓 Unlock PT Comm Lab</h3>
+    <p>Enter your email to access free tools (scripts, explanations, 3 AI uses/day).</p>
+    <p style="font-size: 0.7rem; color: #6A6A6A;">No spam. Unsubscribe anytime.</p>
+    <input type="email" id="gateEmailInput" class="gate-input" placeholder="your@email.com">
+    <button class="gate-submit" id="gateSubmitBtn">Continue</button>
+    <div class="gate-skip"><a href="#" id="skipGateLink">Skip for now →</a></div>
+  </div>
+</div>
+
+<script>
+// ============================================
+// ACCESS CODES SYSTEM
+// ============================================
+const ACCESS_CODES = {
+  'FAMILY2026': { expiresIn: 365 },
+  'REVIEWER': { expiresIn: 90 },
+  'FRIEND90': { expiresIn: 90 },
+  'BETA2026': { expiresIn: 30 }
+};
+
+function checkAccessCode() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const code = urlParams.get('code');
+  if (code && ACCESS_CODES[code.toUpperCase()]) {
+    const expiryDays = ACCESS_CODES[code.toUpperCase()].expiresIn;
+    const premiumUntil = Date.now() + (expiryDays * 86400000);
+    localStorage.setItem('ptcomm_premium_until', premiumUntil);
+    localStorage.setItem('ptcomm_access_code', code.toUpperCase());
+    trackEvent('code_used', { code: code.toUpperCase(), expiry_days: expiryDays });
+    return true;
+  }
+  return false;
+}
+
+function hasPremiumAccess() {
+  if (isPaidUser) return true;
+  const premiumUntil = localStorage.getItem('ptcomm_premium_until');
+  if (premiumUntil && parseInt(premiumUntil) > Date.now()) return true;
+  if (premiumUntil && parseInt(premiumUntil) <= Date.now()) {
+    localStorage.removeItem('ptcomm_premium_until');
+    localStorage.removeItem('ptcomm_access_code');
+  }
+  return false;
+}
+
+function getRemainingPremiumDays() {
+  const premiumUntil = localStorage.getItem('ptcomm_premium_until');
+  if (!premiumUntil) return 0;
+  const remaining = Math.ceil((parseInt(premiumUntil) - Date.now()) / 86400000);
+  return remaining > 0 ? remaining : 0;
+}
+
+// ============================================
+// CHECK FOR SKIPGATE PARAMETER
+// ============================================
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('skipgate') === 'true') {
+  localStorage.setItem('ptcomm_skip_gate', 'true');
+  sessionStorage.setItem('ptcomm_skip_gate', 'true');
+}
+
+const shouldSkipGate = localStorage.getItem('ptcomm_skip_gate') === 'true' || 
+                       sessionStorage.getItem('ptcomm_skip_gate') === 'true';
+
+// ============================================
+// COMPLETE DATA ARRAYS (Merged from Book Team)
+// ============================================
+
+// SCRIPTS: IDs 1-5 (Lite) + IDs 6-35 (Full)
+const SCRIPTS_LITE = [
+  { id: 1, title: "Patient hasn't done their exercises", preview: "That happens. Was there something specific that got in the way this week?", fullText: "That happens. Was there something specific that got in the way this week?\n\nAlternative: Let us look at the exercise plan together. If it is too much or too hard to fit in, I want to know. We can adjust.\n\nAlternative 2: The fact that you are telling me honestly means a lot. Let us figure out a version you can actually do. That is on me, not you." },
+  { id: 2, title: "Patient in pain and afraid to move", preview: "I hear you. Fear of making it worse is completely understandable.", fullText: "I hear you. Fear of making it worse is completely understandable. Let us find a version that does NOT make it worse.\n\nAlternative: What is the smallest, safest movement you feel willing to try today? Even a tiny one.\n\nAlternative 2: Pain does not always mean damage. Your alarm system might be overreacting. Let us test a very small movement and see how your body responds — we can stop anytime." },
+  { id: 3, title: "Patient is frustrated with slow progress", preview: "I hear your frustration. You are working hard. Let me show you the progress you might be missing.", fullText: "I hear your frustration. You are working hard. Let me show you the progress you might be missing.\n\nAlternative: Progress often looks like stairs, not a ramp. Flat periods, then jumps. You might be on a flat part right now. That is normal. The jump is coming.\n\nAlternative 2: If you are doing everything and not seeing change, that is my signal to adjust something. Let me think overnight and come back with a new idea." },
+  { id: 4, title: "Patient compares to someone who recovered faster", preview: "That is frustrating. Here is what we know: age, starting fitness, tissue involvement, and even stress affect recovery speed.", fullText: "That is frustrating. Here is what we know: age, starting fitness, tissue involvement, and even stress affect recovery speed. You are not your friend. Your body is on its own timeline.\n\nAlternative: I cannot change your starting point. But I can help you maximize what you do now. Let us focus on what moves the needle for you.\n\nAlternative 2: Can we agree to compare you to last week's you instead of someone else?" },
+  { id: 5, title: "Patient thinks rest is better than movement", preview: "Complete rest for more than a few days can actually weaken muscles and stiffen joints.", fullText: "Complete rest for more than a few days can actually weaken muscles and stiffen joints. I am not saying push through pain. I am saying find the smallest amount of gentle movement that feels okay.\n\nAlternative: There is a 'just right' amount of movement — not too much, not too little. Let us find yours.\n\nAlternative 2: If you need a few days of rest, take them. But let us put an end date on it. After three days, we start very small — even sitting and standing a few times counts." }
+];
+
+const SCRIPTS_FULL = [
+  { id: 6, title: "Patient Thinks Rest Is Better Than Movement", preview: "Complete rest for more than a few days can actually weaken muscles and stiffen joints.", fullText: "**The Situation:**\n\"I am just going to rest until it feels better.\"\n\n**What Not to Say:**\n\"Rest is bad for you.\" (Oversimplified. Triggers resistance.)\n\n**Try This:**\nOption 1 (explain the risk): \"Complete rest for more than a few days can actually weaken muscles and stiffen joints. I am not saying push through pain. I am saying find the smallest amount of gentle movement that feels okay.\"\n\nOption 2 (the Goldilocks frame): \"There is a 'just right' amount of movement — not too much, not too little. Let us find yours.\"\n\nOption 3 (permission + boundary): \"If you need a few days of rest, take them. But let us put an end date on it. After three days, we start very small — even sitting and standing a few times counts.\"\n\n**Why This Works:**\nYou validate rest as a short-term strategy while preventing rest from becoming avoidance." },
+  { id: 7, title: "Patient Wants More Exercises (You Disagree)", preview: "Research shows that when people have too many exercises, they actually do less.", fullText: "**The Situation:**\n\"Can you give me more exercises? I want to work harder.\"\n\n**What Not to Say:**\n\"No, you cannot handle more.\" (Challenges their self-image.)\n\n**Try This:**\nOption 1 (explain the research): \"Research shows that when people have too many exercises, they actually do less. I want you doing fewer things really well rather than many things sporadically.\"\n\nOption 2 (redirect energy): \"Instead of more exercises, let us talk about quality. Can you do these three perfectly? Let us start there.\"\n\nOption 3 (delay + condition): \"Here is the deal: do these four consistently for two weeks. Perfect attendance. Then we talk about adding more.\"\n\n**Why This Works:**\nYou respect their motivation while redirecting it toward what actually works." },
+  { id: 8, title: "Patient Is Frustrated with Slow Progress", preview: "Progress often looks like stairs, not a ramp. Flat periods, then jumps.", fullText: "**The Situation:**\n\"I have been doing everything. Why am I not better?\"\n\n**What Not to Say:**\n\"Be patient.\" (Invalidating.)\n\n**Try This:**\nOption 1 (acknowledge + reframe): \"I hear your frustration. You are working hard. Let me show you the progress you might be missing.\" (Then show evidence — pain score down, reps up, etc.)\n\nOption 2 (the stairs analogy): \"Progress often looks like stairs, not a ramp. Flat periods, then jumps. You might be on a flat part right now. That is normal. The jump is coming.\"\n\nOption 3 (adjust the plan): \"If you are doing everything and not seeing change, that is my signal to adjust something. Let me think overnight and come back with a new idea.\"\n\n**Why This Works:**\nYou validate their effort, show hidden progress, and own the need to adjust — which builds trust." },
+  { id: 9, title: "Patient Cancels Repeatedly", preview: "I want to make sure this is still the right time for you to be in therapy. No judgment either way.", fullText: "**The Situation:**\nThird cancellation in a row. Voicemail: \"Something came up.\"\n\n**What Not to Say:**\n\"You are wasting my time.\" (True. Destroys the relationship.)\n\n**Try This:**\nOption 1 (gentle boundary): \"I have noticed you have had to cancel a few times. I want to make sure this is still the right time for you to be in therapy. No judgment either way.\"\n\nOption 2 (problem-solving): \"Is there something about the appointment time or frequency that is not working? We can adjust if that helps.\"\n\nOption 3 (the open door): \"I am going to keep your spot for one more week. If you need to take a break and come back when life settles down, that is okay too. Just let me know.\"\n\n**Why This Works:**\nYou protect your schedule while leaving the door open. You do not chase. You do not shame." },
+  { id: 10, title: "When You Need to Document During the Session", preview: "I am noting what we just did so I can track your progress accurately.", fullText: "**The Situation:**\nYou are typing during the session. The patient goes quiet. They look at the clock. They might say: \"Are we done?\" or \"Am I taking too much of your time?\" or just sit there, feeling like they are not the priority. You are not ignoring them. You are just trying to survive the documentation load. But they do not know that.\n\n**What Not to Say:**\n\"Just give me a second.\" (Implies they are interrupting you.)\n\n**Try This:**\nOption 1 (explain + include): \"I am noting what we just did so I can track your progress accurately. While I type, can you tell me — how did that last exercise feel compared to last week?\" (Turns documentation into a collaborative moment.)\n\nOption 2 (honest context): \"I have to document this for your records and for insurance. It takes a few minutes each session. I want you to know: this is not me ignoring you. This is me making sure your care is tracked properly. You are still my priority.\"\n\nOption 3 (protect the time): \"Let us do this: I will give you my full attention for the hands-on part. Then I will take two minutes to write my notes. You can rest, stretch, or ask me anything during that time. Sound fair?\"\n\n**Why This Works:**\nYou name the tension. You explain the invisible system. And you protect the relationship by showing the patient that documentation serves them, not just bureaucracy." },
+  { id: 11, title: "Patient Says \"My Doctor Said Something Different\"", preview: "Doctors often focus on different priorities. Can I show you why I am recommending this movement?", fullText: "**The Situation:**\n\"My doctor said I should not move that way. Now I am confused.\"\n\n**What Not to Say:**\n\"Your doctor does not understand physical therapy.\" (Undermines the medical team.)\n\n**Try This:**\nOption 1 (bridge the gap): \"That is good information. Doctors often focus on different priorities. Can I show you why I am recommending this movement, and then you can ask your doctor for clarification?\"\n\nOption 2 (request records): \"Do you mind if I reach out to your doctor for clarity? I want to make sure we are aligned.\"\n\nOption 3 (educate + defer): \"Here is my clinical reasoning. But your doctor knows your full medical history. If there is a conflict, I trust their judgment. Let us find common ground.\"\n\n**Why This Works:**\nYou respect the doctor, protect the patient, and position yourself as collaborative, not competitive." },
+  { id: 12, title: "Patient Is Only Here Because Their Doctor Told Them to Come", preview: "Your doctor sent you here. That is their reason. What I want to know is: is there anything YOU would like to get out of this?", fullText: "**The Situation:**\nThey sit down. Arms crossed. \"My doctor said I have to come to PT. So here I am.\" No pain they care about. No goal they chose. No buy-in at all. They are physically present but mentally absent.\n\n**What Not to Say:**\n\"Well, you are here, so let us get started.\" (Misses the window. They will comply but never engage.)\n\n**Try This:**\nOption 1 (find their reason): \"Your doctor sent you here. That is their reason. What I want to know is: is there anything YOU would like to get out of this? Even something small. Even if it is just getting your doctor off your back.\"\n\nOption 2 (the ownership shift): \"Here is the truth: I cannot make you do anything. Your doctor cannot either. What I can do is give you a program that works — if you decide you want it to. So let me ask: what would make this worth your time?\"\n\nOption 3 (honest respect): \"I appreciate you showing up even though this was not your idea. That takes effort. Let us find one thing today that makes the visit useful for YOU — not just for your doctor. Deal?\"\n\n**Why This Works:**\nExternal motivation (\"my doctor said so\") gets people in the door. Internal motivation (\"I want this for me\") keeps them coming. You cannot force the shift. But you can create the conditions for it." },
+  { id: 13, title: "Patient Brings in Exercises They Found Online", preview: "I am glad you are researching. Let us look at it together.", fullText: "**The Situation:**\nThe patient shows you a video on their phone. \"I found this exercise on YouTube. Should I be doing this instead?\" Or: \"My friend sent me this TikTok routine. Can we add it?\" The exercise may be fine. It may be inappropriate. It may be outright harmful. They are asking because they trust you — but they also trust the internet.\n\n**What Not to Say:**\n\"Do not believe everything you see online.\" (Dismissive. Shuts down curiosity. They will just stop telling you.)\n\n**Try This:**\nOption 1 (evaluate together): \"I am glad you are researching. Let us look at it together. Some online content is great. Some is not right for where you are right now. Let me tell you what I think and why.\"\n\nOption 2 (redirect to the plan): \"That exercise might be useful — eventually. Right now, your body is not ready for it. Here is why: [explain the progression]. When you ARE ready, we can add it.\"\n\nOption 3 (teach critical thinking): \"Here is a quick test: does the person in the video explain WHY the exercise works and who it is for? If they are giving the same exercise to everyone regardless of their condition, that is a red flag. You are not everyone. You are you.\"\n\n**Why This Works:**\nYou do not mock their effort. You channel it. A patient who researches is a patient who cares. That is a resource, not a problem." },
+  { id: 14, title: "Patient Asks About App-Based Exercise vs. In-Person", preview: "Research actually shows that in-person supervision leads to 4x higher adherence than apps alone.", fullText: "**The Situation:**\n\"My friend uses an app. Do I really need to come see you?\"\n\n**What Not to Say:**\n\"Apps are useless.\" (Defensive. Also not entirely true.)\n\n**Try This:**\nOption 1 (the research): \"Research actually shows that in-person supervision leads to 4x higher adherence than apps alone. Apps are great for reminders. They cannot watch your form or adjust in real time.\"\n\nOption 2 (collaborative): \"We can use an app as a supplement. But the real value of coming in is that I can see what you cannot — compensations, subtle form issues, fear responses.\"\n\nOption 3 (professional framing): \"An app gives you information. I give you interpretation, adaptation, and accountability. They are not the same thing.\"\n\n**Why This Works:**\nYou do not dismiss technology. You clarify your unique value." },
+  { id: 15, title: "Patient Is Overwhelmed by Instructions", preview: "You are right. Let us focus on just two things this week.", fullText: "**The Situation:**\n\"That is a lot to remember.\" (Patient looks overwhelmed.)\n\n**What Not to Say:**\n\"It is not that complicated.\" (Dismissive.)\n\n**Try This:**\nOption 1 (chunking): \"You are right. Let us focus on just two things this week. The rest are optional. Master these two first.\"\n\nOption 2 (write it down): \"Let me write down the most important three steps. Keep this on your fridge.\"\n\nOption 3 (the phone video): \"Let me record you doing the movement correctly on your phone. You will have it forever.\"\n\n**Why This Works:**\nOverwhelm is real. You reduce cognitive load instead of adding to it." },
+  { id: 16, title: "Patient Asks \"Am I Doing This Right?\" (Distant Follow-Up)", preview: "Great job showing up. One small thing: [one correction only]. The rest looks solid.", fullText: "**The Situation:**\nPatient sends a video or asks via message: \"Is this okay?\"\n\n**What Not to Say:**\n\"Looks fine.\" (Vague. Dismissive.)\n\n**Try This:**\nOption 1 (specific feedback): \"Great job showing up. One small thing: [one correction only]. The rest looks solid.\"\n\nOption 2 (remote coaching): \"From what I can see, your form is 80% there. The missing piece is [X]. Try [one cue] and send me another video.\"\n\nOption 3 (schedule a check-in): \"It is hard to assess remotely. Can you come in for a 15-minute form check? I want to see you in person to be sure.\"\n\n**Why This Works:**\nYou encourage effort while maintaining clinical responsibility." },
+  { id: 17, title: "Patient Asks About Injections or Surgery", preview: "For your condition, physical therapy works as well as those options for most people, with fewer risks.", fullText: "**The Situation:**\n\"My doctor offered me a cortisone shot / surgery. What do you think?\"\n\n**What Not to Say:**\n\"Do not do it.\" (Second-guesses the doctor. Damages trust.)\n\n**Try This:**\nOption 1 (neutral comparison): \"Injections and surgery are options. Here is what the research says: for your condition, physical therapy works as well as those options for most people, with fewer risks. But every case is different.\"\n\nOption 2 (shared decision-making): \"Let me give you the information I have. Then you and your doctor decide. Here is what PT can offer. Here is what surgery offers. Here is what research says about success rates.\"\n\nOption 3 (defer but inform): \"I cannot tell you what to do. That is between you and your doctor. But I can tell you what I have seen with other patients in your situation.\"\n\n**Why This Works:**\nYou stay in your lane while providing valuable context." },
+  { id: 18, title: "Patient Has Complex Medical History (Comorbidities)", preview: "Yes, we can help you. We just need to be more careful and go more slowly.", fullText: "**The Situation:**\n\"I have diabetes, heart disease, and arthritis. Can you still help me?\"\n\n**What Not to Say:**\n\"This is going to be complicated.\" (Discouraging.)\n\n**Try This:**\nOption 1 (confidence + caution): \"Yes, we can help you. We just need to be more careful and go more slowly. Your other conditions matter — we will factor them into every decision.\"\n\nOption 2 (team approach): \"I will communicate with your other providers. We are all on the same team. Let me know if anything feels off.\"\n\nOption 3 (progressive goal-setting): \"Let us start with something so small it feels almost silly. We will build from there. Safety first.\"\n\n**Why This Works:**\nYou acknowledge complexity without creating fear." },
+  { id: 19, title: "Patient Is a Young Athlete (Return to Sport Pressure)", preview: "Here is what we can realistically achieve in six weeks. Here is what we cannot.", fullText: "**The Situation:**\n\"I have a tryout in six weeks. I need to be ready.\"\n\n**What Not to Say:**\n\"You are pushing too hard.\" (Dismisses their priority.)\n\n**Try This:**\nOption 1 (honest timeline + contingency): \"Here is what we can realistically achieve in six weeks. Here is what we cannot. Let us focus on what matters most for your sport.\"\n\nOption 2 (redirect to what they control): \"I cannot guarantee you will be ready. But I can guarantee that doing nothing guarantees you will not be ready. Let us maximize the time we have.\"\n\nOption 3 (sports-specific framing): \"Athletes who return too soon get re-injured at higher rates. Let us aim for 'ready to compete safely' — not just 'ready to try out.'\"\n\n**Why This Works:**\nYou speak their language while protecting their long-term health." },
+  { id: 20, title: "Patient Is an Older Adult (Fear of Falling)", preview: "Fear of falling is real — and it is also making you more likely to fall, because you are not moving.", fullText: "**The Situation:**\n\"I am afraid I am going to fall. That is why I stopped moving.\"\n\n**What Not to Say:**\n\"Just be careful.\" (Vague. Increases anxiety.)\n\n**Try This:**\nOption 1 (graded exposure): \"Fear of falling is real — and it is also making you more likely to fall, because you are not moving. Let us start with the safest possible movements and build your confidence.\"\n\nOption 2 (the confidence loop): \"Confidence comes from evidence. Let us create evidence that you can move safely. Small successes build belief.\"\n\nOption 3 (practical): \"Let us also talk about your environment. Grab bars. Good lighting. Removing rugs. We address both your body and your home.\"\n\n**Why This Works:**\nYou validate fear while building a ladder of small, safe wins." },
+  { id: 21, title: "Patient Has Mental Health Struggles (Depression, Anxiety)", preview: "It sounds like you are carrying a heavy load right now. That affects your body too.", fullText: "**The Situation:**\nPatient seems flat, withdrawn, or tearful. \"I just cannot seem to do anything.\"\n\n**What Not to Say:**\n\"Just push through.\" (Invalidating. Not helpful for depression.)\n\n**Try This:**\nOption 1 (normalize + support): \"It sounds like you are carrying a heavy load right now. That affects your body too. Let us make the plan smaller — much smaller — so it feels doable.\"\n\nOption 2 (ask permission): \"Would it be okay if we talk about how your mood might be affecting your recovery? I am not a therapist, but I want to make sure we are not ignoring something important.\"\n\nOption 3 (the smallest step): \"On hard days, your only job is to show up. Even sitting and taking three slow breaths counts. That is enough.\"\n\n**Why This Works:**\nYou acknowledge the whole person without overstepping your role." },
+  { id: 22, title: "Patient Asks \"Should I See a Chiropractor Instead?\"", preview: "Chiropractors and PTs take different approaches. Both can help. Here is what we offer that is different.", fullText: "**The Situation:**\n\"My friend said a chiropractor fixed their back in two visits.\"\n\n**What Not to Say:**\n\"Chiropractors are not real doctors.\" (Defensive. Unprofessional.)\n\n**Try This:**\nOption 1 (neutral comparison): \"Chiropractors and PTs take different approaches. Both can help. Here is what we offer that is different: long-term movement education, not just passive treatment.\"\n\nOption 2 (collaborative): \"You can see both. Just let me know what they are doing so we do not duplicate or conflict. Many patients do both.\"\n\nOption 3 (evidence-based): \"Research shows that active treatment (exercises you do yourself) produces longer-lasting results than passive treatment alone. That is our focus here.\"\n\n**Why This Works:**\nYou do not badmouth another profession. You clarify your unique value." },
+  { id: 23, title: "Patient Has Been Discharged but Wants to Return (Recurrence)", preview: "Recurrence is common. It does not mean you failed.", fullText: "**The Situation:**\n\"I was fine for six months. Now the pain is back. Did I do something wrong?\"\n\n**What Not to Say:**\n\"You must have stopped doing your exercises.\" (Blame.)\n\n**Try This:**\nOption 1 (normalize recurrence): \"Recurrence is common. It does not mean you failed. It means we need to figure out what changed and address it.\"\n\nOption 2 (reframe as information): \"This is useful information. Something in your life or body changed. Let us figure out what it is — and build a plan that prevents it from happening again.\"\n\nOption 3 (maintenance plan): \"Let us use this as a reminder that maintenance matters. We will get you back to where you were — and then build a check-in plan so you do not lose it again.\"\n\n**Why This Works:**\nYou remove shame and turn recurrence into a learning opportunity." },
+  { id: 24, title: "Patient Wants to Stop Coming Because They \"Feel Fine\"", preview: "Pain relief is like fixing the roof after a storm. The leak stopped. But the structure underneath still needs reinforcement.", fullText: "**The Situation:**\nThe pain is gone. Range of motion is back. The patient says: \"I think I am good. I do not need to come anymore.\" You know — from experience and from their assessment — that the foundation is not built yet. Without strength and motor patterns, they will likely be back in three months with the same problem.\n\n**What Not to Say:**\n\"Your insurance covers more visits, so you should keep coming.\" (Makes it about coverage, not clinical need.)\n\n**Try This:**\nOption 1 (the house analogy): \"Pain relief is like fixing the roof after a storm. The leak stopped. But the structure underneath still needs reinforcement. If we stop now, the next storm puts you right back here.\"\n\nOption 2 (honest timeline): \"You are feeling better — that is real. What I want to make sure is that you STAY feeling better. The people who come back for maintenance strength are the ones who do not end up back here in three months. Let us at least finish building the foundation.\"\n\nOption 3 (collaborative milestone): \"Let us do this: let us agree on what 'done' looks like together. Not just pain-free — but strong enough that this problem is unlikely to come back. If we are not there yet, I will tell you honestly. If we are, we celebrate and discharge.\"\n\n**Why This Works:**\nYou validate their progress instead of dismissing it, then reframe \"done\" from pain relief to resilience." },
+  { id: 25, title: "Patient Is a Caregiver (Their Own Health Suffering)", preview: "You are carrying an enormous load. I am not going to add to it.", fullText: "**The Situation:**\n\"I take care of my [spouse/parent/child]. I do not have time for myself.\"\n\n**What Not to Say:**\n\"You have to make time.\" (Dismisses their real constraints.)\n\n**Try This:**\nOption 1 (validation + tiny step): \"You are carrying an enormous load. I am not going to add to it. Let us find one thing — one tiny thing — that you can do for yourself in two minutes or less.\"\n\nOption 2 (caregiver-specific framing): \"You cannot pour from an empty cup. Taking care of yourself is not selfish. It is how you keep showing up for the person you care for.\"\n\nOption 3 (integration): \"Can we build your exercises into the care you already provide? Standing while they sit. Walking while they rest. Let us find ways to weave it in.\"\n\n**Why This Works:**\nYou acknowledge their reality and work within it, not against it." },
+  { id: 26, title: "How to Talk to Patients About Weight (Without Offending)", preview: "Your joints are carrying more load than they were designed for. Reducing that load would help.", fullText: "**The Situation:**\nExcess weight is clearly affecting their condition. They have not brought it up.\n\n**What Not to Say:**\n\"You need to lose weight.\" (Shaming. Often counterproductive.)\n\n**Try This:**\nOption 1 (mechanical framing): \"Here is what I notice: your joints are carrying more load than they were designed for. Reducing that load would help — but I know that is complicated. Can we talk about what feels possible?\"\n\nOption 2 (open the door): \"Weight is a sensitive topic. I do not want to assume anything. Is this something you want to talk about, or should we focus on other things?\"\n\nOption 3 (referral): \"I am not a weight specialist. But I can connect you with someone who is, if that would help. In the meantime, let us focus on what we can do with movement.\"\n\n**Why This Works:**\nYou address the mechanical reality without shame, and you do not assume expertise you do not have." },
+  { id: 27, title: "What to Say When a Patient Asks About CBD or Supplements", preview: "I cannot recommend supplements. That is outside my scope. But I can tell you what the research says.", fullText: "**The Situation:**\n\"I heard CBD helps with pain. Should I try it?\"\n\n**What Not to Say:**\n\"It is a waste of money.\" (May be true. But you are not a pharmacist.)\n\n**Try This:**\nOption 1 (scope of practice): \"I cannot recommend supplements. That is outside my scope. But I can tell you what the research says — and I can suggest you talk to your doctor or a pharmacist.\"\n\nOption 2 (evidence-based): \"The research on CBD for pain is mixed. Some studies show small benefits. Others show placebo effects. It is unlikely to hurt, but I cannot promise it will help.\"\n\nOption 3 (harm reduction): \"If you try it, let me know. And make sure your doctor knows. Some supplements interact with medications.\"\n\n**Why This Works:**\nYou stay in your lane while providing useful guardrails." },
+  { id: 28, title: "How to Handle a Patient Who Is Sexually Inappropriate", preview: "That comment is not appropriate. We are going to continue this session focusing on your treatment.", fullText: "**The Situation:**\nPatient makes a comment, gesture, or advance that crosses a line.\n\n**What Not to Say:**\nNothing. (Silence signals acceptance.)\n\n**Try This:**\nOption 1 (direct boundary): \"That comment [or gesture] is not appropriate. We are going to continue this session focusing on your treatment. Do not do that again.\"\n\nOption 2 (redirect with warning): \"I am going to pretend you did not say that. Let us get back to your exercises.\" (If repeated, move to Option 1.)\n\nOption 3 (end the session): \"This session is over. I will not tolerate inappropriate behavior. You can schedule with a different provider if you choose.\"\n\n**Why This Works:**\nYou protect yourself. You set a clear boundary. You do not argue.\n\nImportant: Document everything. Report as required by your workplace and state laws." },
+  { id: 29, title: "What to Say When a Patient Lies About Doing Their Exercises", preview: "The exercises did not have the effect I expected. That is useful information. Let us adjust the plan.", fullText: "**The Situation:**\nYou know they did not do the exercises. They say they did. The evidence says otherwise.\n\n**What Not to Say:**\n\"You are lying to me.\" (Accusatory. Destroys trust.)\n\n**Try This:**\nOption 1 (save face + redirect): \"The exercises did not have the effect I expected. That is useful information. Let us adjust the plan.\" (You do not need to catch them in the lie. The data tells you what you need.)\n\nOption 2 (gentle honesty): \"I am going to be direct. The progress I am seeing does not match someone doing the exercises as prescribed. No judgment. But can we talk honestly about what happened?\"\n\nOption 3 (problem-solving frame): \"Something is not adding up. Let us figure out the barrier — not to blame you, but to fix it. Was it pain? Time? Forgetting? What got in the way?\"\n\n**Why This Works:**\nYou prioritize the relationship and the solution over being right." },
+  { id: 30, title: "How to Discharge a Patient Who Is Not Progressing", preview: "Here is where we are: you have not been able to follow the plan. That is not a moral failure.", fullText: "**The Situation:**\nYou have done everything. They have tried nothing. Insurance is running out. They are not getting better — and they may not ever, with this level of effort.\n\n**What Not to Say:**\n\"There is nothing more I can do for you.\" (May be true. Feels like abandonment.)\n\n**Try This:**\nOption 1 (compassionate honesty): \"Here is where we are: you have not been able to follow the plan. That is not a moral failure — but it does mean I cannot help you as much as I would like. Let us pause here. If you decide you are ready to try differently, I am here.\"\n\nOption 2 (referral): \"I think you might benefit from a different approach. Here are some other providers who specialize in [different technique]. I am not giving up on you — I am trying to find the right fit.\"\n\nOption 3 (transition to maintenance): \"Let us shift our goal. Not 'fixing' — just 'maintaining' so you do not get worse. Can we agree on that smaller goal?\"\n\n**Why This Works:**\nYou do not pretend. You do not shame. You offer a path forward, even if it is not the path you wanted." },
+  { id: 31, title: "Patient Asks \"Can You Just Write Me a Prescription for PT?\"", preview: "I do more than write prescriptions. I design a movement plan specific to your body and your goals.", fullText: "**The Situation:**\nThe patient does not want the process. They want the paper. \"Can you just write me a script for PT?\" Or: \"My doctor said I need a referral.\" They see you as a formality — a stamp on the way to the real thing.\n\n**What Not to Say:**\n\"That is not how this works.\" (Condescending. Shuts down conversation.)\n\n**Try This:**\nOption 1 (reframe your role): \"I do more than write prescriptions. I design a movement plan specific to your body and your goals. Think of this as the real work — not the paperwork before it.\"\n\nOption 2 (honesty + value): \"I could write a referral, but the person who receives it will start from scratch. I already know your body, your limits, and what you respond to. We are already ahead.\"\n\nOption 3 (patient-centered): \"What are you hoping the referral will give you that we are not already doing? I want to make sure you are getting what you need — whether that is here or somewhere else.\"\n\n**Why This Works:**\nPatients who want referrals often feel unheard or under-informed. They think the \"next step\" is somewhere else. You are not defending your territory. You are asking what they actually need." },
+  { id: 32, title: "Patient Is Non-Verbal or Reluctant to Engage (The Silent Patient)", preview: "You do not have to talk much today. But if something does not feel right, I am here.", fullText: "**The Situation:**\nThey show up. They follow instructions. But they give you nothing — no questions, no feedback, no reactions. One-word answers. Eyes on the floor. You cannot tell if they are engaged, scared, annoyed, or just quiet by nature.\n\n**What Not to Say:**\n\"You are being quiet today.\" (Feels like pressure. Some patients shut down further.)\n\n**Try This:**\nOption 1 (low-pressure invitation): \"You do not have to talk much today. But if something does not feel right — or if you have a question — I am here. No rush.\"\n\nOption 2 (normalize): \"Some people like to talk through everything. Others like to just do the work. Either way is fine. Let me know if you need me to adjust anything.\"\n\nOption 3 (observation + curiosity): \"I notice you are getting through the movements well. I am not sure how it is feeling for you. Can you give me a thumbs up, thumbs down, or somewhere in between?\"\n\n**Why This Works:**\nSilence is not always resistance. It can be personality, culture, trauma, overwhelm, or just their processing style. You do not force engagement. You invite it — gently, repeatedly, without judgment." },
+  { id: 33, title: "Patient Wants to Continue but Insurance Denies Further Visits", preview: "Insurance denied more visits. I disagree with that decision, and I can help you appeal it.", fullText: "**The Situation:**\nThe patient is motivated. They are making progress. They want to keep coming. Then insurance says no. The patient looks at you: \"What do I do now?\" They feel abandoned by the system. You feel powerless too.\n\n**What Not to Say:**\n\"There is nothing I can do — insurance denied it.\" (Technically true. Feels like you washed your hands of them.)\n\n**Try This:**\nOption 1 (advocate + next steps): \"Insurance denied more visits. I disagree with that decision, and I can help you appeal it. In the meantime, let us make sure you have a solid home plan that keeps your progress going. You will not lose what you have built.\"\n\nOption 2 (transition plan): \"This is frustrating — for both of us. Here is what I want you to have before you leave: a clear home exercise plan, a flare-up protocol, and a way to reach me if something changes. You are not being abandoned. The system is making a bad call, but we can work around it.\"\n\nOption 3 (financial transparency): \"You have options. We can appeal the denial — I will write the letter. You can self-pay at a reduced rate if that works. Or you can transition to a maintenance plan on your own. Let us talk through what makes sense for you.\"\n\n**Why This Works:**\nThe patient is losing control. Insurance just told them their recovery is not worth paying for. Your job is not to fix the system. Your job is to make sure they do not lose hope — and that they leave with a plan, not just a denial letter." },
+  { id: 34, title: "Patient's Family Member Contacts You Between Sessions", preview: "I appreciate you reaching out — it shows you care. I need the patient's permission before I can share details.", fullText: "**The Situation:**\nA spouse calls. An adult child emails. A parent sends a message through the front desk. They are worried, involved, and want updates. They mean well. But you have a HIPAA obligation, a professional boundary, and a patient whose privacy comes first.\n\n**What Not to Say:**\n\"I cannot discuss this with you.\" (Technically correct. Feels cold. Escalates the worry.)\n\n**Try This:**\nOption 1 (boundary + empathy): \"I appreciate you reaching out — it shows you care. I need the patient's permission before I can share details. I will ask them at the next visit if they would like to include you in the conversation.\"\n\nOption 2 (redirect + resource): \"I cannot share specific information without consent, but I can tell you this: supporting someone in recovery is hard. The best thing you can do is encourage them to do their home exercises and ask them what they need from you.\"\n\nOption 3 (proactive inclusion): \"Would you like to come to the next session? If the patient is comfortable, having you there can help — especially for home exercise support. I will ask them.\"\n\n**Why This Works:**\nFamily members are not obstacles. They are potential allies — but they need to be brought in the right way. You protect the patient's autonomy while honoring the family's concern. That balance is the whole job." },
+  { id: 35, title: "Patient Asks \"What Do You Think of [Trend/Influencer/Instagram Exercise]?\"", preview: "Show me what they are doing. I want to understand what caught your attention before I give you my thoughts.", fullText: "**The Situation:**\nThey saw it on TikTok. Their friend swears by it. An Instagram therapist with 200K followers said it cures back pain. They want your take. They are not hostile — they are curious. But the thing they are showing you ranges from harmless to dangerous.\n\n**What Not to Say:**\n\"That is garbage. Do not listen to influencers.\" (Dismissive. Triggers defensiveness. They will just stop telling you what they are trying.)\n\n**Try This:**\nOption 1 (curiosity first): \"Show me what they are doing. I want to understand what caught your attention before I give you my thoughts.\" (Watch it. Then respond to the movement, not the messenger.)\n\nOption 2 (nuanced honesty): \"Some of what is out there is solid. Some of it is well-intentioned but not right for every body. And some of it is just content designed for views. Let me tell you what I think about this specific one — and what I would change for your body.\"\n\nOption 3 (redirect to their plan): \"I am glad you are researching. That shows investment. Let us compare what they are suggesting to what we are already doing — you might find they overlap more than you expect. And if there is something worth adding, I will tell you.\"\n\n**Why This Works:**\nPatients who bring you social media content are engaged. That is a gift, not a threat. If you dismiss their curiosity, they will stop sharing — and they will do it behind your back. If you engage with it honestly, you build trust AND get to course-correct dangerous advice." }
+];
+
+const ALL_SCRIPTS = [...SCRIPTS_LITE, ...SCRIPTS_FULL];
+
+// EXPLANATIONS: IDs 1-5 (Lite) + IDs 6-25 (Full)
+const EXPLANATIONS_LITE = [
+  { id: 1, title: "Why strengthening takes time", shortVersion: "Your body is not a light switch. It is a garden.", fullText: "Many people expect quick changes. They come in after a week and ask, 'Why am I not better yet?' Here is the truth: building strength and healing tissue happens slowly — not because your body is failing, but because that is how bodies work. Think of it like planting a seed. You do not dig it up every day to check if it is growing. You water it. You give it sun. You wait. Your body is the same. The work you do today will show up weeks from now. Trust the process.", script: "Your body is adapting at its own pace. The work you do today will show up weeks from now. Trust the process. Keep showing up.", patientHandout: "Your body heals and strengthens gradually — like a garden, not a light switch. Consistent small actions over time produce lasting change. Do not expect overnight results. Expect steady progress." },
+  { id: 2, title: "Why 2-4 exercises is often enough", shortVersion: "Doing a few things well beats doing many things poorly.", fullText: "Patients often think more is better. They want the full list. They want to feel like they are working hard. But research shows the opposite. When patients are given too many exercises or asked to do them too often, they actually do less. It becomes overwhelming. They skip days. They forget. They give up. Fewer exercises, done consistently, produce better results than many exercises, done sporadically.", script: "I am giving you just a few key movements. I want these to feel easy to fit into your day. Research shows people actually do better with fewer exercises done consistently.", patientHandout: "Fewer exercises, done regularly, beat many exercises done occasionally. Focus on quality and consistency — not quantity. Two to four movements, done well, is often the sweet spot." },
+  { id: 3, title: "Why pain doesn't always mean damage", shortVersion: "Pain is your body's alarm system, not always a damage indicator.", fullText: "Many patients believe: pain = injury. If it hurts, something must be wrong. That belief can freeze them. They stop moving. They stop doing their exercises. They get scared. Here is what we know: pain is the brain's opinion about danger to body tissues. Sometimes that opinion is accurate. Sometimes it is overprotective — like a smoke alarm going off from burnt toast. Your body can produce pain without active tissue damage. This is called 'sensitization.' It does not mean you are broken. It means your nervous system is on high alert. The solution is not to stop moving. It is to move in ways that feel safe, at a dose that does not trigger the alarm.", script: "Pain is your body's alarm system. It does not always mean damage — sometimes it just means sensitivity. We will find movements that do not set off the alarm.", patientHandout: "Pain is not always a sign of harm. Sometimes your nervous system is just on high alert. Gentle, safe movement often helps turn down the volume." },
+  { id: 4, title: "Why consistency beats intensity", shortVersion: "Small, regular actions beat occasional heroic efforts.", fullText: "Patients often wait to feel motivated. They plan to do a big workout. They go all in for a day or two. Then life gets busy. They miss a day. Then another. Then they feel guilty, and the guilt makes it even harder to start again. The alternative is not glamorous, but it works: small actions, done almost every day. Five minutes of movement every day beats 60 minutes once a week. Not because five minutes is better exercise — because five minutes keeps the habit alive.", script: "Motivation comes and goes. Habits stay. Let us find a version of this that you can do on your worst day, not just your best day.", patientHandout: "Small actions every day beat heroic efforts once a week. Build a habit you can do on low-energy days. That is how lasting change happens." },
+  { id: 5, title: "Why flare-ups happen", shortVersion: "Flare-ups are normal. They do not erase your progress.", fullText: "The patient who was doing well suddenly feels worse. They panic. They think, 'I am back to square one.' They get discouraged. Sometimes they stop coming. Here is the truth: flare-ups are not failures. They are part of the process. Recovery is not a straight line. It has ups and downs, good weeks and hard weeks. A flare-up does not mean you are starting over. It means your body is sensitive right now. That sensitivity will settle — usually within days, not weeks — if you respond wisely instead of panicking.", script: "This is normal. Recovery has ups and downs. We have not lost our progress. We are just pausing until your body settles.", patientHandout: "Flare-ups happen. They do not erase your hard work. Recovery is not a straight line — it has good weeks and harder weeks. Respond with rest, then gradual return. Do not panic." }
+];
+
+const EXPLANATIONS_FULL = [
+  { id: 6, title: "Why Rest Days Matter", shortVersion: "Rest is not laziness. It is when your body repairs and strengthens.", fullText: "The \"no pain no gain\" culture runs deep. Patients think rest is weakness. They push through. They never take a day off. Then they get injured, burned out, or stuck.\n\nHere is what actually happens: you do not get stronger during exercise. You get stronger during the rest afterward. Your muscles need time to repair. Your nervous system needs time to reset.\n\nRest days are not wasted days. They are the days your body charges back up.", script: "You do not get stronger during the workout. You get stronger during the rest after. Rest days are part of the plan, not a failure of the plan.", patientHandout: "" },
+  { id: 7, title: "Why Progress Isn't Linear", shortVersion: "Two steps forward, one step back is still one step forward.", fullText: "Patients expect a straight line: every week better than the last. When they plateau or dip, they think something is wrong.\n\nHere is the reality: progress almost never looks like a straight line. It looks like stairs — flat periods followed by jumps. It looks like waves — ups and downs that trend upward over time.\n\nThe patient who understands this keeps going through the flat periods. The patient who does not understand quits.", script: "This is normal. Recovery is not a straight line. We are still moving in the right direction. The line just looks different than you expected.", patientHandout: "" },
+  { id: 8, title: "Why Posture Isn't the Enemy", shortVersion: "There is no single perfect posture. Variety is what your body needs.", fullText: "Patients worry about \"bad posture.\" They try to sit perfectly straight. They feel guilty when they slouch. They think posture is the cause of all their pain.\n\nHere is what the evidence actually says: there is no single \"perfect\" posture that prevents pain. Your body is designed to move and change positions throughout the day.\n\nThe problem is not \"bad posture.\" The problem is staying in any one position too long. Motion is lotion. Variety protects you.", script: "There is no perfect way to sit. Your body wants to move. Change positions often. That is what keeps you comfortable.", patientHandout: "" },
+  { id: 9, title: "Why Warm-Ups Help", shortVersion: "Warming up tells your body, \"Get ready to move.\"", fullText: "Patients skip warm-ups. They are busy. They want to get to the \"real\" work. They think warm-ups are optional.\n\nHere is why they matter: muscles, tendons, and joints respond better when they are prepared. Blood flow increases. Tissue elasticity improves. Nervous system activation happens.\n\nA cold start is a risky start. Two minutes of easy movement before harder movement reduces injury risk and improves performance.", script: "Think of warming up like letting a car warm up on a cold morning. It just runs better. Two minutes is all you need.", patientHandout: "" },
+  { id: 10, title: "Why Small Wins Matter", shortVersion: "Small progress, noticed daily, builds the confidence to keep going.", fullText: "Patients focus on the big goal: \"I want to run again.\" \"I want to be pain-free.\" Those goals are important, but they take time. In between, there is a long stretch with no obvious milestones.\n\nSmall wins fill that gap. They are tiny pieces of evidence that you are moving in the right direction. They build self-efficacy — the belief that you can do what you set out to do.\n\nCelebrate the small things. Did you do your exercises three days in a row? That is a win. Did you walk five minutes without stopping? Win.", script: "Let us notice the small wins. They feel small now, but they add up. They also build the confidence you will need for the bigger challenges.", patientHandout: "" },
+  { id: 11, title: "Why Movement Helps Recovery", shortVersion: "Rest is good. Too much rest makes things worse.", fullText: "When patients are in pain, their natural instinct is to stop moving. \"I will rest until it feels better.\" But prolonged rest can weaken muscles, stiffen joints, and actually increase pain sensitivity over time.\n\nGentle, graded movement — within a comfortable range — helps the body regulate inflammation, maintain mobility, and remind the nervous system that movement is safe.\n\nThe goal is not to power through pain. The goal is to find the \"just right\" amount of movement.", script: "Complete rest often backfires. Let us find the smallest amount of movement that feels okay — and start there. Something is better than nothing.", patientHandout: "" },
+  { id: 12, title: "Why Habits Beat Motivation", shortVersion: "Motivation fades. Habits stay.", fullText: "Patients wait to feel motivated. They think, \"When I feel ready, I will start.\" But motivation is an emotion, and emotions are unreliable. It comes and goes.\n\nHabits do not require motivation. They require repetition and environment. You do not need to feel like brushing your teeth. You just do it because it is part of your routine.\n\nThe same is true for exercise and movement. Attach it to something you already do. Make it small. Do not wait to feel like it.", script: "Do not wait until you feel motivated. Motivation comes after you start, not before. Pick a trigger — after breakfast, before bed — and just do two minutes.", patientHandout: "" },
+  { id: 13, title: "Why Fear of Movement Makes Pain Worse (Kinesiophobia)", shortVersion: "Avoiding movement because you are afraid of pain often creates more pain.", fullText: "This cycle is common: you felt pain. You got scared. You stopped moving. Your body got weaker and stiffer. Then normal movements started to hurt more — not because of damage, but because your body forgot how to move safely.\n\nThis is called kinesiophobia: fear of movement. It is not \"all in your head.\" It is real. But the solution is not more rest. The solution is safe, graded exposure to movement — proving to your brain that movement is safe.", script: "Your body learned to be afraid of movement because movement hurt. That was a smart response. Now we need to teach your body that safe movement does not hurt. We go slowly. You are in control.", patientHandout: "" },
+  { id: 14, title: "Why Sleep Is Essential for Recovery", shortVersion: "You cannot out-exercise bad sleep. Recovery happens while you rest.", fullText: "Patients focus on exercises. They track reps. They log minutes. But they ignore sleep.\n\nHere is what happens during sleep: tissue repair accelerates, inflammation regulates, pain sensitivity decreases, and the brain consolidates movement patterns.\n\nPoor sleep does not just make you tired. It makes you heal slower, hurt more, and stick to your plan less consistently.", script: "Your exercises matter. But your sleep matters just as much. If you have to choose between a workout and an extra hour of sleep, choose sleep. Recovery happens while you rest.", patientHandout: "" },
+  { id: 15, title: "Why Stress and Mood Affect Physical Recovery", shortVersion: "Your brain and body are not separate. What affects one affects the other.", fullText: "Patients sometimes say, \"My pain is real. It is not in my head.\" And they are right. But pain is processed in the brain. Stress, anxiety, and low mood change how the brain processes signals from the body.\n\nWhen you are stressed, your nervous system is on higher alert. The same movement that felt fine on a calm day might hurt on a stressful day — not because your body changed, but because your brain turned up the volume.\n\nThis does not mean your pain is imaginary. It means your whole self matters — not just your muscles and joints.", script: "Stress and mood affect how your brain processes pain. If you are having a hard week, your body may feel it. That is normal. Let us factor that into our plan.", patientHandout: "" },
+  { id: 16, title: "Why \"Listening to Your Body\" Sometimes Backfires", shortVersion: "Listening to your body is good — if you understand what your body is saying.", fullText: "\"Listen to your body\" sounds like good advice. But here is the problem: patients interpret this as \"stop if you feel anything.\"\n\nYour body sends two kinds of signals. Some mean \"stop\" (sharp, tearing, worsening). Others mean \"slow down but keep going\" (ache, fatigue, discomfort).\n\nPatients who do not know the difference stop at the first sign of discomfort. Then they never build tolerance. Then they never get better.", script: "Let us be more specific than 'listen to your body.' There is good pain — discomfort that means you are working. And bad pain — sharp, tearing, or worsening. Tell me what you feel, and I will help you decide.", patientHandout: "" },
+  { id: 17, title: "Why Expectations Matter (How Hope Affects Outcomes)", shortVersion: "What you expect to happen influences what actually happens.", fullText: "This is not magical thinking. It is biology. Your brain releases chemicals based on what it expects. If you expect movement to hurt, your brain prepares for pain — and you feel more pain. If you expect to get better, your brain activates healing pathways.\n\nPlacebo and nocebo effects are real. They are not \"fake.\" They are your brain's expectation machinery at work.\n\nThis does not mean you should pretend everything is fine. It means hope matters. Your mindset is not the only factor — but it is a factor.", script: "What you expect to happen influences what happens. Not because of magic — because your brain prepares your body based on what it believes. Let us build realistic, hopeful expectations together.", patientHandout: "" },
+  { id: 18, title: "Why Comparing to Others Hurts Recovery", shortVersion: "Your only competition is yourself from last week.", fullText: "\"My friend had the same thing and recovered in three weeks.\" \"I saw someone on TikTok doing this exercise.\" \"Why am I not like them?\"\n\nComparison is a trap. Every body is different. Age, genetics, starting fitness, tissue involvement, stress, sleep, nutrition, and even personality affect recovery speed.\n\nComparing yourself to others does not motivate you. It discourages you. And discouragement reduces adherence.", script: "I hear you comparing yourself to someone else. That person is not you. Let us compare you to you from last week. That is the only meaningful comparison.", patientHandout: "" },
+  { id: 19, title: "Why Strength Training Protects Joints", shortVersion: "Strong muscles take pressure off joints. Weak muscles leave joints exposed.", fullText: "Patients with joint pain often worry that strength training will make it worse. \"My knee hurts. Why would I squat?\" But the opposite is often true.\n\nYour muscles are your joint's armor. When muscles are weak, every load goes straight to the joint. When muscles are strong, they absorb force before it reaches the joint.\n\nBuilding strength around a painful joint — carefully, gradually — is often the best protection.", script: "Your muscles protect your joints. If your muscles are weak, your joints take all the force. Strengthening around the joint — carefully — is how we build armor.", patientHandout: "" },
+  { id: 20, title: "Why Balance and Falls Prevention Starts Earlier Than You Think", shortVersion: "You do not wait until you fall to work on balance. You work on balance so you do not fall.", fullText: "Patients wait until after a fall to care about balance. By then, fear is high, confidence is low, and the risk of another fall is even higher.\n\nBalance is a skill. Like any skill, it declines without practice. You can maintain and improve balance at any age — but you have to start before you need it.", script: "We do not wait until you fall to work on balance. We work on balance so you do not fall. Prevention starts now, not after something happens.", patientHandout: "" },
+  { id: 21, title: "Why Surgery Is Not Always the Answer", shortVersion: "Surgery is a tool. It is not always the right tool.", fullText: "Patients sometimes believe surgery is the \"real\" fix and physical therapy is just something to try first. But research shows that for many conditions — including back pain, knee arthritis, and rotator cuff tears — physical therapy produces outcomes equal to surgery, with fewer risks.\n\nSurgery is essential for some conditions. For others, it is optional. And for many, it is no better than a good conservative program.", script: "Surgery is a tool. It is not always the best tool. For your condition, research shows that physical therapy works as well as surgery for most people — with fewer risks. Let us try the conservative path first. Surgery will still be there if you need it.", patientHandout: "" },
+  { id: 22, title: "Why Aging Is Not a Disease", shortVersion: "Getting older changes your body. It does not sentence you to pain.", fullText: "Patients blame everything on age. \"I am just getting old.\" \"What do you expect at my age?\" Age is a risk factor — not a diagnosis.\n\nYes, tissues change with age. But function can improve at any age. Strength, balance, and mobility can all be trained. The oldest Olympic weightlifter? 73. The oldest marathoner? 100.\n\nAging is not a disease. It is a variable. You still have control.", script: "Your age matters. But it is not the boss of you. I have worked with 80-year-olds who are stronger than 40-year-olds. Age is a number. Your choices matter more.", patientHandout: "" },
+  { id: 23, title: "Why You Need a Flare-Up Plan Before the Flare-Up Happens", shortVersion: "Panic makes flare-ups worse. A plan turns panic into action.", fullText: "Flare-ups are predictable. If you have a chronic condition, you will have bad days. The question is not \"if\" — it is \"when\" and \"how you respond.\"\n\nPatients who do not have a plan panic. They catastrophize. They stop moving. They call the doctor. They spiral.\n\nPatients who have a plan say: \"I know what this is. Here is what I do.\" They rest briefly. They resume gently. They wait it out. They get better faster.", script: "Let us make a flare-up plan now — before you need it. What will you do when pain spikes? Who will you call? What movements feel safe? Write it down. Keep it on your fridge.", patientHandout: "" },
+  { id: 24, title: "Why Your PT Might Seem Rushed (Written for Patients)", shortVersion: "Your PT wants to give you more time. Their paperwork often decides otherwise.", fullText: "You might notice your PT typing during your session. You might feel rushed. You might wonder, \"Do they actually care?\"\n\nHere is what is happening behind the scenes: documentation, prior authorizations, and insurance requirements consume a significant portion of a PT's clinical time. That is time not spent with you.\n\nYour PT is not ignoring you. They are buried in paperwork.\n\nWhat you can do: Ask questions. Be clear about your goals. Show up on time. Do your home exercises. The more efficient you are, the more face-to-face time your PT can protect.", script: "Your PT is not ignoring you. Insurance paperwork takes up a significant portion of their clinical time. Show up on time, do your exercises, ask clear questions — that protects your time together.", patientHandout: "Your PT is not ignoring you. Insurance paperwork takes up a significant portion of their clinical time. Show up on time, do your exercises, ask clear questions — that protects your time together.", audience: "patient" },
+  { id: 25, title: "Why Some Exercises Feel \"Too Easy\" (Written for Patients)", shortVersion: "Easy exercises build foundations. Boring is often the point.", fullText: "You want to feel challenged. You want to sweat. You ask, \"Is this even doing anything?\" when the exercise feels simple.\n\nHere is what you do not see: foundational exercises teach your brain and body how to move correctly before adding load. If you skip the easy stage, you compensate through the hard stage — and get injured.\n\nEasy is not useless. Easy is preparation.", script: "This feels easy because your body is learning the pattern. Once the pattern is automatic, we will add challenge. Right now, we build the foundation.", patientHandout: "Easy exercises build correct movement patterns. Do not skip the foundation. The challenge comes later. Trust the process.", audience: "patient" }
+];
+
+const ALL_EXPLANATIONS = [...EXPLANATIONS_LITE, ...EXPLANATIONS_FULL];
+
+// QUICK REFERENCES: IDs 1-15 (Full content from book team)
+const QUICK_REFS = [
+  { id: 1, title: "When a patient says X, try Y", icon: "💬", content: "<strong>Patient says:</strong> 'I didn't have time.'<br><br><strong>Try saying:</strong> 'That is real. What is one small thing you could fit in, even on a busy day?'<br><br><strong>Patient says:</strong> 'It hurts.'<br><br><strong>Try saying:</strong> 'Show me where. Let us find a version that does NOT hurt.'<br><br><strong>Patient says:</strong> 'I will do it later.'<br><br><strong>Try saying:</strong> 'Later rarely comes. What is the smallest thing you could do right now?'<br><br><strong>Patient says:</strong> 'I don't feel ready.'<br><br><strong>Try saying:</strong> 'You may never feel ready. Can we try one small step and see how it feels?'<br><br><strong>Patient says:</strong> 'This is not working.'<br><br><strong>Try saying:</strong> 'Tell me more. What were you expecting that is not happening?'<br><br><strong>Patient says:</strong> 'I am fine.'<br><br><strong>Try saying:</strong> 'I am glad to hear that. Let me show you what fine looks like in a strength test — sometimes we have hidden gaps.'" },
+  { id: 2, title: "Top 15 phrases patients misunderstand", icon: "📖", content: "<strong>'Take it easy.'</strong> → 'Do a little less than you think you can.'<br><br><strong>'Listen to your body.'</strong> → 'Pain is information. Tell me what you feel, and we will decide together.'<br><br><strong>'You will get there.'</strong> → 'Here is what there looks like. Here is where you are now. Here is the bridge.'<br><br><strong>'Consistency matters.'</strong> → 'Showing up counts even on the bad days.'<br><br><strong>'Rest is important.'</strong> → 'Rest is when your body repairs. It is part of the plan.'<br><br><strong>'Do not overdo it.'</strong> → 'Find the edge. Stop before you fall off it.'<br><br><strong>'Patience.'</strong> → 'This stage is frustrating. That is normal. Let me show you why it matters.'<br><br><strong>'Everyone is different.'</strong> → 'Your body has its own timeline. Here is what we can control.'<br><br><strong>'Trust the process.'</strong> → 'Here is the evidence this works. Let us track your progress together.'<br><br><strong>'You are doing great.'</strong> → 'You have come far. Here is what is next.'" },
+  { id: 3, title: "Red flags vs. yellow flags", icon: "⚠️", content: "<strong>🔴 RED FLAGS (refer immediately):</strong><br>• Sudden, severe, unexplained pain<br>• Loss of bladder or bowel control<br>• Progressive weakness in limbs<br>• Chest pain or shortness of breath<br>• Fever with unexplained musculoskeletal pain<br>• Night pain that wakes patient from sleep<br>• Unexplained weight loss<br>• Trauma with possible fracture<br><br><strong>🟡 YELLOW FLAGS (proceed with caution):</strong><br>• Gradual worsening over weeks<br>• Mild morning stiffness<br>• Fatigue that improves with rest<br>• History of similar episodes<br>• Stress or mood affecting symptoms<br>• Mild swelling without redness or heat<br>• Deconditioning from inactivity<br>• Patient frustration or low motivation" },
+  { id: 4, title: "HEP prescription cheat sheet", icon: "📋", content: "<strong>Starting Point (Most Patients)</strong><br>• Number of exercises: 2-4<br>• Frequency: 3-5 days per week<br>• Sets: 1-2<br>• Reps: 8-12<br>• Hold time: 10-30 seconds<br>• Rest between sets: 30-60 seconds<br><br><strong>When to Progress:</strong> Patient completes prescribed frequency for 2 weeks consistently, pain less than 3/10, exercises feel 'too easy'<br><br><strong>How to Progress (choose ONE at a time):</strong> Add reps, add sets, add resistance, add hold time, add complexity, add frequency<br><br><strong>When to Regress:</strong> Pain greater than 4/10 that persists, patient consistently misses sessions, poor form despite cueing" },
+  { id: 5, title: "What to say when YOU are having a bad day", icon: "💚", content: "<strong>Morning scripts:</strong><br>'I am not a machine. Today is about presence, not performance. Show up. That is enough.'<br>'This patient is not giving me a hard time. They are having a hard time.'<br><br><strong>Mid-day scripts:</strong><br>'That was not my best work. That is okay. I will try again next time.'<br>'I did not cause their problem. I cannot control their choices. I can only offer my best.'<br><br><strong>End-of-day scripts:</strong><br>'I will document efficiently, then leave work at work.'<br>'Today was hard. I showed up anyway. That is not nothing. That is everything.'" },
+  { id: 6, title: "Patient Personality Types and How to Talk to Each", icon: "🎭", content: "<strong>The Skeptic:</strong> Needs evidence. Say: 'Here is what research shows...' Avoid: 'Trust me.'<br><br><strong>The Pleaser:</strong> Needs permission to be honest. Say: 'I need your real answer, not the nice answer.' Avoid: Assuming they are fine.<br><br><strong>The Overwhelmed:</strong> Needs simplicity. Say: 'Let us focus on just one thing this week.' Avoid: Information overload.<br><br><strong>The Competitive:</strong> Needs metrics. Say: 'Last week you did X. This week you did Y.' Avoid: Comparing them to others.<br><br><strong>The Victim:</strong> Needs empowerment. Say: 'You are in control. Here are your options.' Avoid: Sympathy.<br><br><strong>The Impatient:</strong> Needs honest timelines. Say: 'Here is what to expect week one, two, three.' Avoid: Vague answers.<br><br><strong>The Denier:</strong> Needs gentle reality. Say: 'Let us look at the data together.' Avoid: 'You are wrong.'<br><br><strong>The Dependent:</strong> Needs boundaries. Say: 'I will teach you. You will do it.' Avoid: Doing things for them." },
+  { id: 7, title: "The 10 Most Common Patient Fears (and What to Say)", icon: "😨", content: "<strong>'I will make it worse.'</strong> → 'We will start so small that making it worse is almost impossible. You are in control.'<br><br><strong>'I am too old.'</strong> → 'Age is not a disease. I have helped people older than you get stronger.'<br><br><strong>'I have tried everything.'</strong> → 'Tell me what you tried. Let us figure out what was missing.'<br><br><strong>'I do not have time.'</strong> → 'Let us find a version that takes five minutes or less.'<br><br><strong>'It will never get better.'</strong> → 'I cannot promise full recovery. But I can promise you can get better than you are today.'<br><br><strong>'I am afraid of surgery.'</strong> → 'Then let us do everything possible to avoid it. Surgery will still be there if you need it.'<br><br><strong>'I am letting my family down.'</strong> → 'Taking care of yourself is how you take care of them.'<br><br><strong>'I do not trust my body anymore.'</strong> → 'Trust will come back — one small success at a time.'<br><br><strong>'I am in too much pain.'</strong> → 'Then we start with what does NOT hurt.'<br><br><strong>'What if nothing works?'</strong> → 'We will not know until we try. Let us try. Then we will know.'" },
+  { id: 8, title: "The 5-Minute Morning Check-In for PTs", icon: "🌅", content: "<strong>One minute — Body scan:</strong> Am I carrying tension? Did I sleep enough? Am I hungry or thirsty?<br><br><strong>One minute — Emotional check:</strong> How am I feeling right now? Do I have anything from yesterday I am still carrying?<br><br><strong>One minute — Today's intentions:</strong> What is one thing I want to do well today? Who is the one patient I need to be most present for?<br><br><strong>One minute — Boundaries reminder:</strong> What is one request I will say no to today? What is one thing I will protect?<br><br><strong>One minute — Quiet shift:</strong> Take three slow breaths. Say: 'I am here. I am enough. I will help who I can.'" },
+  { id: 9, title: "Discharge Readiness Checklist", icon: "✅", content: "<strong>Before discharging a patient, ensure they have:</strong><br>☐ Ability to perform HEP independently (without cueing)<br>☐ Understanding of flare-up plan (what to do when pain spikes)<br>☐ Knowledge of when to return (red flags, recurrence signs)<br>☐ A maintenance plan (minimum dose to prevent relapse)<br>☐ Access to written/video resources for home<br>☐ A follow-up plan (check-in, phone call, re-evaluation schedule)<br>☐ Understanding that they can return if needed<br>☐ Acknowledgement of their progress (not just remaining deficits)" },
+  { id: 10, title: "Motivational Interviewing Phrases for PTs", icon: "🎙️", content: "<strong>Ask permission:</strong> 'Would it be okay if we talk about your home exercises?'<br><br><strong>Evoke their reasons:</strong> 'What concerns do you have about your current activity level?'<br><br><strong>Reflect without judgment:</strong> 'It sounds like you are feeling overwhelmed. That makes sense.'<br><br><strong>Ask about importance:</strong> 'On a scale of 1-10, how important is getting better to you?'<br><br><strong>Ask about confidence:</strong> 'On a scale of 1-10, how confident are you that you can do these exercises?'<br><br><strong>Elicit change talk:</strong> 'What would be different in your life if you were able to move without pain?'<br><br><strong>Roll with resistance:</strong> 'You do not have to do anything you do not want to do. I am just giving you information.'<br><br><strong>Summarize:</strong> 'Let me make sure I understand...'<br><br><strong>Ask for commitment:</strong> 'What are you willing to try between now and next week?'" },
+  { id: 11, title: "The Frustrated Patient (Plateau) — Script", icon: "😤", content: "<strong>5-MINUTE SCRIPT FOR THE PATIENT WHO HAS PLATEAUED:</strong><br><br>'I hear your frustration. You were moving forward, and now you feel stuck. That is hard.<br><br>Here is what I know: plateaus are normal. They are not a sign of failure. They are a sign that your body needs something different.<br><br>So let us do something different. I am going to adjust the plan. Not because you did anything wrong — because that is my job.<br><br>Can we agree to try this new plan for two weeks before we decide if it is working?'" },
+  { id: 12, title: "The Non-Adherent Patient — Gentle Script", icon: "🤲", content: "<strong>5-MINUTE SCRIPT FOR THE PATIENT NOT FOLLOWING THROUGH:</strong><br><br>'I have noticed you have been having a hard time keeping up with the home exercises. That happens. It is not a moral failure.<br><br>Let me ask you: is the problem motivation, time, pain, or something else? Be honest. I have heard it all.<br><br>Once I know the real barrier, we can solve it together. Smaller plan. Different exercises. A reminder system. Whatever you need.<br><br>The only wrong answer is pretending everything is fine when it is not. Help me help you.'" },
+  { id: 13, title: "The First Visit — Setting Expectations Script", icon: "📝", content: "<strong>5-MINUTE SCRIPT FOR THE FIRST VISIT:</strong><br><br>'Here is how I work. I am going to teach you things. You are going to practice at home. The people who get the best results are the ones who show up — even on days they do not feel like it.<br><br>Recovery is not a straight line. You will have good weeks and hard weeks. That is normal. When a hard week happens, do not quit. Tell me. We adjust.<br><br>My job is to give you the right plan. Your job is to do your best with it. If something is not working, that is my fault until we fix it together.<br><br>Any questions before we start?'" },
+  { id: 14, title: "The 'I'm Fine' Visit (Early Discharge) — Script", icon: "🏃", content: "<strong>5-MINUTE SCRIPT FOR PATIENT READY TO DISCHARGE EARLY:</strong><br><br>'I am glad you are feeling better. That means phase one worked.<br><br>But there is a difference between feeling better and being stronger. Feeling better can vanish in a week. Being stronger stays with you.<br><br>Here is what I want you to consider: let us finish the full plan. Not because you need to feel better — because you want to stay better.<br><br>If you still want to discharge today, I will support that. But I want you to know what you are leaving behind. Let me show you one thing first.'" },
+  { id: 15, title: "Printable: 'Things I Wish My Patients Knew'", icon: "📄", content: "<strong>If my patients understood just one thing, it would be this:</strong><br><br>• Recovery is not a straight line. Setbacks are not starting over.<br>• Doing a few exercises well beats doing many exercises poorly.<br>• Your body adapts slowly. Trust the process, not your impatience.<br>• Pain is information, not always damage.<br>• Rest is not weakness. It is when your body repairs.<br>• I am on your side. Tell me when something is not working.<br>• Showing up on bad days counts more than perfection on good days.<br>• You are not a burden. Asking questions helps me help you.<br>• Your effort matters — but your body also has its own timeline.<br>• I cannot promise you full recovery. But I can promise you can get better than you are today." }
+];
+
+// Q&As: IDs 1-30 (Full content from book team)
+const Q_AND_A = [
+  { id: 1, question: "How do I get patients to actually do their HEP without nagging?", answer: "Stop trying to motivate. Start reducing resistance.\n\nFirst, look at the HEP itself. If it has more than 3-4 exercises, cut it back. Research shows patients do better with fewer movements done consistently.\n\nSecond, change the conversation. Instead of 'Did you do your exercises?' try: 'Let's focus on just two key movements this week. I want these to feel easy to fit into your day. Which two feel most doable for you?'\n\nThird, remember: your relationship is the intervention. Nagging damages it. Curiosity preserves it.\n\n'What got in the way this week?' is a more useful question than 'Why didn't you do it?'\n\nSource: Moelands et al. (2025). Higher prescribed frequency and dosage of home exercises significantly lowers patient adherence." },
+  { id: 2, question: "What do I say when a patient blames me for their lack of progress?", answer: "First, recognize what is happening. The patient is not attacking you. They are afraid. Their body is not cooperating. They thought they would be better by now. You are just the closest target.\n\nDo not defend. Do not deflect. Validate first.\n\n'I hear that you are frustrated. I would be too. Let me explain what is happening in your body right now, and then we can figure out the next step together.'\n\nThen explain the real timeline — not the one they hoped for, the one that is actually normal.\n\nIf the blame continues, set a quiet boundary:\n\n'My job is to give you the best possible program. Your job is to follow it. If you are doing that and still not progressing, then I need to adjust something. Let us figure this out together.'\n\nYou cannot control their frustration. You can control whether you absorb it." },
+  { id: 3, question: "How do I explain why they need to keep coming even though they're 'fine'?", answer: "Do not say 'You need more visits.' That sounds like a sales pitch.\n\nInstead, reframe the goal. They are fine today. The question is: will they stay fine?\n\nTry this:\n\n'I am glad you are feeling better. That means the first phase of our plan worked. But there is a difference between feeling better and being stronger. Feeling better can vanish in a week. Being stronger stays with you. Let me show you what I mean.'\n\nThen show them one deficit they did not know they had. A subtle weakness. A hidden imbalance. Something they cannot see but their body already knows.\n\nNow the conversation is not about selling more visits. It is about finishing the job they started.\n\nSource: APTA Guide to Physical Therapist Practice. Prevention and maintenance are core components of physical therapy, not optional add-ons." }
+];
+
+// Add Q&As 4-30
+for (let i = 4; i <= 30; i++) {
+  if (i === 4) Q_AND_A.push({ id: 4, question: "What do I say to family members who are 'helping too much'?", answer: "Do not exclude the family member. Bring them into the team.\n\nPrivately, with the patient first:\n\n'It helps when people want to take care of you. But your body needs to move to heal. Can I share something with your [spouse/daughter] that might help them understand?'\n\nThen, with the family member together:\n\n'I know you want to help. The most helpful thing you can do is to let them do the hard things themselves. Walk next to them, not for them. Hand them the resistance band, don't stretch them yourself. Your presence is the help. Their effort is the recovery.'\n\nIf they continue hovering, give them a job:\n\n'Can you time their exercises? Can you write down when they have pain so we can track it together?'\n\nA busy helper is a less overwhelming helper." });
+  else if (i === 5) Q_AND_A.push({ id: 5, question: "How do I handle patients who Google everything and challenge me?", answer: "Do not fight Dr. Google. You will lose. The patient trusts their phone more than they trust you — for now.\n\nInstead, join them.\n\n'You have been doing your research. I respect that. Show me what you found.'\n\nThen look at it together. Validate what is correct. Explain what is missing or out of context.\n\n'This video is not wrong, but it is for a different phase of recovery. You are not there yet.'\n\nNow you are not the enemy of their research. You are the editor. The filter. The person who helps them separate useful from useless.\n\nOne more move: give them better sources to Google next time.\n\n'Here is a study I want you to read. It will answer the question you are really asking.'\n\nNow they are researching with you, not against you.\n\nSource: Health literacy research indicates that patients who are engaged in their own care generally have better outcomes — provided the information is accurate and contextualized by a professional." });
+  else if (i === 6) Q_AND_A.push({ id: 6, question: "What do I say when I am burned out and it shows?", answer: "Burnout is not a personal failure. It is a systemic problem that landed on your shoulders.\n\nBut here is what you can say — to yourself, and sometimes to a patient — when it shows.\n\nTo yourself:\n'I am not a machine. Today is about presence, not performance. Show up. That is enough.'\n\nTo a patient, if appropriate (rare, but sometimes human honesty helps):\n'I want you to know — I am having a heavier day than usual. It is not about you. You are doing great. I just need a second to reset.'\n\nMost patients will surprise you with grace.\n\nBut the real answer is not a script. The real answer is reducing the load. Fewer patients per day. Protected documentation time. One administrative boundary per week.\n\nYou cannot script your way out of systemic burnout. You can only build a quiet resistance, one boundary at a time.\n\nSource: APTA 2025 Administrative Burden Report. 91% of PTs agree administrative burden contributes to burnout." });
+  else if (i === 7) Q_AND_A.push({ id: 7, question: "How do I set boundaries without losing patients?", answer: "The belief that boundaries lose patients is backwards. A lack of boundaries loses the right patients — and burns you out on the ones who stay.\n\nTry this shift: boundaries are not rejection. Boundaries are clarity.\n\n'I want to give you my best attention. To do that, I need to protect my schedule. Let me find a time that works for both of us.'\n\nThat is not a 'no.' That is a 'not right now, and here is why.'\n\nFor the demanding patient who wants more than you can give:\n\n'Here is what I can do for you. Here is what I cannot. If you need something beyond that, I can help you find another provider who specializes in that area.'\n\nYou do not lose patients who respect you. You lose patients who were going to drain you anyway. Let them go quietly." });
+  else if (i === 8) Q_AND_A.push({ id: 8, question: "How do I explain insurance limits without sounding like I don't care?", answer: "First, separate yourself from the insurance company. You are on the patient's side. The insurance company is the obstacle. Make that clear.\n\n'I want to keep seeing you. Your body needs more time. But your insurance has a different opinion. Let me explain what they said, and then we can figure out our options.'\n\nThen lay out the options clearly:\n- Appeal (takes time, may still fail)\n- Cash pay (costly but direct)\n- Reduced frequency (something is better than nothing)\n- Home program with check-ins (the least you can offer)\n\nEnd with this:\n\n'I cannot control what your insurance does. But I can control what I offer you. Here is what I can do within your situation. Let us make the most of it.'\n\nThey will remember that you fought for them, even if you lost.\n\nSource: APTA 2025 Administrative Burden Report. Prior authorization requirements have led to treatment delays and abandonment of care." });
+  else if (i === 9) Q_AND_A.push({ id: 9, question: "What does the research say about app-based exercise vs. in-person?", answer: "The research is clear: your presence matters.\n\nSource: Martinsen et al. (2025). In-person supervised exercise had 4.2x higher odds of adherence compared to app-based exercise.\n\nThe same study found that patients with higher self-efficacy and more education were more likely to adhere to app-based programs. In other words: apps work best for patients who need them the least.\n\nWhen a patient asks about an app, do not dismiss it. Use it as a bridge.\n\n'Apps are great for reminders and tracking. But they cannot watch your form. They cannot see you compensating. They cannot adjust when something hurts differently today than it did yesterday. That is what I am here for.'\n\nPrescribe the app as a supplement, not a substitute." });
+  else if (i === 10) Q_AND_A.push({ id: 10, question: "What actually improves adherence, according to research?", answer: "Here is what the research actually says — not what we wish it said.\n\n- Lower frequency/dosage = higher adherence. (Moelands et al., 2025)\n- In-person supervision = 4.2x higher adherence than app-only. (Martinsen et al., 2025)\n- Self-efficacy (patient's belief they can do it) = higher adherence.\n- Education level = higher adherence (unfortunately, not something you can change).\n\nWhat you can change:\n\n1. Simplify the HEP. Two to four exercises max.\n2. Build self-efficacy. Ask them: 'On a scale of 1-10, how confident are you that you can do this at home?' If less than 7, ask why. Solve that why.\n3. Use multiple formats. Show them. Write it down. Send a video. Repetition across formats helps comprehension, which helps adherence.\n\nNo magic bullet. But these levers work." });
+  else if (i === 11) Q_AND_A.push({ id: 11, question: "How do I respond when a patient says 'exercise makes it worse'?", answer: "Believe them first. Do not dismiss the pain.\n\n'I believe you. That movement, done that way, at that time, made it worse. That is information. Thank you for telling me.'\n\nThen reframe. The problem was not 'exercise.' The problem was the wrong exercise, or the wrong dose, or the wrong time.\n\n'Let us find a version of this that does NOT make it worse. A smaller motion. Fewer reps. More rest. We are going to find your 'just right' zone.'\n\nThis is graded exposure, and it works because you are not fighting their fear. You are working with it.\n\nEnd with this:\n\n'Your body is telling us something. We just have to learn its language. We will go slower. You are not broken. You are just sensitive right now. That is not permanent.'" });
+  else if (i === 12) Q_AND_A.push({ id: 12, question: "What do I say to a patient who cries during a session?", answer: "Do not panic. Do not rush. Do not try to stop the tears.\n\nFirst, stop what you are doing. Give them space.\n\n'It is okay. We can pause. Take your time.'\n\nThen sit with them. Silence is not empty. Silence is presence.\n\nWhen they are ready:\n\n'Can you tell me what is underneath the tears? Not the pain. The feeling under the pain?'\n\nDo not try to solve it. Just listen.\n\nAfter they speak:\n\n'That makes sense. Thank you for trusting me with that.'\n\nThen ask:\n\n'Would you like to keep going today, or would you rather stop and try again when you feel more ready?'\n\nYou are not their therapist. But you are their human. That is enough." });
+  else if (i === 13) Q_AND_A.push({ id: 13, question: "How do I explain why rest days matter without sounding lazy?", answer: "Use an analogy they already understand.\n\nThe gym:\n'When you lift weights, you do not get stronger during the workout. You get stronger during the rest afterward. Your muscles need time to repair. The same is true here.'\n\nThe phone:\n'Your phone battery does not last forever. You have to recharge it. Your body is the same. Rest days are not wasted days. They are the days your body charges back up.'\n\nThe athlete (if relevant):\n'Even elite athletes take rest days. They do not call it lazy. They call it recovery. It is part of the plan, not a failure of the plan.'\n\nThen give them permission:\n\n'Rest is not surrender. Rest is strategy. You are not failing. You are following the plan.'" });
+  else if (i === 14) Q_AND_A.push({ id: 14, question: "What do I say when a patient asks for a 'quick fix'?", answer: "Do not lie. There is no quick fix.\n\nBut do not shame them for wanting one either.\n\n'I understand why you are asking. If there were a quick fix, I would give it to you. I want you to feel better as much as you do.'\n\nThen name the real path:\n\n'The real fix is not fast. But it is permanent. Here is what the fast version looks like: temporary relief, often followed by the same problem coming back. Here is what the slow version looks like: more work upfront, less pain long-term. Which one do you want to invest in?'\n\nIf they still push for the shortcut:\n\n'I can refer you to someone who does injections. That may help for a few weeks. When it wears off, I will still be here. But the work will still need to be done.'\n\nYou are not the fast-food version of healthcare. You are the slow-cooked meal. Some people will not have the appetite. That is not your fault." });
+  else if (i === 15) Q_AND_A.push({ id: 15, question: "What's the one thing PTs wish every patient understood?", answer: "If PTs could put one sentence into every patient's brain at the start of treatment, it would be this:\n\n'Recovery is not a straight line, and feeling better is not the same as being better.'\n\nThe patient who feels better stops too soon and relapses. The patient who understands that setbacks are normal keeps going and stays better.\n\nSo say it. Say it at the first visit. Say it when they plateau. Say it when they flare up. Say it when they ask 'Why am I not better yet?'\n\n'This is normal. Recovery is not a straight line. We are still moving in the right direction. The line just looks different than you expected.'\n\nThey will not believe it the first time. Or the second. But by the tenth time, it will have infiltrated." });
+  else if (i === 16) Q_AND_A.push({ id: 16, question: "What do I do on the days when I am not sure I am making a difference?", answer: "You are not going to see every finish line. Some patients will get better because of you and never say thank you. Some will get better in spite of you. Some will not get better at all, no matter what you do.\n\nThat is not failure. That is the job.\n\nHere is what you can hold onto: you showed up. You tried. You gave a damn on days when it would have been easier to coast.\n\nThe patients who will matter most — the ones whose lives you will change — may not even know it yet. They are two appointments away from a breakthrough. They are one conversation away from understanding something that unlocks everything. You do not get to know when it happens. You only get to keep showing up.\n\nSo on the hard days, say this to yourself:\n\n'I do not need to save everyone today. I just need to be present for the person in front of me. That is enough. That is always enough.'\n\nYou are making a difference. You just cannot always see it. Trust the quiet evidence." });
+  else if (i === 17) Q_AND_A.push({ id: 17, question: "How do I talk to patients about weight without offending them?", answer: "Do not say 'You need to lose weight.' Say:\n\n'Your joints are carrying more load than they were designed for. Reducing that load would help. I know that is complicated. Can we talk about what feels possible?'\n\nIf the patient seems open:\n\n'I am not a weight specialist. But I can connect you with someone who is, if that would help. In the meantime, let us focus on what we can do with movement.'\n\nIf the patient seems shut down:\n\n'We do not have to talk about this today. Just know that the door is open if you ever want to.'\n\nYour job is not to solve their weight. Your job is to name the mechanical reality without shame, and offer support without pressure.\n\nSource: Weight stigma research shows that shame-based discussions reduce healthcare engagement. Neutral, mechanical, patient-led discussions are more effective." });
+  else if (i === 18) Q_AND_A.push({ id: 18, question: "What do I say when a patient asks about CBD or supplements?", answer: "Stay in your lane. But do not leave them without guidance.\n\n'I cannot recommend supplements. That is outside my scope. But I can tell you what the research says — and I strongly suggest you talk to your doctor or a pharmacist before trying anything.'\n\nIf they push:\n\n'Here is what I know: supplements are not regulated like medications. 'Natural' does not mean safe. Some interact with prescription drugs. Please talk to someone who specializes in this.'\n\nIf they already bought it:\n\n'Let me know what you decide to try. And please tell your doctor. I want to make sure nothing we do here conflicts with what you are taking.'\n\nYou are not being difficult. You are being responsible." });
+  else if (i === 19) Q_AND_A.push({ id: 19, question: "How do I handle a patient who is sexually inappropriate?", answer: "You do not have to tolerate this. Ever.\n\nFirst time (low-level comment):\n\n'That comment is not appropriate. Let us focus on your treatment.'\n\nSecond time or more serious:\n\n'This session is over. I will not tolerate inappropriate behavior. You can reschedule with a different provider if you choose.'\n\nDocument everything. Report as required by your workplace and state laws.\n\nYou are not overreacting. You are protecting yourself. And your silence protects no one." });
+  else if (i === 20) Q_AND_A.push({ id: 20, question: "How do I discharge a patient who is not progressing?", answer: "Discharge is not failure. It is appropriate care when care is not working.\n\nTry:\n\n'Here is where we are: you have not been able to follow the plan. That is not a moral failure — but it does mean I cannot help you as much as I would like. Let us pause here. If you decide you are ready to try differently, I am here.'\n\nIf they blame you:\n\n'I hear your frustration. I have given you my best. At this point, a different approach might help. Here are some other providers.'\n\nYou cannot want their recovery more than they do. That is not a failing. That is a boundary." });
+  else if (i === 21) Q_AND_A.push({ id: 21, question: "How do I document non-adherence without sounding punitive?", answer: "Document what happened. Do not document your judgment.\n\nInstead of 'Patient non-adherent':\n'Patient reported barriers to completing HEP this week, including [time/pain/forgetfulness]. Plan adjusted to address identified barriers.'\n\nInstead of 'Patient failed to progress':\n'Less progress than expected this week. Contributing factors discussed. Plan modified.'\n\nThe facts protect you. Judgment hurts the patient — and your relationship with them." });
+  else if (i === 22) Q_AND_A.push({ id: 22, question: "How do I handle a patient who asks for a second opinion?", answer: "Do not defend. Encourage.\n\n'A second opinion is always a good idea. I want you to feel confident in your care. Here is who I would recommend.'\n\nIf they are using it to avoid the work:\n\n'A second opinion is fine. But I want you to know: the work does not change. Whatever the next person says, you will still need to do the exercises. There is no way around that.'\n\nYou are not threatened by a second opinion. You are confident enough to welcome it." });
+  else if (i === 23) Q_AND_A.push({ id: 23, question: "How do I talk to a patient about opioid tapering?", answer: "Do not tell them to stop. That is not your role.\n\nDo tell them:\n\n'Pain medications manage symptoms. They do not fix the underlying problem. The goal is to build your body's own ability to manage pain, so you need less medication over time.'\n\nIf they are open:\n\n'Have you talked to your doctor about a plan to reduce medication? I cannot prescribe, but I can support you with movement while you do.'\n\nIf they are not open:\n\n'I understand. Let us focus on what we can do with movement. If you ever want to talk about reducing medication, I can help coordinate with your doctor.'\n\nYou plant the seed. You do not force it to grow." });
+  else if (i === 24) Q_AND_A.push({ id: 24, question: "What do I say to a patient's employer who is calling me?", answer: "You cannot share anything without the patient's written consent.\n\nIf the patient has consented:\n\n'I can share information relevant to return-to-work. I cannot share diagnosis or treatment details beyond that.'\n\nThen give functional information only:\n\n'The patient can currently [sit/stand/walk] for X minutes. They cannot currently [lift/carry/climb]. I anticipate they can return with [restrictions] in Y weeks.'\n\nIf the employer pushes for more:\n\n'I have told you what I can tell you. For more detail, you will need to ask the patient directly.'\n\nYou are not the employer's doctor. You are the patient's PT. Remember who you work for." });
+  else if (i === 25) Q_AND_A.push({ id: 25, question: "How do I talk to a patient who is clearly depressed?", answer: "Acknowledge what you see. Do not diagnose.\n\n'I have noticed you seem lower than usual. That affects your body too. How are you doing — not just physically, but overall?'\n\nIf they open up:\n\n'That sounds really hard. I want to support you. Have you talked to anyone about how you are feeling? A doctor? A therapist?'\n\nIf they are not ready:\n\n'I am not a mental health professional. But I want you to know that what you are feeling matters. If you ever want help finding someone to talk to, I can help with that.'\n\nYou cannot treat their depression. But you can see it. And seeing it is the first step." });
+  else if (i === 26) Q_AND_A.push({ id: 26, question: "How do I stop caring so much?", answer: "Do not stop caring.\n\nStop carrying.\n\nCaring is feeling for someone. Carrying is feeling responsible for someone. You are not responsible for their choices. You are responsible for your care.\n\nSay this to yourself:\n\n'I can care without carrying. I can try without owning. I can give my best without believing their outcome is my failure.'\n\nYou are not God. You are not their parent. You are their physical therapist.\n\nThat is enough." });
+  else if (i === 27) Q_AND_A.push({ id: 27, question: "How do I handle a patient who asks for a 'note for their lawyer'?", answer: "Stick to what you can document.\n\n'I can write a note about what I observed and what I treated. I cannot give an opinion about cause, permanence, or disability. That is for a doctor or a specialist.'\n\nIf the patient pushes:\n\n'I understand you need documentation for your case. I will write a factual note about your treatment and progress. I cannot write anything I cannot support with evidence.'\n\nDocument what you know. Do not speculate. Your integrity is worth more than one patient's case." });
+  else if (i === 28) Q_AND_A.push({ id: 28, question: "How do I talk to a patient about their dusty old home exercise equipment?", answer: "Name it. Gently.\n\n'I see the equipment in the corner of your living room. Can I ask — what gets in the way of using it?'\n\nDo not shame. Just ask. The answer will be illuminating.\n\n'The resistance bands are still in the package. That tells me we have not found a way to make them feel easy to use. Let us fix that.'\n\nThe equipment is not the problem. The barrier is the problem. Find the barrier." });
+  else if (i === 29) Q_AND_A.push({ id: 29, question: "What would you do if you were me?", answer: "Be careful. But do not hide.\n\n'If I were you, with the same information you have, I would...'\n\nThen add:\n\n'But I am not you. Your priorities may be different. So take what I say as one perspective, not an order.'\n\nThis is different from 'you should.' 'You should' is prescriptive. 'If I were you, I would' is sharing your thinking. Patients can handle the difference." });
+  else if (i === 30) Q_AND_A.push({ id: 30, question: "What is the one thing you wish every new grad PT knew?", answer: "The one thing:\n\n'You cannot save everyone. And that is not a failure.'\n\nThe patient who does not try. The one who blames you. The one who never comes back. The one who gets better but never says thank you.\n\nYou will encounter all of them.\n\nYou will still be a good PT.\n\nThe measure of your work is not perfect outcomes. It is perfect effort. Did you show up? Did you try? Did you learn? Did you care?\n\nThat is enough." });
+}
+
+// ============================================
+// STATE VARIABLES
+// ============================================
+let userEmail = null;
+let isPaidUser = false;
+let currentScripts = SCRIPTS_LITE;
+let currentExplanations = EXPLANATIONS_LITE;
+let currentQuickRefs = QUICK_REFS.slice(0, 5);
+let currentQnA = [];
+
+// ============================================
+// HELPER FUNCTIONS
+// ============================================
+function escapeHtml(str) { if (!str) return ''; return str.replace(/[&<>]/g, function(m) { if (m === '&') return '&amp;'; if (m === '<') return '&lt;'; if (m === '>') return '&gt;'; return m; }); }
+function copyToClipboard(text) { navigator.clipboard.writeText(text); alert('Copied to clipboard!'); }
+
+// ============================================
+// ANALYTICS TRACKING (kept from previous version)
+// ============================================
+function getSessionId() {
+  let sessionId = localStorage.getItem('ptcomm_session_id');
+  if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    localStorage.setItem('ptcomm_session_id', sessionId);
+  }
+  return sessionId;
+}
+
+function trackEvent(eventName, eventData) {
+  const event = {
+    event: eventName,
+    data: eventData,
+    timestamp: Date.now(),
+    session_id: getSessionId(),
+    user_email: userEmail || localStorage.getItem('ptcomm_user_email') || null
+  };
+  let queue = JSON.parse(localStorage.getItem('analytics_queue') || '[]');
+  queue.push(event);
+  localStorage.setItem('analytics_queue', JSON.stringify(queue));
+  if (queue.length >= 10) sendAnalyticsBatch();
+}
+
+function sendAnalyticsBatch() {
+  const queue = JSON.parse(localStorage.getItem('analytics_queue') || '[]');
+  if (queue.length === 0) return;
+  fetch('https://api.ptcommlab.com/log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ events: queue, session_id: getSessionId() })
+  }).catch(e => console.error('Analytics send failed:', e));
+  localStorage.setItem('analytics_queue', '[]');
+}
+
+setInterval(sendAnalyticsBatch, 30000);
+window.addEventListener('beforeunload', sendAnalyticsBatch);
+
+// ============================================
+// RENDER FUNCTIONS
+// ============================================
+function toggleCard(card) {
+  card.classList.toggle('open');
+  const title = card.querySelector('.item-title')?.innerText;
+  if (title && card.classList.contains('open')) {
+    trackEvent('content_open', { title: title });
+  }
+}
+
+function renderScripts() {
+  const searchTerm = document.getElementById('scriptSearch')?.value.toLowerCase() || '';
+  const filtered = currentScripts.filter(s => s.title.toLowerCase().includes(searchTerm));
+  const container = document.getElementById('scriptsList');
+  if (!container) return;
+  container.innerHTML = filtered.map(script => `<div class="item-card" onclick="toggleCard(this)"><div class="item-header"><div class="item-title">${escapeHtml(script.title)}</div><span class="expand-icon">▼</span></div><div class="item-content"><div class="item-text">${escapeHtml(script.preview)}</div><div class="script-box">${escapeHtml(script.fullText).replace(/\n/g, '<br>')}</div><button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('${escapeHtml(script.fullText).replace(/'/g, "\\'")}')">📋 Copy Script</button></div></div>`).join('');
+}
+
+function renderExplanations() {
+  const searchTerm = document.getElementById('explanationSearch')?.value.toLowerCase() || '';
+  const filtered = currentExplanations.filter(e => e.title.toLowerCase().includes(searchTerm));
+  const container = document.getElementById('explanationsList');
+  if (!container) return;
+  container.innerHTML = filtered.map(exp => `<div class="item-card" onclick="toggleCard(this)"><div class="item-header"><div class="item-title">${escapeHtml(exp.title)}</div><span class="expand-icon">▼</span></div><div class="item-content"><div class="item-text"><strong>Short version:</strong> ${escapeHtml(exp.shortVersion)}</div><div class="item-text">${escapeHtml(exp.fullText)}</div><div class="script-box">“${escapeHtml(exp.script)}”</div><button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('${escapeHtml(exp.patientHandout || exp.script).replace(/'/g, "\\'")}')">📋 Copy Handout</button></div></div>`).join('');
+}
+
+function renderQuickRefs() {
+  const container = document.getElementById('qrGrid');
+  if (!container) return;
+  container.innerHTML = currentQuickRefs.map(qr => `<div class="qr-card" onclick="openQuickRefModal(${qr.id})"><div class="qr-icon">${qr.icon}</div><div class="qr-title">${escapeHtml(qr.title)}</div></div>`).join('');
+}
+
+function openQuickRefModal(id) {
+  const qr = currentQuickRefs.find(q => q.id === id);
+  if (qr) {
+    trackEvent('quickref_view', { quickref_id: id, quickref_title: qr.title });
+    document.getElementById('qrModalTitle').innerHTML = qr.title;
+    document.getElementById('qrModalContent').innerHTML = qr.content;
+    document.getElementById('qrModal').classList.add('active');
+  }
+}
+
+function closeModal() { document.getElementById('qrModal').classList.remove('active'); }
+
+function renderQnA() {
+  const searchTerm = document.getElementById('qaSearch')?.value.toLowerCase() || '';
+  const filtered = currentQnA.filter(q => q.question.toLowerCase().includes(searchTerm));
+  const container = document.getElementById('qaList');
+  if (!container) return;
+  container.innerHTML = filtered.map(qa => `<div class="item-card" onclick="toggleCard(this)"><div class="item-header"><div class="item-title">${escapeHtml(qa.question)}</div><span class="expand-icon">▼</span></div><div class="item-content"><div class="qa-answer">${escapeHtml(qa.answer).replace(/\n/g, '<br>')}</div><button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('${escapeHtml(qa.answer).replace(/'/g, "\\'")}')">📋 Copy Answer</button></div></div>`).join('');
+}
+
+function updateDate() {
+  const now = new Date();
+  document.getElementById('dateDay').innerHTML = now.getDate();
+  document.getElementById('dateFull').innerHTML = now.toLocaleDateString('en-US', { month: 'short', year: 'numeric', weekday: 'short' });
+}
+
+// ============================================
+// PURCHASE VERIFICATION & EMAIL GATE
+// ============================================
+async function checkPurchaseStatus(email) {
+  const cached = localStorage.getItem('ptcomm_paid_status');
+  if (cached === 'true') return true;
+  try {
+    const response = await fetch(`https://api.gumroad.com/v2/sales?email=${encodeURIComponent(email)}`);
+    const data = await response.json();
+    const hasPurchased = data.sales && data.sales.some(sale => sale.product_permalink === 'fqgtv' && sale.successful);
+    localStorage.setItem('ptcomm_paid_status', hasPurchased ? 'true' : 'false');
+    return hasPurchased;
+  } catch (error) {
+    console.error('Purchase check failed:', error);
+    return false;
+  }
+}
+
+// AI USAGE TRACKING
+function getTodayKey() { return new Date().toISOString().split('T')[0]; }
+function getAIUsage() {
+  const today = getTodayKey();
+  const stored = localStorage.getItem('ptcomm_lite_ai_usage');
+  const data = stored ? JSON.parse(stored) : {};
+  if (data.date !== today) return { date: today, count: 0 };
+  return data;
+}
+function incrementAIUsage() {
+  if (isPaidUser || hasPremiumAccess()) return;
+  const usage = getAIUsage();
+  usage.count++;
+  localStorage.setItem('ptcomm_lite_ai_usage', JSON.stringify(usage));
+  updateAIUsageDisplay();
+}
+function getRemainingAIUsage() {
+  if (isPaidUser || hasPremiumAccess()) return 999;
+  const usage = getAIUsage();
+  return Math.max(0, 3 - usage.count);
+}
+function updateAIUsageDisplay() {
+  const remaining = getRemainingAIUsage();
+  const counterDiv = document.getElementById('aiUsageCounter');
+  const requestBtn = document.getElementById('requestExtensionBtn');
+  if (counterDiv && userEmail) {
+    if (isPaidUser || hasPremiumAccess()) {
+      const remainingDays = getRemainingPremiumDays();
+      if (remainingDays > 0 && !isPaidUser) {
+        counterDiv.style.display = 'block';
+        counterDiv.innerHTML = `✨ Premium Access — ${remainingDays} days remaining ✨`;
+      } else if (isPaidUser) {
+        counterDiv.style.display = 'block';
+        counterDiv.innerHTML = '✨ Unlimited AI (Lifetime Premium) ✨';
+      } else {
+        counterDiv.style.display = 'block';
+        counterDiv.innerHTML = '⚠️ ' + remaining + ' AI uses remaining today. Upgrade for unlimited →';
+      }
+    } else {
+      counterDiv.style.display = 'block';
+      counterDiv.innerHTML = '⚠️ ' + remaining + ' AI uses remaining today. Upgrade for unlimited →';
+    }
+    if (!isPaidUser && !hasPremiumAccess() && userEmail && userEmail !== 'skip@ptcommlab.com') {
+      requestBtn.style.display = 'inline-block';
+    } else {
+      requestBtn.style.display = 'none';
+    }
+  }
+}
+
+function requestExtension() {
+  if (!userEmail || userEmail === 'skip@ptcommlab.com') {
+    alert('Please enter your email to request an extension.');
+    return;
+  }
+  const subject = encodeURIComponent('Premium Extension Request');
+  const body = encodeURIComponent(`Please extend my premium access.\n\nMy email: ${userEmail}\n\nI can also upgrade at https://thequietseries.gumroad.com/l/fqgtv`);
+  window.location.href = `mailto:support@ptcommlab.com?subject=${subject}&body=${body}`;
+  trackEvent('request_extension', { user_email: userEmail });
+}
+
+// EMAIL GATE
+function closeEmailGate() { document.getElementById('emailGate')?.classList.remove('active'); }
+function showEmailGate() {
+  if (userEmail || localStorage.getItem('ptcomm_user_email') || shouldSkipGate) return;
+  document.getElementById('emailGate')?.classList.add('active');
+}
+
+async function setUserEmail(email) {
+  if (!email) return;
+  userEmail = email;
+  localStorage.setItem('ptcomm_user_email', email);
+  
+  const hasCodePremium = hasPremiumAccess();
+  
+  if (hasCodePremium) {
+    isPaidUser = false;
+    currentScripts = ALL_SCRIPTS;
+    currentExplanations = ALL_EXPLANATIONS;
+    currentQuickRefs = QUICK_REFS;
+    currentQnA = Q_AND_A;
+    document.getElementById('premiumScriptBadge').style.display = 'inline-block';
+    document.getElementById('freeScriptBadge').style.display = 'none';
+    document.getElementById('premiumExplainBadge').style.display = 'inline-block';
+    document.getElementById('freeExplainBadge').style.display = 'none';
+    document.getElementById('premiumQrBadge').style.display = 'inline-block';
+    document.getElementById('freeQrBadge').style.display = 'none';
+    document.getElementById('premiumAiBadge').style.display = 'inline-block';
+    document.getElementById('freeAiBadge').style.display = 'none';
+    document.getElementById('premiumQaBadge').style.display = 'inline-block';
+    document.getElementById('freeQaBadge').style.display = 'none';
+    document.getElementById('scriptUpgradeMsg').style.display = 'none';
+    document.getElementById('explainUpgradeMsg').style.display = 'none';
+    document.getElementById('qrUpgradeMsg').style.display = 'none';
+    document.getElementById('aiUpgradeMsg').style.display = 'none';
+    document.getElementById('qaUpgradeMsg').style.display = 'none';
+  } else {
+    isPaidUser = await checkPurchaseStatus(email);
+    if (isPaidUser) {
+      currentScripts = ALL_SCRIPTS;
+      currentExplanations = ALL_EXPLANATIONS;
+      currentQuickRefs = QUICK_REFS;
+      currentQnA = Q_AND_A;
+      document.getElementById('premiumScriptBadge').style.display = 'inline-block';
+      document.getElementById('freeScriptBadge').style.display = 'none';
+      document.getElementById('premiumExplainBadge').style.display = 'inline-block';
+      document.getElementById('freeExplainBadge').style.display = 'none';
+      document.getElementById('premiumQrBadge').style.display = 'inline-block';
+      document.getElementById('freeQrBadge').style.display = 'none';
+      document.getElementById('premiumAiBadge').style.display = 'inline-block';
+      document.getElementById('freeAiBadge').style.display = 'none';
+      document.getElementById('premiumQaBadge').style.display = 'inline-block';
+      document.getElementById('freeQaBadge').style.display = 'none';
+      document.getElementById('scriptUpgradeMsg').style.display = 'none';
+      document.getElementById('explainUpgradeMsg').style.display = 'none';
+      document.getElementById('qrUpgradeMsg').style.display = 'none';
+      document.getElementById('aiUpgradeMsg').style.display = 'none';
+      document.getElementById('qaUpgradeMsg').style.display = 'none';
+    } else {
+      currentScripts = SCRIPTS_LITE;
+      currentExplanations = EXPLANATIONS_LITE;
+      currentQuickRefs = QUICK_REFS.slice(0, 5);
+      currentQnA = [];
+      document.getElementById('premiumScriptBadge').style.display = 'none';
+      document.getElementById('freeScriptBadge').style.display = 'inline-block';
+      document.getElementById('premiumExplainBadge').style.display = 'none';
+      document.getElementById('freeExplainBadge').style.display = 'inline-block';
+      document.getElementById('premiumQrBadge').style.display = 'none';
+      document.getElementById('freeQrBadge').style.display = 'inline-block';
+      document.getElementById('premiumAiBadge').style.display = 'none';
+      document.getElementById('freeAiBadge').style.display = 'inline-block';
+      document.getElementById('premiumQaBadge').style.display = 'none';
+      document.getElementById('freeQaBadge').style.display = 'inline-block';
+      document.getElementById('scriptUpgradeMsg').style.display = 'block';
+      document.getElementById('explainUpgradeMsg').style.display = 'block';
+      document.getElementById('qrUpgradeMsg').style.display = 'block';
+      document.getElementById('aiUpgradeMsg').style.display = 'block';
+      document.getElementById('qaUpgradeMsg').style.display = 'block';
+    }
+  }
+  
+  renderScripts();
+  renderExplanations();
+  renderQuickRefs();
+  renderQnA();
+  updateAIUsageDisplay();
+  closeEmailGate();
+}
+
+checkAccessCode();
+
+const savedEmail = localStorage.getItem('ptcomm_user_email');
+if (savedEmail) setUserEmail(savedEmail);
+else if (window.pendingEmail) setUserEmail(window.pendingEmail);
+else if (shouldSkipGate) setUserEmail('skip@ptcommlab.com');
+else setTimeout(() => { if (!userEmail && !localStorage.getItem('ptcomm_user_email')) showEmailGate(); }, 1000);
+
+document.getElementById('closeGateBtn')?.addEventListener('click', closeEmailGate);
+document.getElementById('skipGateLink')?.addEventListener('click', (e) => { e.preventDefault(); closeEmailGate(); });
+document.getElementById('emailGate')?.addEventListener('click', (e) => { if (e.target === document.getElementById('emailGate')) closeEmailGate(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeEmailGate(); });
+document.getElementById('gateSubmitBtn')?.addEventListener('click', async () => {
+  const email = document.getElementById('gateEmailInput')?.value.trim();
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  await setUserEmail(email);
+});
+
+document.getElementById('requestExtensionBtn')?.addEventListener('click', requestExtension);
+
+// ============================================
+// CHECK-IN & WEEKLY (kept from previous version)
+// ============================================
+let currentCheckin = { drained: null, lunchBreak: null, leftOnTime: null, thoughtAfterWork: null, win: "" };
+function renderCheckin() {
+  const container = document.getElementById('checkinQuestions');
+  if (!container) return;
+  container.innerHTML = `<div class="checkin-question"><label class="checkin-label">1. How drained did you feel after work today?</label><div class="rating-group" id="drainedGroup">${[1,2,3,4,5].map(n => `<div class="rating-btn ${currentCheckin.drained === n ? 'selected' : ''}" data-value="${n}">${n}</div>`).join('')}</div></div><div class="checkin-question"><label class="checkin-label">2. Did you take a real lunch break?</label><div class="yesno-group" id="lunchGroup"><div class="yesno-btn ${currentCheckin.lunchBreak === true ? 'selected' : ''}" data-value="yes">Yes</div><div class="yesno-btn ${currentCheckin.lunchBreak === false ? 'selected' : ''}" data-value="no">No</div></div></div><div class="checkin-question"><label class="checkin-label">3. Did you leave work on time?</label><div class="yesno-group" id="leaveGroup"><div class="yesno-btn ${currentCheckin.leftOnTime === true ? 'selected' : ''}" data-value="yes">Yes</div><div class="yesno-btn ${currentCheckin.leftOnTime === false ? 'selected' : ''}" data-value="no">No</div></div></div><div class="checkin-question"><label class="checkin-label">4. Did you think about work after leaving?</label><div class="rating-group" id="thoughtGroup">${[1,2,3,4,5].map(n => `<div class="rating-btn ${currentCheckin.thoughtAfterWork === n ? 'selected' : ''}" data-value="${n}">${n}</div>`).join('')}</div></div><div class="checkin-question"><label class="checkin-label">5. One win today (even small):</label><input type="text" id="winInput" class="win-input" value="${escapeHtml(currentCheckin.win)}" placeholder="e.g., 'Helped a patient understand why rest matters'"></div>`;
+  document.querySelectorAll('#drainedGroup .rating-btn').forEach(btn => btn.addEventListener('click', () => { currentCheckin.drained = parseInt(btn.dataset.value); renderCheckin(); renderTrends(); }));
+  document.querySelectorAll('#thoughtGroup .rating-btn').forEach(btn => btn.addEventListener('click', () => { currentCheckin.thoughtAfterWork = parseInt(btn.dataset.value); renderCheckin(); renderTrends(); }));
+  document.querySelectorAll('#lunchGroup .yesno-btn').forEach(btn => btn.addEventListener('click', () => { currentCheckin.lunchBreak = btn.dataset.value === 'yes'; renderCheckin(); renderTrends(); }));
+  document.querySelectorAll('#leaveGroup .yesno-btn').forEach(btn => btn.addEventListener('click', () => { currentCheckin.leftOnTime = btn.dataset.value === 'yes'; renderCheckin(); renderTrends(); }));
+  document.getElementById('winInput')?.addEventListener('input', (e) => { currentCheckin.win = e.target.value; renderTrends(); });
+}
+
+function saveCheckin() {
+  trackEvent('checkin_save', { drained: currentCheckin.drained, lunch_break: currentCheckin.lunchBreak, left_on_time: currentCheckin.leftOnTime, thought_after_work: currentCheckin.thoughtAfterWork, win_length: currentCheckin.win.length });
+  const today = new Date().toISOString().split('T')[0];
+  const stored = localStorage.getItem('ptcomm_checkin');
+  const all = stored ? JSON.parse(stored) : {};
+  all[today] = { ...currentCheckin };
+  localStorage.setItem('ptcomm_checkin', JSON.stringify(all));
+  renderTrends();
+  alert('Today\'s check-in saved.');
+}
+
+function renderTrends() {
+  const stored = localStorage.getItem('ptcomm_checkin');
+  const all = stored ? JSON.parse(stored) : {};
+  const last7 = [];
+  for (let i = 0; i < 7; i++) { const d = new Date(); d.setDate(d.getDate() - i); const key = d.toISOString().split('T')[0]; if (all[key]) last7.push(all[key]); }
+  const avgDrained = last7.length ? Math.round(last7.reduce((s, d) => s + (d.drained || 3), 0) / last7.length) : 0;
+  const lunchRate = last7.length ? Math.round(last7.filter(d => d.lunchBreak === true).length / last7.length * 100) : 0;
+  const container = document.getElementById('trendStats');
+  if (container) container.innerHTML = `<div class="trend-card"><div class="trend-number">${avgDrained}</div><div>Avg Drained</div></div><div class="trend-card"><div class="trend-number">${lunchRate}%</div><div>Lunch breaks</div></div><div class="trend-card"><div class="trend-number">${last7.length}</div><div>Days tracked</div></div>`;
+}
+
+let weeklyState = {};
+function loadWeekly() { const stored = localStorage.getItem('ptcomm_weekly'); if (stored) weeklyState = JSON.parse(stored); renderWeekly(); }
+function renderWeekly() {
+  const container = document.getElementById('weeklyList');
+  if (!container) return;
+  const items = ['weekly1', 'weekly2', 'weekly3', 'weekly4', 'weekly5'];
+  const labels = ['Practiced the cup-emptying belief challenge', 'Moved forward on one key project at least 4 of 7 days', 'Protected morning anchor routine at least 5 of 7 days', 'Noticed an old habit resurface — diluted it with a micro-action', 'Paused to register one piece of evidence that I am changing'];
+  container.innerHTML = items.map((item, i) => `<div class="weekly-item"><div class="weekly-check ${weeklyState[item] ? 'checked' : ''}" data-weekly="${item}"></div><div class="weekly-text">${labels[i]}</div></div>`).join('');
+  document.querySelectorAll('.weekly-check').forEach(el => { el.addEventListener('click', () => { el.classList.toggle('checked'); if (el.classList.contains('checked')) el.innerText = '✓'; else el.innerText = ''; weeklyState[el.dataset.weekly] = el.classList.contains('checked'); localStorage.setItem('ptcomm_weekly', JSON.stringify(weeklyState)); }); if (weeklyState[el.dataset.weekly]) el.innerText = '✓'; });
+}
+function saveWeekly() { localStorage.setItem('ptcomm_weekly', JSON.stringify(weeklyState)); alert('Weekly review saved.'); }
+
+// ============================================
+// AI API CALL (with multilingual override support)
+// ============================================
+const API_URL = 'https://api.ptcommlab.com/chat';
+async function callAI(prompt) {
+  const remaining = getRemainingAIUsage();
+  if (remaining <= 0 && !isPaidUser && !hasPremiumAccess()) throw new Error('DAILY_LIMIT_REACHED');
+  
+  // Check for multilingual override parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const isMultilingual = urlParams.get('multilingual') === 'true';
+  
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ 
+      prompt, 
+      tone: 'encouraging', 
+      session_id: userEmail || 'anonymous',
+      force_english: !isMultilingual  // Send flag to worker
+    })
+  });
+  const data = await response.json();
+  if (!isPaidUser && !hasPremiumAccess()) incrementAIUsage();
+  return data.response;
+}
+
+async function handleAIGenerate() {
+  const input = document.getElementById('aiInput')?.value;
+  if (!input) { alert('Please paste some clinical text or ask a question.'); return; }
+  if (!userEmail && !shouldSkipGate) { showEmailGate(); return; }
+  const remaining = getRemainingAIUsage();
+  if (remaining <= 0 && !isPaidUser && !hasPremiumAccess()) {
+    document.getElementById('aiOutput').innerHTML = '⚠️ You have reached your daily AI limit. <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color:#2B5C5C;">Upgrade to Full Bundle for unlimited access →</a>';
+    document.getElementById('aiOutput').style.display = 'block';
+    return;
+  }
+  const btn = document.getElementById('aiGenerateBtn');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = '<span class="loading"></span> Thinking...';
+  btn.disabled = true;
+  const outputDiv = document.getElementById('aiOutput');
+  outputDiv.innerHTML = '';
+  outputDiv.style.display = 'block';
+  try {
+    const response = await callAI(input);
+    outputDiv.innerHTML = response;
+    trackEvent('ai_generate', { prompt_length: input.length, response_length: response.length, provider: 'worker-ai', cached: false });
+  } catch (error) {
+    outputDiv.innerHTML = '⚠️ Sorry, something went wrong. Please try again.';
+    trackEvent('ai_generate_error', { prompt_length: input.length, error_message: error.message || 'unknown' });
+  } finally {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+  }
+}
+
+document.getElementById('aiGenerateBtn')?.addEventListener('click', handleAIGenerate);
+document.querySelectorAll('.suggested-btn')?.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const question = btn.getAttribute('data-question');
+    if (question) { document.getElementById('aiInput').value = question; document.getElementById('aiGenerateBtn').click(); }
+  });
+});
+
+// ============================================
+// TAB SWITCHING
+// ============================================
+function switchTab(tabId) {
+  document.querySelectorAll('.bottom-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.bottom-tab[data-tab="${tabId}"]`)?.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active-tab'));
+  document.getElementById(`${tabId}Tab`)?.classList.add('active-tab');
+  if (tabId === 'scripts') renderScripts();
+  if (tabId === 'explanations') renderExplanations();
+  if (tabId === 'quickrefs') renderQuickRefs();
+  if (tabId === 'qa') renderQnA();
+  if (tabId === 'checkin') { renderCheckin(); renderTrends(); renderWeekly(); }
+}
+document.querySelectorAll('.bottom-tab').forEach(tab => { tab.addEventListener('click', () => switchTab(tab.dataset.tab)); });
+
+// ============================================
+// DARK MODE & INIT
+// ============================================
+const darkModeFab = document.getElementById('darkModeFab');
+if (localStorage.getItem('darkMode') === 'enabled') { document.body.classList.add('dark'); darkModeFab.innerHTML = '☀️'; }
+darkModeFab.addEventListener('click', () => { document.body.classList.toggle('dark'); const isDark = document.body.classList.contains('dark'); localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled'); darkModeFab.innerHTML = isDark ? '☀️' : '🌙'; });
+document.getElementById('saveCheckinBtn')?.addEventListener('click', saveCheckin);
+document.getElementById('weeklyReviewBtn')?.addEventListener('click', saveWeekly);
+
+document.querySelectorAll('.upgrade-button a, .upgrade-link, .btn-primary[href*="gumroad"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    trackEvent('upgrade_click', { source: btn.closest('.upgrade-button') ? 'upgrade_button' : 'bundle_button', location: window.location.pathname });
+  });
+});
+
+updateDate(); renderScripts(); renderExplanations(); renderQuickRefs(); renderCheckin(); renderTrends(); loadWeekly(); renderQnA();
+
+trackEvent('session_start', { is_paid: isPaidUser, has_code_premium: hasPremiumAccess(), has_email: !!userEmail, app_version: '2.0' });
+</script>
+</body>
+</html>

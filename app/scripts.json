@@ -1,0 +1,248 @@
+
+[
+  {
+    "id": 1,
+    "title": "Patient hasn't done their exercises",
+    "preview": "That happens. Was there something specific that got in the way this week?",
+    "fullText": "That happens. Was there something specific that got in the way this week?\n\nAlternative: Let us look at the exercise plan together. If it is too much or too hard to fit in, I want to know. We can adjust.\n\nAlternative 2: The fact that you are telling me honestly means a lot. Let us figure out a version you can actually do.",
+    "tags": ["adherence", "motivation", "non-compliance"]
+  },
+  {
+    "id": 2,
+    "title": "Patient in pain and afraid to move",
+    "preview": "I hear you. Fear of making it worse is completely understandable.",
+    "fullText": "I hear you. Fear of making it worse is completely understandable. Let us find a version that does NOT make it worse.\n\nAlternative: What is the smallest, safest movement you feel willing to try today? Even a tiny one.\n\nAlternative 2: Pain does not always mean damage. Your alarm system might be overreacting. Let us test a very small movement and see how your body responds.",
+    "tags": ["pain", "fear", "kinesiophobia"]
+  },
+  {
+    "id": 3,
+    "title": "Patient asks 'How long will this take?'",
+    "preview": "Most people with your condition start feeling noticeable improvement in 4-6 weeks.",
+    "fullText": "Most people with your condition start feeling noticeable improvement in 4-6 weeks, but full recovery takes longer. I cannot promise a date, but I can promise we will track progress weekly.\n\nAlternative: Instead of 'how long,' let us ask 'what needs to happen for you to feel done?' Let us list those milestones together.\n\nAlternative 2: It is like a road trip. I know the destination. I know the speed limit. But traffic and detours happen. We adjust as we go.",
+    "tags": ["timeline", "expectations", "recovery"]
+  },
+  {
+    "id": 4,
+    "title": "Patient compares to someone who recovered faster",
+    "preview": "That is frustrating. Here is what we know: age, starting fitness, tissue involvement, and even stress affect recovery speed.",
+    "fullText": "That is frustrating. Here is what we know: age, starting fitness, tissue involvement, and even stress affect recovery speed. You are not your friend. Your body is on its own timeline.\n\nAlternative: I cannot change your starting point. But I can help you maximize what you do now. Let us focus on what moves the needle for you.\n\nAlternative 2: Can we agree to compare you to last week's you instead of someone else?",
+    "tags": ["comparison", "expectations", "frustration"]
+  },
+  {
+    "id": 5,
+    "title": "Patient thinks rest is better than movement",
+    "preview": "Complete rest for more than a few days can actually weaken muscles and stiffen joints.",
+    "fullText": "Complete rest for more than a few days can actually weaken muscles and stiffen joints. I am not saying push through pain. I am saying find the smallest amount of gentle movement that feels okay.\n\nAlternative: There is a 'just right' amount of movement — not too much, not too little. Let us find yours.\n\nAlternative 2: If you need a few days of rest, take them. But let us put an end date on it. After three days, we start very small.",
+    "tags": ["rest", "movement", "recovery"]
+  },
+  {
+    "id": 6,
+    "title": "Patient wants more exercises (you disagree)",
+    "preview": "Research shows that when people have too many exercises, they actually do less.",
+    "fullText": "Research shows that when people have too many exercises, they actually do less. I want you doing fewer things really well rather than many things sporadically.\n\nAlternative: Instead of more exercises, let us talk about quality. Can you do these three perfectly? Let us start there.\n\nAlternative 2: Here is the deal: do these four consistently for two weeks. Then we talk about adding more.",
+    "tags": ["HEP", "adherence", "motivation"]
+  },
+  {
+    "id": 7,
+    "title": "Patient is frustrated with slow progress",
+    "preview": "I hear your frustration. You are working hard. Let me show you the progress you might be missing.",
+    "fullText": "I hear your frustration. You are working hard. Let me show you the progress you might be missing.\n\nAlternative: Progress often looks like stairs, not a ramp. Flat periods, then jumps. You might be on a flat part right now. That is normal. The jump is coming.\n\nAlternative 2: If you are doing everything and not seeing change, that is my signal to adjust something. Let me think overnight and come back with a new idea.",
+    "tags": ["progress", "frustration", "plateau"]
+  },
+  {
+    "id": 8,
+    "title": "Patient cancels repeatedly",
+    "preview": "I have noticed you have had to cancel a few times. I want to make sure this is still the right time for you to be in therapy.",
+    "fullText": "I have noticed you have had to cancel a few times. I want to make sure this is still the right time for you to be in therapy. No judgment either way.\n\nAlternative: Is there something about the appointment time or frequency that is not working? We can adjust if that helps.\n\nAlternative 2: I am going to keep your spot for one more week. If you need to take a break and come back when life settles down, that is okay too.",
+    "tags": ["boundaries", "attendance", "barriers"]
+  },
+  {
+    "id": 9,
+    "title": "Patient asks about app-based exercise vs. in-person",
+    "preview": "Research actually shows that in-person supervision leads to 4x higher adherence than apps alone.",
+    "fullText": "Research actually shows that in-person supervision leads to 4x higher adherence than apps alone. Apps are great for reminders. They cannot watch your form or adjust in real time.\n\nAlternative: We can use an app as a supplement. But the real value of coming in is that I can see what you cannot — compensations, subtle form issues, fear responses.\n\nAlternative 2: An app gives you information. I give you interpretation, adaptation, and accountability. They are not the same thing.",
+    "tags": ["technology", "adherence", "evidence"]
+  },
+  {
+    "id": 10,
+    "title": "Patient says 'My doctor said something different'",
+    "preview": "That is good information. Doctors often focus on different priorities.",
+    "fullText": "That is good information. Doctors often focus on different priorities. Can I show you why I am recommending this movement, and then you can ask your doctor for clarification?\n\nAlternative: Do you mind if I reach out to your doctor for clarity? I want to make sure we are aligned.\n\nAlternative 2: Here is my clinical reasoning. But your doctor knows your full medical history. If there is a conflict, I trust their judgment.",
+    "tags": ["collaboration", "trust", "communication"]
+  },
+  {
+    "id": 11,
+    "title": "Patient is overwhelmed by instructions",
+    "preview": "You are right. Let us focus on just two things this week. The rest are optional.",
+    "fullText": "You are right. Let us focus on just two things this week. The rest are optional. Master these two first.\n\nAlternative: Let me write down the most important three steps. Keep this on your fridge.\n\nAlternative 2: Let me record you doing the movement correctly on your phone. You will have it forever.",
+    "tags": ["overwhelm", "cognitive load", "simplicity"]
+  },
+  {
+    "id": 12,
+    "title": "Patient asks 'Am I doing this right?' (remote follow-up)",
+    "preview": "Great job showing up. One small thing: [one correction only].",
+    "fullText": "Great job showing up. One small thing: [one correction only]. The rest looks solid.\n\nAlternative: From what I can see, your form is 80% there. The missing piece is [X]. Try [one cue] and send me another video.\n\nAlternative 2: It is hard to assess remotely. Can you come in for a 15-minute form check? I want to see you in person to be sure.",
+    "tags": ["telehealth", "feedback", "coaching"]
+  },
+  {
+    "id": 13,
+    "title": "Patient asks about injections or surgery",
+    "preview": "Injections and surgery are options. Here is what the research says: for your condition, physical therapy works as well as those options for most people.",
+    "fullText": "Injections and surgery are options. Here is what the research says: for your condition, physical therapy works as well as those options for most people, with fewer risks.\n\nAlternative: Let me give you the information I have. Then you and your doctor decide. Here is what PT can offer. Here is what surgery offers.\n\nAlternative 2: I cannot tell you what to do. That is between you and your doctor. But I can tell you what I have seen with other patients in your situation.",
+    "tags": ["medical decisions", "surgery", "options"]
+  },
+  {
+    "id": 14,
+    "title": "Patient has complex medical history (comorbidities)",
+    "preview": "Yes, we can help you. We just need to be more careful and go more slowly.",
+    "fullText": "Yes, we can help you. We just need to be more careful and go more slowly. Your other conditions matter — we will factor them into every decision.\n\nAlternative: I will communicate with your other providers. We are all on the same team. Let me know if anything feels off.\n\nAlternative 2: Let us start with something so small it feels almost silly. We will build from there. Safety first.",
+    "tags": ["comorbidities", "safety", "multidisciplinary"]
+  },
+  {
+    "id": 15,
+    "title": "Patient is a young athlete (return to sport pressure)",
+    "preview": "Here is what we can realistically achieve in six weeks. Here is what we cannot.",
+    "fullText": "Here is what we can realistically achieve in six weeks. Here is what we cannot. Let us focus on what matters most for your sport.\n\nAlternative: I cannot guarantee you will be ready. But I can guarantee that doing nothing guarantees you will not be ready.\n\nAlternative 2: Athletes who return too soon get re-injured at higher rates. Let us aim for 'ready to compete safely' — not just 'ready to try out.'",
+    "tags": ["athletes", "sports", "return to sport"]
+  },
+  {
+    "id": 16,
+    "title": "Patient is an older adult (fear of falling)",
+    "preview": "Fear of falling is real — and it is also making you more likely to fall, because you are not moving.",
+    "fullText": "Fear of falling is real — and it is also making you more likely to fall, because you are not moving. Let us start with the safest possible movements and build your confidence.\n\nAlternative: Confidence comes from evidence. Let us create evidence that you can move safely. Small successes build belief.\n\nAlternative 2: Let us also talk about your environment. Grab bars. Good lighting. Removing rugs. We address both your body and your home.",
+    "tags": ["geriatrics", "falls", "confidence"]
+  },
+  {
+    "id": 17,
+    "title": "Patient has mental health struggles (depression, anxiety)",
+    "preview": "It sounds like you are carrying a heavy load right now. That affects your body too.",
+    "fullText": "It sounds like you are carrying a heavy load right now. That affects your body too. Let us make the plan smaller — much smaller — so it feels doable.\n\nAlternative: Would it be okay if we talk about how your mood might be affecting your recovery? I am not a therapist, but I want to make sure we are not ignoring something important.\n\nAlternative 2: On hard days, your only job is to show up. Even sitting and taking three slow breaths counts. That is enough.",
+    "tags": ["mental health", "depression", "anxiety"]
+  },
+  {
+    "id": 18,
+    "title": "Patient asks 'Should I see a chiropractor instead?'",
+    "preview": "Chiropractors and PTs take different approaches. Both can help.",
+    "fullText": "Chiropractors and PTs take different approaches. Both can help. Here is what we offer that is different: long-term movement education, not just passive treatment.\n\nAlternative: You can see both. Just let me know what they are doing so we do not duplicate or conflict.\n\nAlternative 2: Research shows that active treatment (exercises you do yourself) produces longer-lasting results than passive treatment alone. That is our focus here.",
+    "tags": ["chiropractic", "comparison", "scope"]
+  },
+  {
+    "id": 19,
+    "title": "Patient has been discharged but wants to return (recurrence)",
+    "preview": "Recurrence is common. It does not mean you failed. It means we need to figure out what changed.",
+    "fullText": "Recurrence is common. It does not mean you failed. It means we need to figure out what changed and address it.\n\nAlternative: This is useful information. Something in your life or body changed. Let us figure out what it is — and build a plan that prevents it from happening again.\n\nAlternative 2: Let us use this as a reminder that maintenance matters. We will get you back to where you were — and then build a check-in plan so you do not lose it again.",
+    "tags": ["recurrence", "maintenance", "relapse"]
+  },
+  {
+    "id": 20,
+    "title": "Patient is a caregiver (their own health suffering)",
+    "preview": "You are carrying an enormous load. I am not going to add to it.",
+    "fullText": "You are carrying an enormous load. I am not going to add to it. Let us find one thing — one tiny thing — that you can do for yourself in two minutes or less.\n\nAlternative: You cannot pour from an empty cup. Taking care of yourself is not selfish. It is how you keep showing up for the person you care for.\n\nAlternative 2: Can we build your exercises into the care you already provide? Standing while they sit. Walking while they rest.",
+    "tags": ["caregiver", "self-care", "burnout"]
+  },
+  {
+    "id": 21,
+    "title": "How to talk to patients about weight (without offending)",
+    "preview": "Your joints are carrying more load than they were designed for. Reducing that load would help.",
+    "fullText": "Your joints are carrying more load than they were designed for. Reducing that load would help. I know that is complicated. Can we talk about what feels possible?\n\nAlternative: Weight is a sensitive topic. I do not want to assume anything. Is this something you want to talk about, or should we focus on other things?\n\nAlternative 2: I am not a weight specialist. But I can connect you with someone who is, if that would help.",
+    "tags": ["weight", "sensitive topics", "motivation"]
+  },
+  {
+    "id": 22,
+    "title": "Patient asks about CBD or supplements",
+    "preview": "I cannot recommend supplements. That is outside my scope.",
+    "fullText": "I cannot recommend supplements. That is outside my scope. But I can tell you what the research says — and I strongly suggest you talk to your doctor or a pharmacist before trying anything.\n\nAlternative: The research on CBD for pain is mixed. Some studies show small benefits. Others show placebo effects. It is unlikely to hurt, but I cannot promise it will help.\n\nAlternative 2: If you try it, let me know. And make sure your doctor knows. Some supplements interact with medications.",
+    "tags": ["supplements", "CBD", "scope"]
+  },
+  {
+    "id": 23,
+    "title": "Patient is sexually inappropriate",
+    "preview": "That comment [or gesture] is not appropriate. We are going to continue this session focusing on your treatment.",
+    "fullText": "That comment [or gesture] is not appropriate. We are going to continue this session focusing on your treatment. Do not do that again.\n\nAlternative: I am going to pretend you did not say that. Let us get back to your exercises. (If repeated: This session is over. I will not tolerate inappropriate behavior.)\n\nAlternative 2: This session is over. You can schedule with a different provider if you choose.",
+    "tags": ["boundaries", "professionalism", "safety"]
+  },
+  {
+    "id": 24,
+    "title": "Patient lies about doing their exercises",
+    "preview": "The exercises did not have the effect I expected. That is useful information. Let us adjust the plan.",
+    "fullText": "The exercises did not have the effect I expected. That is useful information. Let us adjust the plan.\n\nAlternative: I am going to be direct. The progress I am seeing does not match someone doing the exercises as prescribed. No judgment. But can we talk honestly about what happened?\n\nAlternative 2: Something is not adding up. Let us figure out the barrier — not to blame you, but to fix it.",
+    "tags": ["honesty", "adherence", "trust"]
+  },
+  {
+    "id": 25,
+    "title": "Discharging a patient who is not progressing",
+    "preview": "Here is where we are: you have not been able to follow the plan. That is not a moral failure — but it does mean I cannot help you as much as I would like.",
+    "fullText": "Here is where we are: you have not been able to follow the plan. That is not a moral failure — but it does mean I cannot help you as much as I would like. Let us pause here. If you decide you are ready to try differently, I am here.\n\nAlternative: I think you might benefit from a different approach. Here are some other providers who specialize in [different technique].\n\nAlternative 2: Let us shift our goal. Not 'fixing' — just 'maintaining' so you do not get worse.",
+    "tags": ["discharge", "boundaries", "ethics"]
+  },
+  {
+    "id": 26,
+    "title": "Patient asks about heat vs. ice",
+    "preview": "Both can help, but for different reasons. Let me explain when to use each.",
+    "fullText": "Both can help, but for different reasons. Ice is best for acute injuries and swelling — it reduces inflammation and numbs pain. Heat is better for muscle tightness and chronic stiffness — it increases blood flow and relaxes tissues.\n\nAlternative: When in doubt, ice for the first 48 hours after an injury. Heat for old, stiff muscles before movement.\n\nAlternative 2: Your body will tell you. Try ice. If it feels worse, try heat. But do not use heat on acute swelling.",
+    "tags": ["modalities", "ice", "heat"]
+  },
+  {
+    "id": 27,
+    "title": "Patient asks about popping or clicking joints",
+    "preview": "Popping and clicking are usually harmless unless accompanied by pain or swelling.",
+    "fullText": "Popping and clicking are usually harmless unless accompanied by pain or swelling. Most sounds come from gas bubbles in the joint or tendons moving over bone — completely normal.\n\nAlternative: If it does not hurt, do not worry about it. If it starts hurting or the joint feels like it is catching or locking, tell me.\n\nAlternative 2: Your joints have been making noise for years. Your body is just chatty. Nothing to worry about.",
+    "tags": ["symptoms", "reassurance"]
+  },
+  {
+    "id": 28,
+    "title": "Patient is afraid of needles (dry needling, injections)",
+    "preview": "I understand. Many people feel that way. Let me explain what will happen so there are no surprises.",
+    "fullText": "I understand. Many people feel that way. Let me explain what will happen so there are no surprises. You will feel a small prick — like a mosquito bite. The sensation lasts one or two seconds. You can look away the whole time.\n\nAlternative: We do not have to do it today. We can try other techniques first. You are in control.\n\nAlternative 2: Would it help if I showed you the needle first? Sometimes seeing it is scarier than imagining it.",
+    "tags": ["needles", "fear", "procedures"]
+  },
+  {
+    "id": 29,
+    "title": "Patient asks 'Should I push through pain?'",
+    "preview": "No — but also not completely. Let me explain the difference between 'good pain' and 'bad pain.'",
+    "fullText": "No — but also not completely. Let me explain the difference. Discomfort that feels like a dull ache or muscle fatigue — that is usually safe. Sharp, tearing, or worsening pain — that is a stop signal.\n\nAlternative: Think of a scale of 1-10. If pain is 4 or below, continue but pay attention. If it goes above 5, stop and tell me.\n\nAlternative 2: Your body is giving you information. Do not ignore it. But also do not assume every ache is damage.",
+    "tags": ["pain", "exercise", "safety"]
+  },
+  {
+    "id": 30,
+    "title": "Patient doesn't understand why they need to come back",
+    "preview": "You are feeling better — that is great. But feeling better and being stronger are different things.",
+    "fullText": "You are feeling better — that is great. But feeling better and being stronger are different things. Feeling better can vanish in a week. Being stronger stays with you. Let me show you what I mean.\n\nAlternative: We have solved the symptom. Now we need to solve the cause. That takes a few more visits.\n\nAlternative 2: Think of it like this: the fire is out. Now we need to remove the gasoline. That is what these next visits are for.",
+    "tags": ["maintenance", "value", "compliance"]
+  },
+  {
+    "id": 31,
+    "title": "Patient says 'I don't have time for exercises'",
+    "preview": "How much time do you actually have? Five minutes? Two minutes?",
+    "fullText": "How much time do you actually have? Five minutes? Two minutes? Something is better than nothing. Let us find the smallest version you can do.\n\nAlternative: Can you attach it to something you already do — like brushing your teeth or waiting for coffee to brew?\n\nAlternative 2: What if you did one exercise while watching TV? Two minutes during a commercial break? That counts.",
+    "tags": ["time", "adherence", "habits"]
+  },
+  {
+    "id": 32,
+    "title": "Patient is frustrated by insurance limits",
+    "preview": "I hear you. Insurance is frustrating for me too. Let me tell you what is possible within your plan.",
+    "fullText": "I hear you. Insurance is frustrating for me too. Let me tell you what is possible within your plan. Then we can talk about what you can do on your own.\n\nAlternative: I cannot control what your insurance covers. But I can control what I teach you. Let us make every visit count.\n\nAlternative 2: Here is a home program that builds on what we did today. If you can only come twice more, we can still make progress.",
+    "tags": ["insurance", "barriers", "advocacy"]
+  },
+  {
+    "id": 33,
+    "title": "Patient asks 'Is this worth it?'",
+    "preview": "That is a fair question. Let me show you what you have already gained — and what is still possible.",
+    "fullText": "That is a fair question. Let me show you what you have already gained — and what is still possible. Two weeks ago you could not [X]. Now you can [Y]. That is real progress.\n\nAlternative: I cannot promise you will be 100% better. But I can promise you can be better than you are today. Is that worth it?\n\nAlternative 2: Only you can answer that. But I can tell you that most people in your situation are glad they stuck with it.",
+    "tags": ["motivation", "doubt", "value"]
+  },
+  {
+    "id": 34,
+    "title": "Patient asks 'What if nothing works?'",
+    "preview": "That is a real fear. Let us work through it together. What does 'nothing works' look like to you?",
+    "fullText": "That is a real fear. Let us work through it together. What does 'nothing works' look like to you? Often, patients mean 'nothing has worked yet' — not 'nothing will ever work.'\n\nAlternative: If this plan does not work, we will try another. There are many approaches. We have not run out yet.\n\nAlternative 2: I cannot promise success. But I can promise I will not give up on you. Will you give me the same promise?",
+    "tags": ["hopelessness", "realistic expectations", "therapeutic alliance"]
+  },
+  {
+    "id": 35,
+    "title": "Patient thanks you (end of successful treatment)",
+    "preview": "You did the work. I just showed you the way.",
+    "fullText": "You did the work. I just showed you the way. I am proud of what you accomplished.\n\nAlternative: Patients like you make my job worth doing. Thank you for trusting me.\n\nAlternative 2: You earned this. Every exercise. Every visit. That was all you. I am just glad I could help.",
+    "tags": ["gratitude", "closure", "therapeutic relationship"]
+  }
+]

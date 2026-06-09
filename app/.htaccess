@@ -1,0 +1,54 @@
+# ========================================
+# .htaccess for PT Communication Lab
+# ========================================
+
+# Enable rewrite engine
+RewriteEngine On
+
+# ========================================
+# CACHE EXCEPTION FOR FACEBOOK PIXEL
+# ========================================
+# Prevent caching of fbevents.js to ensure Pixel fires correctly
+<IfModule mod_headers.c>
+    <FilesMatch "fbevents\.js$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# SECURITY HEADERS
+# ========================================
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ========================================
+# BLOCK ACCESS TO PRIVATE DIRECTORY
+# ========================================
+RewriteRule ^private/ - [F,L]
+
+# ========================================
+# REDIRECT OLD FULL APP URL TO UNIFIED APP
+# ========================================
+Redirect 301 /index-full.html /index.html
+Redirect 301 /app/index-full.html /app/index.html
+
+# ========================================
+# PREVENT DIRECTORY LISTING
+# ========================================
+Options -Indexes
+
+# ========================================
+# CUSTOM ERROR PAGES (optional)
+# ========================================
+# ErrorDocument 404 /404.html
+# ErrorDocument 403 /403.html

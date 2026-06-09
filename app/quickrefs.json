@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "When a patient says X, try Y",
+    "icon": "💬",
+    "content": "<strong>Patient says:</strong> 'I didn't have time.'<br><br><strong>Try saying:</strong> 'That is real. What is one small thing you could fit in, even on a busy day?'<br><br><strong>Patient says:</strong> 'It hurts.'<br><br><strong>Try saying:</strong> 'Show me where. Let us find a version that does NOT hurt.'<br><br><strong>Patient says:</strong> 'I will do it later.'<br><br><strong>Try saying:</strong> 'Later rarely comes. What is the smallest thing you could do right now?'<br><br><strong>Patient says:</strong> 'I don't feel ready.'<br><br><strong>Try saying:</strong> 'You may never feel ready. Can we try one small step and see how it feels?'<br><br><strong>Patient says:</strong> 'This is not working.'<br><br><strong>Try saying:</strong> 'Tell me more. What were you expecting that is not happening?'<br><br><strong>Patient says:</strong> 'I am fine.'<br><br><strong>Try saying:</strong> 'I am glad to hear that. Let me show you what fine looks like in a strength test — sometimes we have hidden gaps.'"
+  },
+  {
+    "id": 2,
+    "title": "Top 15 phrases patients misunderstand",
+    "icon": "📖",
+    "content": "<strong>'Take it easy.'</strong> → 'Do a little less than you think you can.'<br><br><strong>'Listen to your body.'</strong> → 'Pain is information. Tell me what you feel, and we will decide together.'<br><br><strong>'You will get there.'</strong> → 'Here is what there looks like. Here is where you are now. Here is the bridge.'<br><br><strong>'Consistency matters.'</strong> → 'Showing up counts even on the bad days.'<br><br><strong>'Rest is important.'</strong> → 'Rest is when your body repairs. It is part of the plan.'<br><br><strong>'Do not overdo it.'</strong> → 'Find the edge. Stop before you fall off it.'<br><br><strong>'Patience.'</strong> → 'This stage is frustrating. That is normal. Let me show you why it matters.'<br><br><strong>'Everyone is different.'</strong> → 'Your body has its own timeline. Here is what we can control.'<br><br><strong>'Trust the process.'</strong> → 'Here is the evidence this works. Let us track your progress together.'<br><br><strong>'You are doing great.'</strong> → 'You have come far. Here is what is next.'"
+  },
+  {
+    "id": 3,
+    "title": "Red flags vs. yellow flags (when to refer)",
+    "icon": "⚠️",
+    "content": "<strong>🔴 RED FLAGS (refer immediately):</strong><br>• Sudden, severe, unexplained pain<br>• Loss of bladder or bowel control<br>• Progressive weakness in limbs<br>• Chest pain or shortness of breath<br>• Fever with unexplained musculoskeletal pain<br>• Night pain that wakes patient from sleep<br>• Unexplained weight loss<br>• Trauma with possible fracture<br><br><strong>🟡 YELLOW FLAGS (proceed with caution):</strong><br>• Gradual worsening over weeks<br>• Mild morning stiffness<br>• Fatigue that improves with rest<br>• History of similar episodes<br>• Stress or mood affecting symptoms<br>• Mild swelling without redness or heat<br>• Deconditioning from inactivity<br>• Patient frustration or low motivation"
+  },
+  {
+    "id": 4,
+    "title": "Patient personality types — how to talk to each",
+    "icon": "🎭",
+    "content": "<strong>🧠 The Skeptic:</strong> Needs evidence. Say: 'Here is what research shows...' Avoid: 'Trust me.'<br><br><strong>🤝 The Pleaser:</strong> Needs permission to be honest. Say: 'I need your real answer, not the nice answer.' Avoid: Assuming they are fine.<br><br><strong>😰 The Overwhelmed:</strong> Needs simplicity. Say: 'Let us focus on just one thing this week.' Avoid: Information overload.<br><br><strong>🏆 The Competitive:</strong> Needs metrics. Say: 'Last week you did X. This week you did Y.' Avoid: Comparing them to others.<br><br><strong>😔 The Victim:</strong> Needs empowerment. Say: 'You are in control. Here are your options.' Avoid: Sympathy (traps them).<br><br><strong>⏩ The Impatient:</strong> Needs honest timelines. Say: 'Here is what to expect week one, two, three.' Avoid: Vague answers.<br><br><strong>🙈 The Denier:</strong> Needs gentle reality. Say: 'Let us look at the data together.' Avoid: 'You are wrong.'<br><br><strong>🫂 The Dependent:</strong> Needs boundaries. Say: 'I will teach you. You will do it.' Avoid: Doing things for them."
+  },
+  {
+    "id": 5,
+    "title": "The 10 most common patient fears (and what to say)",
+    "icon": "😨",
+    "content": "<strong>'I will make it worse.'</strong> → 'We will start so small that making it worse is almost impossible. You are in control.'<br><br><strong>'I am too old.'</strong> → 'Age is not a disease. I have helped people older than you get stronger.'<br><br><strong>'I have tried everything.'</strong> → 'Tell me what you tried. Let us figure out what was missing.'<br><br><strong>'I do not have time.'</strong> → 'Let us find a version that takes five minutes or less. Something is better than nothing.'<br><br><strong>'It will never get better.'</strong> → 'I cannot promise full recovery. But I can promise you can get better than you are today.'<br><br><strong>'I am afraid of surgery.'</strong> → 'Then let us do everything possible to avoid it. Surgery will still be there if you need it.'<br><br><strong>'I am letting my family down.'</strong> → 'Taking care of yourself is how you take care of them.'<br><br><strong>'I do not trust my body anymore.'</strong> → 'Trust will come back — one small success at a time.'<br><br><strong>'I am in too much pain.'</strong> → 'Then we start with what does NOT hurt. There is always something you can do.'<br><br><strong>'What if nothing works?'</strong> → 'We will not know until we try. Let us try. Then we will know.'"
+  },
+  {
+    "id": 6,
+    "title": "HEP prescription cheat sheet",
+    "icon": "📋",
+    "content": "<strong>STARTING POINT (most patients):</strong><br>• Number of exercises: 2-4<br>• Frequency: 3-5 days per week<br>• Sets: 1-2<br>• Reps: 8-12<br>• Hold time (static): 10-30 seconds<br>• Rest between sets: 30-60 seconds<br><br><strong>WHEN TO PROGRESS:</strong><br>• Patient completes prescribed frequency for 2 weeks consistently<br>• Pain with exercise is <3/10 and settles quickly<br>• Patient reports exercises feel 'too easy'<br><br><strong>HOW TO PROGRESS (choose ONE at a time):</strong><br>• Add reps (12 → 15)<br>• Add sets (2 → 3)<br>• Add resistance<br>• Add hold time (10 sec → 20 sec)<br>• Add complexity<br>• Add frequency (4 days → 5 days)<br><br><strong>WHEN TO REGRESS:</strong><br>• Pain with exercise >4/10 that persists<br>• Patient consistently misses sessions<br>• Poor form despite cueing"
+  },
+  {
+    "id": 7,
+    "title": "Motivational interviewing phrases for PTs",
+    "icon": "🎙️",
+    "content": "<strong>Ask permission:</strong> 'Would it be okay if we talk about your home exercises?'<br><br><strong>Evoke their reasons:</strong> 'What concerns do you have about your current activity level?'<br><br><strong>Reflect without judgment:</strong> 'It sounds like you are feeling overwhelmed. That makes sense.'<br><br><strong>Ask about importance:</strong> 'On a scale of 1-10, how important is getting better to you? Why not lower? Why not higher?'<br><br><strong>Ask about confidence:</strong> 'On a scale of 1-10, how confident are you that you can do these exercises? What would make it a higher number?'<br><br><strong>Elicit change talk:</strong> 'What would be different in your life if you were able to move without pain?'<br><br><strong>Roll with resistance:</strong> 'You do not have to do anything you do not want to do. I am just giving you information.'<br><br><strong>Summarize:</strong> 'Let me make sure I understand. You want to get better. You are not sure you can fit in the exercises. Did I get that right?'<br><br><strong>Ask for commitment:</strong> 'What are you willing to try between now and next week?'"
+  },
+  {
+    "id": 8,
+    "title": "What to say when YOU are having a bad day (for PTs)",
+    "icon": "💚",
+    "content": "<strong>Morning scripts:</strong><br>• 'I am not a machine. Today is about presence, not performance. Show up. That is enough.'<br>• 'I cannot save everyone. I can help the person in front of me.'<br>• 'This patient is not giving me a hard time. They are having a hard time.'<br><br><strong>Mid-day scripts (after a hard session):</strong><br>• 'That was not my best work. That is okay. I will try again next time.'<br>• 'I did not cause their problem. I cannot control their choices. I can only offer my best.'<br>• 'One conversation can change a patient's entire trajectory. That might have been the one.'<br><br><strong>End-of-day scripts:</strong><br>• 'I will document efficiently, then leave work at work. The notes can wait.'<br>• 'I am allowed to have an off day. It does not erase my skill or my care.'<br>• 'Today was hard. I showed up anyway. That is not nothing. That is everything.'"
+  },
+  {
+    "id": 9,
+    "title": "The 5-minute morning check-in for PTs (self-assessment)",
+    "icon": "🌅",
+    "content": "<strong>One minute — Body scan:</strong><br>• Am I carrying tension in my shoulders, jaw, or neck?<br>• Did I sleep enough? (If no, plan a shorter lunch.)<br>• Am I hungry? Thirsty? (Fix it now.)<br><br><strong>One minute — Emotional check:</strong><br>• How am I feeling right now? (Frustrated? Tired? Anxious? Present?)<br>• Do I have anything from yesterday that I am still carrying? (If yes, name it. Then set it down.)<br><br><strong>One minute — Today's intentions:</strong><br>• What is one thing I want to do well today?<br>• Who is the one patient I need to be most present for?<br><br><strong>One minute — Boundaries reminder:</strong><br>• What is one request I will say no to today?<br>• What is one thing I will protect (lunch, documentation time, leaving on time)?<br><br><strong>One minute — Quiet shift:</strong><br>• Take three slow breaths.<br>• Say to yourself: 'I am here. I am enough. I will help who I can.'"
+  },
+  {
+    "id": 10,
+    "title": "Discharge readiness checklist",
+    "icon": "✅",
+    "content": "<strong>Before discharging a patient, ensure they have:</strong><br><br>☐ Ability to perform HEP independently (without cueing)<br>☐ Understanding of flare-up plan (what to do when pain spikes)<br>☐ Knowledge of when to return (red flags, recurrence signs)<br>☐ A maintenance plan (minimum dose to prevent relapse)<br>☐ Access to written/video resources for home<br>☐ A follow-up plan (check-in, phone call, re-evaluation schedule)<br>☐ Understanding that they can return if needed<br>☐ Acknowledgement of their progress (not just remaining deficits)<br><br><strong>Script for discharge:</strong><br>'You have come a long way. You know what to do. You know when to call. I am proud of you — and I am here if you need me.'"
+  },
+  {
+    "id": 11,
+    "title": "The 'I'm fine' visit (early discharge) — script",
+    "icon": "🏃",
+    "content": "<strong>5-MINUTE SCRIPT FOR PATIENT READY TO DISCHARGE EARLY:</strong><br><br>'I am glad you are feeling better. That means phase one worked.<br><br>But there is a difference between feeling better and being stronger. Feeling better can vanish in a week. Being stronger stays with you.<br><br>Here is what I want you to consider: let us finish the full plan. Not because you need to feel better — because you want to stay better.<br><br>If you still want to discharge today, I will support that. But I want you to know what you are leaving behind. Let me show you one thing first.'<br><br><strong>Follow-up if they relapsed:</strong><br>'This happened because we stopped too soon. Not your fault. Let us finish the full plan this time. No shortcuts.'"
+  },
+  {
+    "id": 12,
+    "title": "The frustrated patient (plateau) — script",
+    "icon": "😤",
+    "content": "<strong>5-MINUTE SCRIPT FOR THE PATIENT WHO HAS PLATEAUED:</strong><br><br>'I hear your frustration. You were moving forward, and now you feel stuck. That is hard.<br><br>Here is what I know: plateaus are normal. They are not a sign of failure. They are a sign that your body needs something different.<br><br>So let us do something different. I am going to adjust the plan. Not because you did anything wrong — because that is my job.<br><br>Can we agree to try this new plan for two weeks before we decide if it is working?'<br><br><strong>Alternative for patient who wants to quit:</strong><br>'I understand why you want to quit. But if you quit now, what happens in six months? Does this problem go away, or does it come back worse? Let us try one more adjustment before we give up.'"
+  },
+  {
+    "id": 13,
+    "title": "The non-adherent patient — gentle script",
+    "icon": "🤲",
+    "content": "<strong>5-MINUTE SCRIPT FOR THE PATIENT NOT FOLLOWING THROUGH:</strong><br><br>'I have noticed you have been having a hard time keeping up with the home exercises. That happens. It is not a moral failure.<br><br>Let me ask you: is the problem motivation, time, pain, or something else? Be honest. I have heard it all.<br><br>Once I know the real barrier, we can solve it together. Smaller plan. Different exercises. A reminder system. Whatever you need.<br><br>The only wrong answer is pretending everything is fine when it is not. Help me help you.'<br><br><strong>Follow-up if patient admits they haven't been trying:</strong><br>'Thank you for being honest. That is brave. Now let us fix it — together. What is the smallest, easiest version of this plan that you could actually do?'"
+  },
+  {
+    "id": 14,
+    "title": "The first visit — setting expectations script",
+    "icon": "📝",
+    "content": "<strong>5-MINUTE SCRIPT FOR THE FIRST VISIT:</strong><br><br>'Here is how I work. I am going to teach you things. You are going to practice at home. The people who get the best results are the ones who show up — even on days they do not feel like it.<br><br>Recovery is not a straight line. You will have good weeks and hard weeks. That is normal. When a hard week happens, do not quit. Tell me. We adjust.<br><br>My job is to give you the right plan. Your job is to do your best with it. If something is not working, that is my fault until we fix it together.<br><br>Any questions before we start?'<br><br><strong>Printable version for patients (keep this card):</strong><br>• Recovery has ups and downs. Setbacks are not starting over.<br>• Tell me when something is not working. I will adjust.<br>• Showing up on bad days counts more than perfection on good days.<br>• You are not a burden. Asking questions helps me help you.'"
+  },
+  {
+    "id": 15,
+    "title": "Printable: 'Things I wish my patients knew'",
+    "icon": "📄",
+    "content": "<strong>If my patients understood just one thing, it would be this:</strong><br><br>• Recovery is not a straight line. Setbacks are not starting over.<br><br>• Doing a few exercises well beats doing many exercises poorly.<br><br>• Your body adapts slowly. Trust the process, not your impatience.<br><br>• Pain is information, not always damage.<br><br>• Rest is not weakness. It is when your body repairs.<br><br>• I am on your side. Tell me when something is not working.<br><br>• Showing up on bad days counts more than perfection on good days.<br><br>• You are not a burden. Asking questions helps me help you.<br><br>• Your effort matters — but your body also has its own timeline.<br><br>• I cannot promise you full recovery. But I can promise you can get better than you are today.<br><br><em>Print this. Keep it at your desk. Give it to patients who need to hear it.</em>"
+  }
+]
