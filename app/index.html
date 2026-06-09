@@ -1316,7 +1316,7 @@ function renderWeekly() {
   const container = document.getElementById('weeklyList');
   if (!container) return;
   const items = ['weekly1', 'weekly2', 'weekly3', 'weekly4', 'weekly5'];
-  const labels = ['Practiced the cup-emptying belief challenge', 'Moved forward on one key project at least 4 of 7 days', 'Protected morning anchor routine at least 5 of 7 days', 'Noticed an old habit resurface — diluted it with a micro-action', 'Paused to register one piece of evidence that I am changing'];
+  const labels = ['Had at least one session this week where communication felt easy', 'Set a boundary around after-hours work communication at least once', 'Said no to something that would have drained me unnecessarily', 'Found one patient moment I am proud of — wrote it down or told someone', 'Identified one script or explanation I want to use next week'];
   container.innerHTML = items.map((item, i) => `<div class="weekly-item"><div class="weekly-check ${weeklyState[item] ? 'checked' : ''}" data-weekly="${item}"></div><div class="weekly-text">${labels[i]}</div></div>`).join('');
   document.querySelectorAll('.weekly-check').forEach(el => { el.addEventListener('click', () => { el.classList.toggle('checked'); if (el.classList.contains('checked')) el.innerText = '✓'; else el.innerText = ''; weeklyState[el.dataset.weekly] = el.classList.contains('checked'); localStorage.setItem('ptcomm_weekly', JSON.stringify(weeklyState)); }); if (weeklyState[el.dataset.weekly]) el.innerText = '✓'; });
 }
