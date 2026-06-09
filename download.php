@@ -38,6 +38,7 @@ if (file_exists($filepath)) {
     readfile($filepath);
     exit;
 } else {
+    http_response_code(404);
     echo "File not found.";
     exit;
 }
