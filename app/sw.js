@@ -1,4 +1,4 @@
-const CACHE_NAME = "ptcommlab-v2";
+const CACHE_NAME = "ptcommlab-v3";
 const urlsToCache = [
   "/",
   "/index.html",
