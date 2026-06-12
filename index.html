@@ -57,7 +57,7 @@ src="https://www.facebook.com/tr?id=2035990150320727&ev=PageView&noscript=1"
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <title>PT Communication Lab — 35 Scripts, 25 Explanations, AI Tools for PTs</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -220,7 +220,7 @@ nav {
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 520px;
+  grid-template-columns: 1fr 400px;
   gap: 60px;
   align-items: center;
 }
@@ -813,6 +813,83 @@ footer {
   .hero-actions { flex-direction: column; }
   .hero-right { flex-direction: column; gap: 20px; }
 }
+
+/* ============================================ */
+/* PHONE MOCKUP — Inline (no iframe)           */
+/* Used in: Hero section, PWA section          */
+/* Font: Inter (added to Google Fonts above)   */
+/* ============================================ */
+.ptc-wrap { display:flex; align-items:center; justify-content:center; }
+.ptc-frame {
+  width:290px; height:592px; flex-shrink:0;
+  background:linear-gradient(160deg,#2e2e32 0%,#1c1c1e 40%,#111113 70%,#1c1c1e 100%);
+  border-radius:28px; position:relative;
+  box-shadow:inset 0 0 0 0.5px rgba(255,255,255,0.13),0 4px 8px rgba(0,0,0,0.12),0 14px 36px rgba(0,0,0,0.24),0 40px 80px rgba(0,0,0,0.26);
+  font-family:'Inter',system-ui,sans-serif;
+}
+.ptc-btn  { position:absolute; border-radius:1.5px; }
+.ptc-pwr  { right:-2.5px; top:124px; width:2.5px; height:70px; background:linear-gradient(to right,#1a1a1c,#2a2a2e); }
+.ptc-vup  { left:-2.5px;  top:108px; width:2.5px; height:36px; background:linear-gradient(to left,#1a1a1c,#2a2a2e); }
+.ptc-vdn  { left:-2.5px;  top:152px; width:2.5px; height:36px; background:linear-gradient(to left,#1a1a1c,#2a2a2e); }
+.ptc-act  { left:-2.5px;  top:86px;  width:2.5px; height:17px; background:linear-gradient(to left,#1a1a1c,#2a2a2e); }
+.ptc-bezel { position:absolute; top:5px; left:5px; right:5px; bottom:5px; background:#000; border-radius:24px; overflow:hidden; }
+.ptc-di    { position:absolute; top:10px; left:50%; transform:translateX(-50%); width:98px; height:26px; background:#000; border-radius:16px; z-index:50; }
+.ptc-screen { position:absolute; top:2px; left:2px; right:2px; bottom:2px; background:#FDFBF7; border-radius:22px; overflow:hidden; display:flex; flex-direction:column; }
+.ptc-inner  { width:100%; height:100%; display:flex; flex-direction:column; background:#FDFBF7; overflow-y:auto; scrollbar-width:none; -ms-overflow-style:none; }
+.ptc-inner::-webkit-scrollbar { display:none; }
+/* Status bar */
+.ptc-sb  { display:flex; justify-content:space-between; align-items:center; padding:13px 16px 4px; font-size:11px; font-weight:600; color:#1c1c1e; flex-shrink:0; }
+.ptc-sbr { display:flex; align-items:center; gap:5px; }
+.ptc-sig { display:flex; align-items:flex-end; gap:1.5px; height:11px; }
+.ptc-bar { background:#1c1c1e; border-radius:1px; width:2.5px; }
+.ptc-bat { display:flex; align-items:center; gap:1px; }
+.ptc-bb  { width:20px; height:10px; border:1.5px solid #1c1c1e; border-radius:2.5px; display:flex; align-items:center; padding:1.5px; }
+.ptc-bf  { height:100%; width:75%; background:#1c1c1e; border-radius:1px; }
+.ptc-bt  { width:2px; height:5px; background:#1c1c1e; border-radius:0 1px 1px 0; }
+/* App header */
+.ptc-hdr  { padding:4px 14px 6px; background:#FDFBF7; display:flex; justify-content:space-between; align-items:flex-start; flex-shrink:0; }
+.ptc-name { font-size:14px; font-weight:700; color:#1a1a1a; }
+.ptc-tag  { font-size:8.5px; color:#aaa; letter-spacing:0.6px; text-transform:uppercase; margin-top:1px; }
+.ptc-dnum { font-size:20px; font-weight:700; color:#1a1a1a; line-height:1; text-align:right; }
+.ptc-dtxt { font-size:8px; color:#aaa; letter-spacing:0.4px; text-transform:uppercase; margin-top:1px; text-align:right; }
+/* Badges */
+.ptc-badge { display:inline-flex; align-items:center; gap:5px; background:#3a5c42; color:#c8e6c9; font-size:9.5px; font-weight:600; padding:4px 10px; border-radius:20px; margin:0 14px 6px; align-self:flex-start; flex-shrink:0; }
+.ptc-prem  { background:#f5f5f0; border:0.5px solid #e0ddd6; border-radius:8px; padding:4px 10px; font-size:9px; color:#6a7a6a; text-align:center; margin:0 14px 8px; flex-shrink:0; }
+/* Chips */
+.ptc-chips { display:flex; flex-wrap:wrap; gap:3px; padding:0 14px; margin-bottom:9px; flex-shrink:0; }
+.ptc-chip  { background:#fff; border:0.5px solid #d0cec8; color:#444; font-size:8.5px; padding:3px 8px; border-radius:16px; }
+/* AI scenario elements */
+.ptc-sit  { margin:0 14px 6px; background:#fff; border:1.5px solid #c8a84b; border-radius:10px; padding:9px 10px; font-size:9.5px; color:#1a1a1a; line-height:1.6; flex-shrink:0; }
+.ptc-gen  { margin:0 14px 8px; background:#fff; border:1px solid #333; color:#1a1a1a; font-size:9.5px; font-weight:500; padding:5px 10px; border-radius:6px; display:block; flex-shrink:0; }
+.ptc-resp { margin:0 14px 8px; background:#eef2ee; border-left:3px solid #4a7c59; border-radius:0 8px 8px 0; padding:9px 10px; font-size:9px; color:#1a2e1a; line-height:1.72; font-style:italic; flex-shrink:0; }
+.ptc-disc { font-size:7.5px; color:#aaa; text-align:center; line-height:1.5; padding:4px 10px; flex-shrink:0; }
+/* Explain card elements */
+.ptc-card  { border:0.5px solid #e8e5e0; border-radius:12px; margin:6px 14px; padding:10px; flex-shrink:0; }
+.ptc-chead { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+.ptc-ctit  { font-size:10.5px; font-weight:700; color:#1a1a1a; line-height:1.4; flex:1; }
+.ptc-ctog  { font-size:12px; color:#999; flex-shrink:0; }
+.ptc-cbody { margin-top:8px; padding-top:8px; border-top:0.5px solid #e8e5e0; }
+.ptc-csht  { font-size:10px; font-weight:600; color:#1a1a1a; line-height:1.5; margin-bottom:6px; }
+.ptc-clng  { font-size:9.5px; color:#333; line-height:1.6; margin-bottom:8px; }
+.ptc-cqt   { background:#e8eae8; border-left:3px solid #4a7c59; border-radius:0 6px 6px 0; padding:8px; font-size:9.5px; color:#1a2e1a; line-height:1.6; font-style:italic; margin-bottom:8px; }
+.ptc-ccp   { font-size:9.5px; color:#5a6e60; }
+/* Moon & nav */
+.ptc-moon  { display:flex; justify-content:flex-end; padding:6px 14px 0; flex-shrink:0; }
+.ptc-mbtn  { width:26px; height:26px; background:#222; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; }
+.ptc-nav   { display:flex; justify-content:space-around; padding:6px 0 4px; border-top:0.5px solid #e0ddd6; flex-shrink:0; background:#FDFBF7; margin-top:auto; }
+.ptc-ni    { font-size:8.5px; color:#999; text-align:center; padding:0 2px; }
+.ptc-ni.active { color:#3a5c42; font-weight:700; }
+.ptc-dot   { width:16px; height:1.5px; background:#3a5c42; border-radius:1px; margin:2px auto 0; }
+/* WiFi SVG helper */
+.ptc-sbr svg { width:13px; height:10px; }
+/* Responsive */
+@media (max-width:820px) {
+  .ptc-wrap { justify-content:center; }
+}
+@media (max-width:500px) {
+  .ptc-frame { transform:scale(0.92); transform-origin:center top; }
+}
+
 </style>
 </head>
 <body>
@@ -862,35 +939,33 @@ footer {
           <div id="formMessage" style="margin-top:12px; font-size:0.8rem; display:none;"></div>
         </div>
       </div>
-      <div class="hero-right fade-up d1">
-        <div style="position:relative; margin: 0 auto; max-width: 220px;">
-          <div class="app-badge">FREE App</div>
-          <div class="phone-outer">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div style="font-size:8px; color:#888; display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid #222; margin-bottom:8px">
-                <span>9:41</span>
-                <span style="font-size:6px">●●●●●</span>
-              </div>
-              <div class="ps-header">
-                <div><div class="ps-brand-text">PT Comm Lab</div></div>
-                <div style="text-align:right">
-                  <div class="ps-date-big" id="mockupDate" style="font-size:14px">10</div>
-                  <div class="ps-date-sm" id="mockupMonth" style="font-size:6px">Jun</div>
-                </div>
-              </div>
-              <div style="background:#2B5C5C; color:#c8e6c9; font-size:6px; font-weight:600; padding:3px 8px; border-radius:12px; margin:6px 0; display:inline-block">✓ AI Access</div>
-              <div class="ps-script-card" style="background:#1F1A12; border:1px solid rgba(43,92,92,0.3); border-radius:6px; padding:6px 8px; margin:6px 0 4px">
-                <div class="ps-script-label" style="font-size:6px; color:#4A7A7A; margin-bottom:3px">Situation</div>
-                <div class="ps-script-text" style="font-size:7px; color:#CCC; line-height:1.3">Running late for patient visit. Family upset. Traffic unclear.</div>
-              </div>
-              <div class="ps-script-card" style="background:#eef2ee; border-left:2px solid #4a7c59; border-radius:0 4px 4px 0; padding:6px 8px">
-                <div class="ps-script-label" style="font-size:6px; color:#2B5C5C; margin-bottom:3px">Response</div>
-                <div class="ps-script-text" style="font-size:6.5px; color:#1a2e1a; line-height:1.3; font-style:italic">"Hi, I apologize for calling. I'm stuck in traffic and will update soon."</div>
-              </div>
-            </div>
-          </div>
+      <div class="hero-right fade-up d1" style="display:flex; align-items:center; justify-content:center;">
+        <div class="ptc-wrap">
+  <div class="ptc-frame">
+    <div class="ptc-btn ptc-pwr"></div>
+    <div class="ptc-btn ptc-vup"></div>
+    <div class="ptc-btn ptc-vdn"></div>
+    <div class="ptc-btn ptc-act"></div>
+    <div class="ptc-bezel">
+      <div class="ptc-di"></div>
+      <div class="ptc-screen">
+        <div class="ptc-inner">
+          <div class="ptc-sb"><span>9:41</span><div class="ptc-sbr"><div class="ptc-sig"><div class="ptc-bar" style="height:3px"></div><div class="ptc-bar" style="height:5px"></div><div class="ptc-bar" style="height:7px"></div><div class="ptc-bar" style="height:9px"></div><div class="ptc-bar" style="height:11px"></div></div><svg viewBox="0 0 14 11" fill="none"><path d="M7 2.5C8.8 2.5 10.4 3.3 11.5 4.5L13 3C11.5 1.4 9.4 0.5 7 0.5C4.6 0.5 2.5 1.4 1 3L2.5 4.5C3.6 3.3 5.2 2.5 7 2.5Z" fill="#1c1c1e"/><path d="M7 5.5C8.1 5.5 9.1 6 9.8 6.8L11.3 5.3C10.2 4.1 8.7 3.5 7 3.5C5.3 3.5 3.8 4.1 2.7 5.3L4.2 6.8C4.9 6 5.9 5.5 7 5.5Z" fill="#1c1c1e"/><circle cx="7" cy="9.5" r="1.5" fill="#1c1c1e"/></svg><div class="ptc-bat"><div class="ptc-bb"><div class="ptc-bf"></div></div><div class="ptc-bt"></div></div></div></div>
+          <div class="ptc-hdr"><div><div class="ptc-name">PT Comm Lab</div><div class="ptc-tag">Communication tools for PTs</div></div><div><div class="ptc-dnum" id="mockupDate">10</div><div class="ptc-dtxt" id="mockupMonth">Jun 2026 Wed</div></div></div>
+          <div class="ptc-badge">&#10003; Unlimited AI (Full Access)</div>
+          <div class="ptc-prem">&#9672; Premium Access &mdash; 363 days remaining &#9672;</div>
+          <div class="ptc-chips"><div class="ptc-chip">Rest days</div><div class="ptc-chip">Fear of movement</div><div class="ptc-chip">Exercise quantity</div><div class="ptc-chip">Non-adherence</div><div class="ptc-chip">Flare-ups</div><div class="ptc-chip">Slow progress</div></div>
+          <div class="ptc-sit">I&rsquo;m running late for a patient visit because of a vehicle accident. The family may be upset, and I&rsquo;m not sure when traffic will clear. Should I call, and what should I say? I want to help the patient and maintain trust without getting scolded.</div>
+          <div class="ptc-gen">Generate Patient-Friendly Version</div>
+          <div class="ptc-resp">Of course. I understand how stressful this situation is for you. Here&rsquo;s a practical script: &ldquo;Hi, this is [Your Name], your physical therapist. I first want to apologize for calling so close to our appointment time. I&rsquo;m stuck in traffic due to a vehicle accident and will be delayed. I truly care about your recovery. I will update you as soon as I know my exact arrival time. Thank you so much for your patience.&rdquo; Trust is built through honesty, not perfection. You&rsquo;re doing the right thing by calling.</div>
+          <div class="ptc-disc">For informational and educational purposes only. Not medical advice. Clinical judgment remains with licensed PTs.</div>
+          <div class="ptc-moon"><div class="ptc-mbtn">&#127769;</div></div>
+          <div class="ptc-nav"><div class="ptc-ni">Scripts</div><div class="ptc-ni">Explain</div><div class="ptc-ni">QuickRefs</div><div class="ptc-ni">Check-in</div><div class="ptc-ni active">&#10024; AI<div class="ptc-dot"></div></div><div class="ptc-ni">Q&amp;A</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -1023,15 +1098,38 @@ footer {
           <div class="app-feat"><div class="af-icon">✨</div><div><div class="af-t">AI Explain Rephraser</div><div class="af-s">Free with email (3 uses/day). Paid bundle removes limits.</div></div></div>
         </div>
       </div>
-      <div class="fade-up d1" style="text-align:center">
-        <div class="phone-outer" style="margin:0 auto">
-          <div class="phone-notch"></div>
-          <div class="phone-screen" style="min-height:400px">
-            <div class="ps-header"><div><div class="ps-brand-text">PT Comm Lab</div></div><div style="text-align:right"><div class="ps-date-big">25</div><div class="ps-date-sm">May</div></div></div>
-            <div style="background:#1A1A1A; border-radius:8px; padding:10px; margin-bottom:10px"><div style="font-size:8px; color:var(--teal2); margin-bottom:6px">Scripts</div><div style="font-size:9px; color:white">Patient hasn't done exercises</div><div style="font-size:7px; color:#888; margin-top:4px">"That happens. Was there something specific..."</div></div>
-            <div style="background:#1A1A1A; border-radius:8px; padding:10px"><div style="font-size:8px; color:var(--teal2); margin-bottom:6px">Explanations</div><div style="font-size:9px; color:white">Why 2-4 exercises is enough</div><div style="font-size:7px; color:#888; margin-top:4px">Research shows fewer exercises, done consistently, beat many exercises done sporadically.</div></div>
+      <div class="fade-up d1" style="text-align:center; display:flex; align-items:center; justify-content:center; flex-direction:column">
+        <div class="ptc-wrap">
+  <div class="ptc-frame">
+    <div class="ptc-btn ptc-pwr"></div>
+    <div class="ptc-btn ptc-vup"></div>
+    <div class="ptc-btn ptc-vdn"></div>
+    <div class="ptc-btn ptc-act"></div>
+    <div class="ptc-bezel">
+      <div class="ptc-di"></div>
+      <div class="ptc-screen">
+        <div class="ptc-inner">
+          <div class="ptc-sb"><span>9:41</span><div class="ptc-sbr"><div class="ptc-sig"><div class="ptc-bar" style="height:3px"></div><div class="ptc-bar" style="height:5px"></div><div class="ptc-bar" style="height:7px"></div><div class="ptc-bar" style="height:9px"></div><div class="ptc-bar" style="height:11px"></div></div><svg viewBox="0 0 14 11" fill="none"><path d="M7 2.5C8.8 2.5 10.4 3.3 11.5 4.5L13 3C11.5 1.4 9.4 0.5 7 0.5C4.6 0.5 2.5 1.4 1 3L2.5 4.5C3.6 3.3 5.2 2.5 7 2.5Z" fill="#1c1c1e"/><path d="M7 5.5C8.1 5.5 9.1 6 9.8 6.8L11.3 5.3C10.2 4.1 8.7 3.5 7 3.5C5.3 3.5 3.8 4.1 2.7 5.3L4.2 6.8C4.9 6 5.9 5.5 7 5.5Z" fill="#1c1c1e"/><circle cx="7" cy="9.5" r="1.5" fill="#1c1c1e"/></svg></div></div>
+          <div class="ptc-hdr"><div><div class="ptc-name">PT Comm Lab</div><div class="ptc-tag">Communication tools for PTs</div></div><div><div class="ptc-dnum">11</div><div class="ptc-dtxt">Jun 2026 Thu</div></div></div>
+          <div class="ptc-card">
+            <div class="ptc-chead"><div class="ptc-ctit">Why strengthening takes time</div><div class="ptc-ctog">&#9662;</div></div>
+            <div class="ptc-cbody">
+              <div class="ptc-csht"><strong>Short version:</strong> Your body is not a light switch. It is a garden.</div>
+              <div class="ptc-clng">Many people expect quick changes. Here is the truth: building strength and healing tissue happens slowly &mdash; not because your body is failing, but because that is how bodies work. The work you do today will show up weeks from now. Trust the process.</div>
+              <div class="ptc-cqt">&ldquo;Your body is adapting at its own pace. The work you do today will show up weeks from now. Trust the process. Keep showing up.&rdquo;</div>
+              <div class="ptc-ccp">&#128203; Copy Handout</div>
+            </div>
           </div>
+          <div class="ptc-card"><div class="ptc-chead"><div class="ptc-ctit">Why 2&ndash;4 exercises is often enough</div><div class="ptc-ctog">&#9660;</div></div></div>
+          <div class="ptc-card"><div class="ptc-chead"><div class="ptc-ctit">Why pain doesn&rsquo;t always mean damage</div><div class="ptc-ctog">&#9660;</div></div></div>
+          <div class="ptc-card"><div class="ptc-chead"><div class="ptc-ctit">Why consistency beats intensity</div><div class="ptc-ctog">&#9660;</div></div></div>
+          <div class="ptc-moon"><div class="ptc-mbtn">&#127769;</div></div>
+          <div class="ptc-nav"><div class="ptc-ni">Scripts</div><div class="ptc-ni active">Explain<div class="ptc-dot"></div></div><div class="ptc-ni">QuickRefs</div><div class="ptc-ni">Check-in</div><div class="ptc-ni">&#10024; AI</div><div class="ptc-ni">Q&amp;A</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
         <p style="margin-top:16px; font-size:0.7rem; color:var(--ink4)">Free with email. Install to home screen.</p>
       </div>
     </div>
