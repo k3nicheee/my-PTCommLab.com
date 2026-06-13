@@ -707,8 +707,8 @@
   <div id="aiTab" class="tab-content">
     <div class="scroll-content">
       <div class="section-header">✨ AI Explain Rephraser</div>
-      <div id="premiumAiBadge" class="premium-badge" style="display: none;">⭐ Unlimited AI (Full Access)</div>
-      <div id="freeAiBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">📘 3 free uses/day</div>
+      <div id="premiumAiBadge" class="premium-badge" style="display: none;">⭐ Full Access</div>
+      <div id="freeAiBadge" class="premium-badge" style="background: var(--text-tertiary); display: none;">📘 10 uses/day</div>
       <div id="aiUsageCounter" class="usage-counter" style="display: none;"></div>
       <div id="requestExtensionBtn" class="request-link" style="display: none;">🔄 Request Extension →</div>
       <div class="suggested-section">
@@ -732,7 +732,7 @@
       </div>
       
       <div id="aiUpgradeMsg" class="upgrade-button" style="display: none; margin-top: 20px;">
-        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to Full for Unlimited AI ✨</a>
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color: white; text-decoration: none;">✨ Upgrade to PTCommLab Complete ✨</a>
       </div>
       <div class="website-link"><a href="https://ptcommlab.com" target="_blank">PT Communication Lab</a></div>
     </div>
@@ -768,7 +768,7 @@
   <div class="gate-content">
     <button class="close-modal" id="closeGateBtn">&times;</button>
     <h3>🔓 Unlock PT Comm Lab</h3>
-    <p>Enter your email to access free tools (scripts, explanations, 3 AI uses/day).</p>
+    <p>Enter your email to access free tools (scripts, explanations, 10 AI uses/day).</p>
     <p style="font-size: 0.7rem; color: #6A6A6A;">No spam. Unsubscribe anytime.</p>
     <input type="email" id="gateEmailInput" class="gate-input" placeholder="your@email.com">
     <button class="gate-submit" id="gateSubmitBtn">Continue</button>
@@ -1051,7 +1051,7 @@ function renderExplanations() {
   const filtered = currentExplanations.filter(e => e.title.toLowerCase().includes(searchTerm));
   const container = document.getElementById('explanationsList');
   if (!container) return;
-  container.innerHTML = filtered.map(exp => `<div class="item-card" onclick="toggleCard(this)"><div class="item-header"><div class="item-title">${escapeHtml(exp.title)}</div><span class="expand-icon">▼</span></div><div class="item-content"><div class="item-text"><strong>Short version:</strong> ${escapeHtml(exp.shortVersion)}</div><div class="item-text">${escapeHtml(exp.fullText)}</div><div class="script-box">“${escapeHtml(exp.script)}”</div><button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('${escapeHtml(exp.patientHandout || exp.script).replace(/'/g, "\\'")}')">📋 Copy Handout</button></div></div>`).join('');
+  container.innerHTML = filtered.map(exp => `<div class="item-card" onclick="toggleCard(this)"><div class="item-header"><div class="item-title">${escapeHtml(exp.title)}</div><span class="expand-icon">▼</span></div><div class="item-content"><div class="item-text"><strong>Short version:</strong> ${escapeHtml(exp.shortVersion)}</div><div class="item-text">${escapeHtml(exp.fullText)}</div><div class="script-box">"${escapeHtml(exp.script)}"</div><button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('${escapeHtml(exp.patientHandout || exp.script).replace(/'/g, "\\'")}')">📋 Copy Handout</button></div></div>`).join('');
 }
 
 function renderQuickRefs() {
@@ -1123,7 +1123,7 @@ function incrementAIUsage() {
 function getRemainingAIUsage() {
   if (isPaidUser || hasPremiumAccess()) return 999;
   const usage = getAIUsage();
-  return Math.max(0, 3 - usage.count);
+  return Math.max(0, 10 - usage.count);
 }
 function updateAIUsageDisplay() {
   const remaining = getRemainingAIUsage();
@@ -1134,17 +1134,17 @@ function updateAIUsageDisplay() {
       const remainingDays = getRemainingPremiumDays();
       if (remainingDays > 0 && !isPaidUser) {
         counterDiv.style.display = 'block';
-        counterDiv.innerHTML = `✨ Premium Access — ${remainingDays} days remaining ✨`;
+        counterDiv.innerHTML = '✨ AI Access Included ✨';
       } else if (isPaidUser) {
         counterDiv.style.display = 'block';
-        counterDiv.innerHTML = '✨ Unlimited AI (Lifetime Premium) ✨';
+        counterDiv.innerHTML = '✨ PTCommLab Complete ✨';
       } else {
         counterDiv.style.display = 'block';
-        counterDiv.innerHTML = '⚠️ ' + remaining + ' AI uses remaining today. Upgrade for unlimited →';
+        counterDiv.innerHTML = '⚠️ ' + remaining + ' AI uses remaining today — Upgrade to PTCommLab Complete →';
       }
     } else {
       counterDiv.style.display = 'block';
-      counterDiv.innerHTML = '⚠️ ' + remaining + ' AI uses remaining today. Upgrade for unlimited →';
+      counterDiv.innerHTML = '⚠️ ' + remaining + ' AI uses remaining today — Upgrade to PTCommLab Complete →';
     }
     if (!isPaidUser && !hasPremiumAccess() && userEmail && userEmail !== 'skip@ptcommlab.com') {
       requestBtn.style.display = 'inline-block';
@@ -1355,7 +1355,7 @@ async function handleAIGenerate() {
   if (!userEmail && !shouldSkipGate) { showEmailGate(); return; }
   const remaining = getRemainingAIUsage();
   if (remaining <= 0 && !isPaidUser && !hasPremiumAccess()) {
-    document.getElementById('aiOutput').innerHTML = '⚠️ You have reached your daily AI limit. <a href="https://thequietseries.gumroad.com/l/fqgtv" target="_blank" style="color:#2B5C5C;">Upgrade to Full Bundle for unlimited access →</a>';
+    document.getElementById('aiOutput').innerHTML = '⚠️ You have reached your 10 daily AI uses. Upgrade to PTCommLab Complete → ptcommlab.com';
     document.getElementById('aiOutput').style.display = 'block';
     return;
   }

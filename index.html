@@ -23,7 +23,7 @@
 <meta name="p:domain_verify" content="f8dd8aa8bfede59b714d5cdfa0d38e6b"/>
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="35 scripts. 25 explanations. 15 quick references. 30 Q&As. AI-powered explainer. Free preview + full bundle. Tools for physical therapists.">
+<meta name="description" content="35 scripts. 25 explanations. 15 quick references. 30 Q&As. AI-powered explainer. PTCommLab Complete — for physical therapists.">
 <meta name="keywords" content="physical therapy, PT, communication scripts, patient education, HEP adherence, AI for PTs">
 <link rel="canonical" href="https://ptcommlab.com/">
 
@@ -51,7 +51,7 @@ src="https://www.facebook.com/tr?id=2035990150320727&ev=PageView&noscript=1"
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ptcommlab.com/">
 <meta property="og:title" content="PT Communication Lab — Tools for Physical Therapists">
-<meta property="og:description" content="35 scripts. 25 explanations. 15 quick references. 30 Q&As. AI-powered explainer. Free preview + full bundle.">
+<meta property="og:description" content="35 scripts. 25 explanations. 15 quick references. 30 Q&As. AI-powered explainer. PTCommLab Complete.">
 <meta property="og:image" content="https://ptcommlab.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -243,7 +243,7 @@ nav {
 }
 .hero-title {
   font-family: var(--ff-h);
-  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
   line-height: 1.04;
   color: var(--ink);
   margin-bottom: 14px;
@@ -529,11 +529,11 @@ nav {
 .bi-sub { font-size: 0.78rem; color: var(--ink4); line-height: 1.4; }
 .price-card {
   position: sticky; top: 80px;
-  background: var(--white);
-  border: 1px solid var(--bdr2);
+  background: var(--cream2);
+  border: 1px solid var(--bdr);
   border-radius: 10px;
-  padding: 34px 30px;
-  box-shadow: 0 4px 24px rgba(28,28,28,0.07);
+  padding: 28px 26px;
+  box-shadow: 0 2px 12px rgba(28,28,28,0.04);
 }
 .price-tag {
   font-size: 0.65rem;
@@ -544,8 +544,8 @@ nav {
 }
 .price-amount {
   font-family: var(--ff-h);
-  font-size: 2.6rem;
-  color: var(--teal);
+  font-size: 2.1rem;
+  color: var(--ink2);
   line-height: 1;
   margin-bottom: 4px;
 }
@@ -727,43 +727,13 @@ nav {
 .cta-sub { font-size: 1rem; color: var(--ink4); margin-bottom: 40px; font-weight: 300; }
 .cta-free-link { margin-top: 18px; font-size: 0.8rem; color: #555; }
 .cta-free-link a { color: var(--teal2); border-bottom: 1px solid #5a7a5a; }
-#roadmap {
-  background: var(--cream2);
-  border-top: 1px solid var(--bdr);
-  padding: 60px 0;
-}
-.roadmap-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
-}
-.roadmap-item {
-  background: var(--white);
-  border-radius: 8px;
-  padding: 16px 20px;
-  border-left: 3px solid var(--teal);
-}
-.roadmap-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.roadmap-title { font-weight: 600; color: var(--ink); }
-.roadmap-phase {
-  font-size: 0.65rem;
-  background: var(--teal-bg);
-  padding: 2px 8px;
-  border-radius: 20px;
-  color: var(--teal);
-}
-.roadmap-desc {
-  font-size: 0.75rem;
-  color: var(--ink3);
-  margin-top: 6px;
-}
+
+
+
+
+
+
+
 footer {
   background: #141414;
   border-top: 1px solid #222;
@@ -809,7 +779,7 @@ footer {
 }
 @media (max-width: 500px) {
   .guide-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2.6rem; }
+  .hero-title { font-size: 2rem; }
   .hero-actions { flex-direction: column; }
   .hero-right { flex-direction: column; gap: 20px; }
 }
@@ -890,6 +860,54 @@ footer {
   .ptc-frame { transform:scale(0.92); transform-origin:center top; }
 }
 
+
+/* ============================================ */
+/* CONVERSATIONS SECTION + MODAL               */
+/* ============================================ */
+#conversations { padding: 80px 0 60px; background: var(--white); border-bottom: 1px solid var(--bdr); }
+.conv-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 14px; }
+.conv-title { font-family: var(--ff-h); font-size: clamp(1.7rem, 2.8vw, 2.4rem); color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
+.conv-subtitle { font-size: 0.95rem; color: var(--ink3); font-weight: 300; max-width: 480px; line-height: 1.6; margin-bottom: 48px; }
+.conv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.conv-card { background: var(--cream2); border: 1px solid var(--bdr); border-radius: 12px; padding: 22px 20px 20px; cursor: pointer; transition: all 0.22s ease; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.conv-card:hover { background: var(--white); border-color: var(--teal); box-shadow: 0 4px 20px rgba(43,92,92,0.1); transform: translateY(-2px); }
+.conv-card:hover .conv-card-cta { color: var(--teal); }
+.conv-quote { font-family: var(--ff-h); font-size: 0.98rem; color: var(--ink); font-style: italic; line-height: 1.5; }
+.conv-tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); }
+.conv-card-cta { font-size: 0.75rem; color: var(--ink4); transition: color 0.2s; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--bdr); }
+@media (max-width: 820px) { .conv-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .conv-grid { grid-template-columns: 1fr; } }
+.conv-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(20,20,20,0.72); z-index: 1000; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.conv-modal-overlay.open { display: flex; }
+.conv-modal { background: var(--cream); border-radius: 16px; max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 32px 80px rgba(0,0,0,0.28); animation: modalIn 0.28s cubic-bezier(0.34,1.2,0.64,1) both; }
+@keyframes modalIn { from { opacity:0; transform:scale(0.94) translateY(12px); } to { opacity:1; transform:scale(1) translateY(0); } }
+.conv-modal-header { padding: 28px 28px 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.conv-modal-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); }
+.conv-modal-close { background: none; border: 1.5px solid var(--bdr); color: var(--ink3); font-size: 1rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.18s; }
+.conv-modal-close:hover { background: var(--bdr); color: var(--ink); }
+.conv-modal-body { padding: 16px 28px 28px; }
+.conv-modal-patient { font-family: var(--ff-h); font-size: 1.3rem; font-style: italic; color: var(--ink); line-height: 1.4; margin-bottom: 6px; }
+.conv-modal-feeling { font-size: 0.8rem; color: var(--ink4); font-style: italic; margin-bottom: 22px; padding-left: 2px; }
+.conv-modal-divider { width: 32px; height: 1.5px; background: var(--teal); margin-bottom: 18px; opacity: 0.5; }
+.conv-modal-response-label { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+.conv-modal-response { background: rgba(43,92,92,0.06); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 16px 18px; font-size: 0.9rem; color: var(--ink2); line-height: 1.7; margin-bottom: 20px; }
+.conv-modal-note { font-size: 0.78rem; color: var(--ink4); line-height: 1.6; padding-top: 16px; border-top: 1px solid var(--bdr); margin-bottom: 20px; }
+.conv-modal-cta { display: inline-block; background: var(--teal); color: var(--white); padding: 11px 22px; border-radius: 6px; font-size: 0.84rem; font-weight: 600; transition: all 0.2s; text-decoration: none; }
+.conv-modal-cta:hover { background: var(--teal2); transform: translateY(-1px); }
+
+
+/* Hero benefits strip */
+.hero-benefits { display: flex; flex-direction: column; gap: 7px; margin-bottom: 24px; }
+.hero-benefit { display: flex; align-items: center; gap: 9px; font-size: 0.88rem; color: var(--ink3); }
+.benefit-check { color: var(--teal); font-size: 0.9rem; font-weight: 700; flex-shrink: 0; }
+
+
+/* Stats in What's Inside */
+.inside-stats { display: flex; gap: 28px; margin-bottom: 28px; flex-wrap: wrap; }
+.ins-stat { text-align: left; }
+.ins-num { font-family: var(--ff-h); font-size: 2rem; color: var(--teal); line-height: 1; }
+.ins-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink4); margin-top: 2px; }
+
 </style>
 </head>
 <body>
@@ -903,7 +921,7 @@ footer {
     <li><a href="#inside">The Toolkit</a></li>
     <li><a href="#bundle">Pricing</a></li>
     <li><a href="#app">The App</a></li>
-    <li><a href="#bundle">Bundle — $37</a></li>
+    <li><a href="#bundle">Complete — $37</a></li>
 <li><a href="#hero" class="nav-buy">Try Free →</a></li>
   </ul>
   <a href="#hero" class="nav-mobile-buy">Try Free →</a>
@@ -918,24 +936,26 @@ footer {
       <div class="hero-left fade-up">
         <div class="hero-kicker">
           <div class="hero-kicker-line"></div>
-          <div class="hero-kicker-text">Free for physical therapists</div>
+          <div class="hero-kicker-text">For physical therapists</div>
         </div>
-        <h1 class="hero-title">The words every PT<br><em>needs.</em></h1>
-        <p class="hero-sub">A free AI communication tool that lives on your phone. Scripts, quick refs, and an AI that tells you what to say — in any patient situation — in under 10 seconds.</p>
-        <div class="hero-stats">
-          <div class="stat"><div class="stat-number">35</div><div class="stat-label">Scripts</div></div>
-          <div class="stat"><div class="stat-number">25</div><div class="stat-label">Explanations</div></div>
-          <div class="stat"><div class="stat-number">15</div><div class="stat-label">QuickRefs</div></div>
+        <h1 class="hero-title">Some Conversations Are<br><em>Harder Than The Treatment.</em></h1>
+        <p class="hero-sub">PTCommLab helps physical therapists find the right words during moments of uncertainty, frustration, fear, and slow progress.</p>
+        <p class="hero-byline">You know exactly what you&rsquo;re trying to say.<br>Finding the right words &mdash; quickly, clearly, and compassionately &mdash; is a different challenge.<br>PTCommLab is a communication support system for physical therapists.</p>
+        <div class="hero-benefits">
+          <div class="hero-benefit"><span class="benefit-check">&#10003;</span><span>AI Explain Rephraser App</span></div>
+          <div class="hero-benefit"><span class="benefit-check">&#10003;</span><span>5 ready-to-use scripts</span></div>
+          <div class="hero-benefit"><span class="benefit-check">&#10003;</span><span>5 patient explanations</span></div>
+          <div class="hero-benefit"><span class="benefit-check">&#10003;</span><span>No credit card. No app store.</span></div>
         </div>
         <div class="lead-gate">
           <form id="signupForm" class="gate-form">
             <input type="text" name="first_name" id="firstName" class="gate-input" placeholder="First name (optional)">
             <input type="email" name="email" id="email" class="gate-input" placeholder="Email address" required>
             <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
-            <button type="submit" class="gate-submit" id="submitBtn">Get Free App Access →</button>
+            <button type="submit" class="gate-submit" id="submitBtn">Try PTCommLab AI App for Free &rarr;</button>
           </form>
           <p class="gate-privacy">No spam. Unsubscribe anytime. <a href="/privacy.html" target="_blank">Privacy policy</a></p>
-          <p class="gate-proof" style="font-size: 0.65rem; color: #9A9A9A; margin-top: 6px; text-align: center;">Used by PTs in 43+ countries. No app store. No credit card.</p>
+          <p class="gate-proof" style="font-size: 0.65rem; color: #9A9A9A; margin-top: 6px; text-align: center;">Built for real&#8209;world practice. Used globally. No app store. No credit card.</p>
           <div id="formMessage" style="margin-top:12px; font-size:0.8rem; display:none;"></div>
         </div>
       </div>
@@ -952,8 +972,8 @@ footer {
         <div class="ptc-inner">
           <div class="ptc-sb"><span>9:41</span><div class="ptc-sbr"><div class="ptc-sig"><div class="ptc-bar" style="height:3px"></div><div class="ptc-bar" style="height:5px"></div><div class="ptc-bar" style="height:7px"></div><div class="ptc-bar" style="height:9px"></div><div class="ptc-bar" style="height:11px"></div></div><svg viewBox="0 0 14 11" fill="none"><path d="M7 2.5C8.8 2.5 10.4 3.3 11.5 4.5L13 3C11.5 1.4 9.4 0.5 7 0.5C4.6 0.5 2.5 1.4 1 3L2.5 4.5C3.6 3.3 5.2 2.5 7 2.5Z" fill="#1c1c1e"/><path d="M7 5.5C8.1 5.5 9.1 6 9.8 6.8L11.3 5.3C10.2 4.1 8.7 3.5 7 3.5C5.3 3.5 3.8 4.1 2.7 5.3L4.2 6.8C4.9 6 5.9 5.5 7 5.5Z" fill="#1c1c1e"/><circle cx="7" cy="9.5" r="1.5" fill="#1c1c1e"/></svg><div class="ptc-bat"><div class="ptc-bb"><div class="ptc-bf"></div></div><div class="ptc-bt"></div></div></div></div>
           <div class="ptc-hdr"><div><div class="ptc-name">PT Comm Lab</div><div class="ptc-tag">Communication tools for PTs</div></div><div><div class="ptc-dnum" id="mockupDate">10</div><div class="ptc-dtxt" id="mockupMonth">Jun 2026 Wed</div></div></div>
-          <div class="ptc-badge">&#10003; Unlimited AI (Full Access)</div>
-          <div class="ptc-prem">&#9672; Premium Access &mdash; 363 days remaining &#9672;</div>
+          <div class="ptc-badge">&#10003; Full Access</div>
+          <div class="ptc-prem">&#9672; PTCommLab Complete &#9672;</div>
           <div class="ptc-chips"><div class="ptc-chip">Rest days</div><div class="ptc-chip">Fear of movement</div><div class="ptc-chip">Exercise quantity</div><div class="ptc-chip">Non-adherence</div><div class="ptc-chip">Flare-ups</div><div class="ptc-chip">Slow progress</div></div>
           <div class="ptc-sit">I&rsquo;m running late for a patient visit because of a vehicle accident. The family may be upset, and I&rsquo;m not sure when traffic will clear. Should I call, and what should I say? I want to help the patient and maintain trust without getting scolded.</div>
           <div class="ptc-gen">Generate Patient-Friendly Version</div>
@@ -972,6 +992,71 @@ footer {
 </section>
 
 <!-- ======================================== -->
+<!-- BLOCK: CONVERSATIONS                    -->
+<!-- ======================================== -->
+<section id="conversations">
+  <div class="wrap">
+    <div class="fade-up">
+      <span class="conv-label">Built For Conversations Like These</span>
+      <h2 class="conv-title">The moments that stay with you<br>after the session ends.</h2>
+      <p class="conv-subtitle">PTCommLab helps you find the right words when the clinical reasoning is clear but the conversation is hard.</p>
+    </div>
+    <div class="conv-grid fade-up d1">
+      <div class="conv-card" onclick="openConvModal(0)">
+        <div class="conv-tag">Pain &amp; Setback</div>
+        <div class="conv-quote">&ldquo;I did my exercises and now I&rsquo;m worse.&rdquo;</div>
+        <div class="conv-card-cta">See a script &rarr;</div>
+      </div>
+      <div class="conv-card" onclick="openConvModal(1)">
+        <div class="conv-tag">Slow Progress</div>
+        <div class="conv-quote">&ldquo;Shouldn&rsquo;t I be better by now?&rdquo;</div>
+        <div class="conv-card-cta">See a script &rarr;</div>
+      </div>
+      <div class="conv-card" onclick="openConvModal(2)">
+        <div class="conv-tag">Non-Adherence</div>
+        <div class="conv-quote">&ldquo;Why do I even need these exercises?&rdquo;</div>
+        <div class="conv-card-cta">See a script &rarr;</div>
+      </div>
+      <div class="conv-card" onclick="openConvModal(3)">
+        <div class="conv-tag">Fear of Movement</div>
+        <div class="conv-quote">&ldquo;I&rsquo;m afraid movement will make it worse.&rdquo;</div>
+        <div class="conv-card-cta">See a script &rarr;</div>
+      </div>
+      <div class="conv-card" onclick="openConvModal(4)">
+        <div class="conv-tag">Expectations</div>
+        <div class="conv-quote">&ldquo;Can I get an MRI to see what&rsquo;s going on?&rdquo;</div>
+        <div class="conv-card-cta">See a script &rarr;</div>
+      </div>
+      <div class="conv-card" onclick="openConvModal(5)">
+        <div class="conv-tag">Frustration</div>
+        <div class="conv-quote">&ldquo;The exercises aren&rsquo;t working. This is pointless.&rdquo;</div>
+        <div class="conv-card-cta">See a script &rarr;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="conv-modal-overlay" id="convModalOverlay" onclick="closeConvModal(event)">
+  <div class="conv-modal" id="convModal">
+    <div class="conv-modal-header">
+      <span class="conv-modal-tag" id="convModalTag"></span>
+      <button class="conv-modal-close" onclick="closeConvModal(null)" aria-label="Close">&times;</button>
+    </div>
+    <div class="conv-modal-body">
+      <div class="conv-modal-patient" id="convModalPatient"></div>
+      <div class="conv-modal-feeling" id="convModalFeeling"></div>
+      <div class="conv-modal-divider"></div>
+      <div class="conv-modal-response-label">A way to respond</div>
+      <div class="conv-modal-response" id="convModalResponse"></div>
+      <div class="conv-modal-note" id="convModalNote"></div>
+      <a href="#hero" class="conv-modal-cta" onclick="closeConvModal(null)">Try PTCommLab Free &mdash; 35 scripts included</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ======================================== -->
 <!-- BLOCK: QUOTES -->
 <!-- ======================================== -->
 <div id="quotes">
@@ -987,7 +1072,8 @@ footer {
     </div>
     <div class="quote-cell fade-up d2">
       <div class="quote-mark">"</div>
-      <div class="quote-text">Research shows that in-person supervision leads to 4.2x higher odds of adherence than app-based exercise alone (Martinsen et al., 2025). Your presence matters.</div>
+      <div class="quote-text"><!-- ⚠️ FLAG: Martinsen et al. 2025 stat not yet in verified sources folder. Strategy session must verify before next deploy. If unverifiable, remove stat and keep "Your presence matters." -->
+    Research shows that in-person supervision leads to 4.2x higher odds of adherence than app-based exercise alone (Martinsen et al., 2025). Your presence matters.</div>
     </div>
   </div>
 </div>
@@ -1001,6 +1087,12 @@ footer {
       <div class="fade-up">
         <span class="section-label">What's Inside</span>
         <h2 class="section-title">A complete<br>communication toolkit.</h2>
+        <div class="inside-stats">
+          <div class="ins-stat"><div class="ins-num">35</div><div class="ins-lbl">Scripts</div></div>
+          <div class="ins-stat"><div class="ins-num">25</div><div class="ins-lbl">Explanations</div></div>
+          <div class="ins-stat"><div class="ins-num">15</div><div class="ins-lbl">QuickRefs</div></div>
+          <div class="ins-stat"><div class="ins-num">30</div><div class="ins-lbl">Q&As</div></div>
+        </div>
         <p class="section-body" style="margin-bottom:36px">Not a textbook. A library of ready-to-use scripts, explanations, and AI tools built from real PT conversations and peer-reviewed research.</p>
         <div class="chapters-list">
           <div class="chapter-row"><div class="chapter-n">Part 1</div><div><div class="chapter-name">25 Core Explanations</div><div class="chapter-desc">Patient-friendly versions of what PTs wish patients understood — ready to share or adapt.</div></div></div>
@@ -1035,28 +1127,28 @@ footer {
       <div class="fade-up">
         <span class="section-label">The Complete System</span>
         <h2 class="section-title">One price.<br>The whole toolkit.</h2>
-        <p class="section-body" style="margin-bottom:32px">Everything you need to communicate clearly, save time, and protect your voice — in one bundle.</p>
+        <p class="section-body" style="margin-bottom:32px">Everything you need to communicate clearly, save time, and protect your voice — as one complete system.</p>
         <div class="bundle-items">
           <div class="bundle-item"><div class="bi-icon">📖</div><div><div class="bi-title">Full PT Communication Guide (PDF)</div><div class="bi-sub">35 scripts, 25 explanations, 15 quick refs, 30 Q&As, burnout kit.</div></div></div>
           <div class="bundle-item"><div class="bi-icon">📱</div><div><div class="bi-title">PT Comm Lab PWA</div><div class="bi-sub">Searchable script library, explanation library, quick references, daily PT check-in, AI tools.</div></div></div>
           <div class="bundle-item"><div class="bi-icon">🖨️</div><div><div class="bi-title">Printable Companion</div><div class="bi-sub">12 ready-to-print patient handouts. One page each. Keep at your desk.</div></div></div>
-          <div class="bundle-item"><div class="bi-icon">🤖</div><div><div class="bi-title">AI Explain Rephraser</div><div class="bi-sub">Paste your clinical note → get a warm, patient-friendly version. Unlimited with bundle.</div></div></div>
+          <div class="bundle-item"><div class="bi-icon">🤖</div><div><div class="bi-title">AI Explain Rephraser</div><div class="bi-sub">Paste your clinical note → get a warm, patient-friendly version. Included with PTCommLab Complete.</div></div></div>
         </div>
       </div>
       <div class="price-card fade-up d1">
-        <div class="price-tag">Lifetime Access</div>
+        <div class="price-tag">PTCommLab Complete</div>
         <div class="price-amount">$37</div>
-        <div class="price-note">One-time payment. Lifetime updates.</div>
+        <div class="price-note">One-time purchase. No subscription.</div>
         <ul class="price-list">
           <li>Full PDF Guide</li>
           <li>PT Comm Lab PWA + AI Tools</li>
           <li>Printable Handouts (12 pages)</li>
           <li>Burnout Protection Kit</li>
-          <li>Lifetime updates</li>
+          <li>Content updates included</li>
         </ul>
-        <a href="https://thequietseries.gumroad.com/l/fqgtv" class="btn-primary" style="width:100%; text-align:center; display:block;" onclick="fbq('track', 'InitiateCheckout', {content_name: 'PT Communication Lab Bundle', content_ids: ['ptcommlab-bundle'], content_type: 'product', value: 37.00, currency: 'USD'});">Get the Bundle →</a>
+        <a href="https://thequietseries.gumroad.com/l/fqgtv" class="btn-primary" style="width:100%; text-align:center; display:block;" onclick="fbq('track', 'InitiateCheckout', {content_name: 'PT Communication Lab Bundle', content_ids: ['ptcommlab-bundle'], content_type: 'product', value: 37.00, currency: 'USD'});">Get PTCommLab Complete →</a>
         <p class="price-fine">14-day money-back guarantee</p>
-        <p class="bundle-clarification">Full bundle includes all 35 scripts, 25 explanations, 15 quick references, 30 Q&As, printable handouts, and unlimited AI. Free preview includes 5 of each.</p>
+        <p class="bundle-clarification">PTCommLab Complete includes all 35 scripts, 25 explanations, 15 quick references, 30 Q&amp;As, printable handouts, and full AI companion access. PTCommLab Lite (free) includes 5 scripts, selected explanations, and 10 AI uses per day.</p>
       </div>
     </div>
   </div>
@@ -1070,7 +1162,7 @@ footer {
     <div class="teal-rule-c"></div>
     <span class="section-label" style="text-align: center; display: block;">AI Explain Rephraser</span>
     <h2 class="section-title" style="text-align: center;">Your clinical note.<br>A patient-friendly version.</h2>
-    <p class="section-body" style="text-align: center; margin: 0 auto 20px;">Paste your clinical language. Get a warm, clear explanation in seconds. Free users get 3 uses per day. Bundle includes unlimited access.</p>
+    <p class="section-body" style="text-align: center; margin: 0 auto 20px;">Paste your clinical language. Get a warm, clear explanation in seconds. PTCommLab Lite includes 10 AI uses per day. PTCommLab Complete includes full AI access.</p>
     <div class="ai-features-grid">
       <div class="ai-feature"><div class="ai-feature-icon">⚡</div><div class="ai-feature-title">Fast, not rushed</div><div class="ai-feature-desc">Generates in seconds. No waiting. No complicated settings.</div></div>
       <div class="ai-feature"><div class="ai-feature-icon">🧠</div><div class="ai-feature-title">Learns from you</div><div class="ai-feature-desc">Anonymized questions help improve responses over time.</div></div>
@@ -1095,7 +1187,7 @@ footer {
           <div class="app-feat"><div class="af-icon">📚</div><div><div class="af-t">Explanation Library</div><div class="af-s">25 patient-friendly explanations. Copy the short version or full script.</div></div></div>
           <div class="app-feat"><div class="af-icon">🃏</div><div><div class="af-t">Quick Reference Cards</div><div class="af-s">15 print-ready cards: red flags, HEP cheat sheet, patient fears.</div></div></div>
           <div class="app-feat"><div class="af-icon">💚</div><div><div class="af-t">Daily PT Check-in</div><div class="af-s">Track burnout, lunch breaks, and small wins — private to you.</div></div></div>
-          <div class="app-feat"><div class="af-icon">✨</div><div><div class="af-t">AI Explain Rephraser</div><div class="af-s">Free with email (3 uses/day). Paid bundle removes limits.</div></div></div>
+          <div class="app-feat"><div class="af-icon">✨</div><div><div class="af-t">AI Explain Rephraser</div><div class="af-s">PTCommLab Lite: 10 uses/day. PTCommLab Complete: full AI access.</div></div></div>
         </div>
       </div>
       <div class="fade-up d1" style="text-align:center; display:flex; align-items:center; justify-content:center; flex-direction:column">
@@ -1174,60 +1266,12 @@ footer {
   <div class="wrap">
     <div class="fade-up" style="text-align:center"><span class="section-label">Questions</span><h2 class="section-title" style="margin-bottom:36px">Frequently asked.</h2></div>
     <div class="faq-wrap fade-up d1">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's included in the $37 bundle?<div class="faq-icon">+</div></div><div class="faq-a">The full PDF guide (35 scripts, 25 explanations, 30 Q&As, burnout kit), lifetime access to the PT Comm Lab PWA with unlimited AI rephraser, and the printable companion (12 patient handouts).</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the difference between free and paid?<div class="faq-icon">+</div></div><div class="faq-a">The free PWA Lite includes 5 scripts, 5 explanations, 5 quick references, and 3 AI uses per day. It's a complete preview. The full bundle ($37) unlocks all 35 scripts, 25 explanations, 15 quick references, unlimited AI, 12 printable handouts, and the complete 146-page PDF guide. One payment. Lifetime access.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a free version?<div class="faq-icon">+</div></div><div class="faq-a">Yes. The PWA (scripts + explanations + quick refs + check-in) is free with your email. AI rephraser has daily limits on the free tier. The bundle removes all limits and adds the PDF + printables.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's included in PTCommLab Complete?<div class="faq-icon">+</div></div><div class="faq-a">The full PDF guide (35 scripts, 25 explanations, 30 Q&As, burnout kit), lifetime access to the PT Comm Lab PWA with full AI access, and the printable companion (12 patient handouts).</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the difference between free and paid?<div class="faq-icon">+</div></div><div class="faq-a">The free PWA Lite includes 5 scripts, 5 explanations, 5 quick references, and 3 AI uses per day. It's a complete preview. PTCommLab Complete ($37) unlocks all 35 scripts, 25 explanations, 15 quick references, full AI access, 12 printable handouts, and the complete 146-page PDF guide. One payment. Lifetime access.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a free version?<div class="faq-icon">+</div></div><div class="faq-a">Yes. The PWA (scripts + explanations + quick refs + check-in) is free with your email. AI rephraser has daily limits on the free tier. PTCommLab Complete adds the full PDF guide and printables, with full AI access.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this evidence-based?<div class="faq-icon">+</div></div><div class="faq-a">Yes. Every claim is grounded in peer-reviewed research (APTA 2025, Moelands et al. 2025, Martinsen et al. 2025) or paraphrased PT community patterns. Source boxes appear throughout.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the refund policy?<div class="faq-icon">+</div></div><div class="faq-a">14-day money-back guarantee. If it doesn't help you communicate better with patients, email support@ptcommlab.com for a full refund.</div></div>
     </div>
-  </div>
-</section>
-
-<!-- ======================================== -->
-<!-- BLOCK: ROADMAP (Future Features) -->
-<!-- ======================================== -->
-<section id="roadmap">
-  <div class="wrap-narrow">
-    <div class="teal-rule-c"></div>
-    <span class="section-label" style="text-align: center; display: block;">Coming Soon</span>
-    <h2 class="section-title" style="text-align: center; font-size: 1.8rem;">The roadmap ahead.</h2>
-    <p style="font-size: 0.85rem; color: var(--ink3); text-align: center; margin-bottom: 32px;">Quiet improvements. No hype. Just better tools.</p>
-    
-    <div class="roadmap-list">
-      <div class="roadmap-item">
-        <div class="roadmap-header">
-          <span class="roadmap-title">📝 AI Training Prompts</span>
-          <span class="roadmap-phase">Phase 2</span>
-        </div>
-        <p class="roadmap-desc">Fine-tuning AI responses for each script and explanation. Smarter, more contextual answers.</p>
-      </div>
-      
-      <div class="roadmap-item">
-        <div class="roadmap-header">
-          <span class="roadmap-title">❓ Curated Patient Q&A</span>
-          <span class="roadmap-phase">Phase 2</span>
-        </div>
-        <p class="roadmap-desc">Hardcoded answers to the 20 most common patient questions. Faster responses, no API cost.</p>
-      </div>
-      
-      <div class="roadmap-item">
-        <div class="roadmap-header">
-          <span class="roadmap-title">📄 Patient Handouts (All Explanations)</span>
-          <span class="roadmap-phase">Phase 2</span>
-        </div>
-        <p class="roadmap-desc">Patient-friendly summaries for all 25 explanations. One-click share with patients.</p>
-      </div>
-      
-      <div class="roadmap-item">
-        <div class="roadmap-header">
-          <span class="roadmap-title">🔍 Semantic Search in PWA</span>
-          <span class="roadmap-phase">Phase 3</span>
-        </div>
-        <p class="roadmap-desc">Search scripts by meaning, not just keywords. Find what you need even with different wording.</p>
-      </div>
-    </div>
-    
-    <p style="font-size: 0.7rem; color: var(--ink4); text-align: center; margin-top: 32px;">Updates roll out quietly. No spam. No hype.</p>
   </div>
 </section>
 
@@ -1239,9 +1283,9 @@ footer {
     <div class="teal-rule-c"></div>
     <span class="cta-kicker">Stop repeating yourself. Start communicating clearly.</span>
     <h2 class="cta-title">Get the complete<br>PT communication toolkit.</h2>
-    <p class="cta-sub">35 scripts. 25 explanations. 15 quick references. AI rephraser. Printable handouts. One price.</p>
-    <a href="https://thequietseries.gumroad.com/l/fqgtv" class="btn-teal" style="padding:15px 34px" onclick="fbq('track', 'InitiateCheckout', {content_name: 'PT Communication Lab Bundle', content_ids: ['ptcommlab-bundle'], content_type: 'product', value: 37.00, currency: 'USD'});">Get the Bundle — $37</a>
-    <p class="cta-free-link"><a href="#hero">Get the free chapter + app access →</a></p>
+    <p class="cta-sub">35 scripts. 25 patient explanations. 15 quick references. Full AI support. Printable handouts. One price.</p>
+    <a href="https://thequietseries.gumroad.com/l/fqgtv" class="btn-teal" style="padding:15px 34px" onclick="fbq('track', 'InitiateCheckout', {content_name: 'PT Communication Lab Bundle', content_ids: ['ptcommlab-bundle'], content_type: 'product', value: 37.00, currency: 'USD'});">Get PTCommLab Complete — $37</a>
+    <p class="cta-free-link"><a href="#hero">Try PTCommLab AI App for Free &rarr;</a></p>
   </div>
 </section>
 
@@ -1257,7 +1301,7 @@ footer {
 <!-- ======================================== -->
 <footer>
   <div class="wrap">
-    <div class="footer-inner"><div class="footer-brand">PT Communication Lab</div><ul class="footer-links"><li><a href="#inside">The Toolkit</a></li><li><a href="#bundle">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="refund-policy.html">Refund Policy</a></li></ul></div>
+    <div class="footer-inner"><div class="footer-brand">PT Communication Lab</div><ul class="footer-links"><li><a href="#inside">The Toolkit</a></li><li><a href="#bundle">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li><li><a href="/refund-policy.html">Refund Policy</a></li></ul></div>
     <p class="footer-copy">The Quiet Shift Series · © 2026 Sovereign System Productions</p>
   </div>
 </footer>
@@ -1328,6 +1372,72 @@ document.getElementById('signupForm').addEventListener('submit', async function(
 const now = new Date();
 document.getElementById('mockupDate').innerHTML = now.getDate();
 document.getElementById('mockupMonth').innerHTML = now.toLocaleString('default', { month: 'short' });
+
+// CONVERSATIONS MODAL
+var CONV_DATA = [
+  {
+    tag: 'Pain & Setback',
+    patient: 'I did my exercises and now I\'m worse.',
+    feeling: 'You want to validate their experience without alarming them — or undermining trust in the plan.',
+    response: 'That makes sense to bring up, and I\'m glad you told me. Sometimes the body responds to new movement with temporary soreness — that\'s different from damage. Can you describe what "worse" feels like? Knowing whether it\'s the same pain, a new pain, or just muscle tiredness helps me understand what\'s happening and adjust if needed.',
+    note: 'This script validates without catastrophising. It keeps clinical judgment in your hands — not in the patient\'s interpretation of symptoms. PTCommLab has 35 scripts for moments like this.'
+  },
+  {
+    tag: 'Slow Progress',
+    patient: 'Shouldn\'t I be better by now?',
+    feeling: 'You know the timeline is realistic. But they came in with a different expectation — and no one corrected it early enough.',
+    response: 'That\'s a fair question, and I want to give you an honest answer. Healing timelines are real, and they don\'t follow a straight line. What I\'m looking for isn\'t dramatic change week to week — I\'m looking for direction. Right now, your movement is improving even if it doesn\'t feel that way yet. Let me show you what I\'m seeing.',
+    note: 'Reframing progress from outcome to direction reduces patient anxiety and keeps them engaged in the process. PTCommLab includes explanation cards you can share with patients.'
+  },
+  {
+    tag: 'Non-Adherence',
+    patient: 'Why do I even need these exercises?',
+    feeling: 'You\'ve explained it before. Repeating yourself feels exhausting — and you\'re not sure it\'s landing.',
+    response: 'Honest answer: the exercises are doing the work that happens between our sessions. I can help your body while you\'re here, but the changes that stick — the ones that reduce pain long-term — those come from what you do consistently at home. Even two or three exercises done regularly will outperform ten exercises done sporadically.',
+    note: 'Research shows 2–4 exercises prescribed consistently outperforms larger programs done sporadically (Moelands et al., 2025). This script is grounded in that evidence.'
+  },
+  {
+    tag: 'Fear of Movement',
+    patient: 'I\'m afraid movement will make it worse.',
+    feeling: 'You understand their fear is real — even if the fear itself is part of the problem.',
+    response: 'That fear makes complete sense, and I don\'t want to dismiss it. Pain is a signal — but sometimes the signal gets stuck on even when the danger has passed. What we\'re going to do is move in a way that\'s safe and controlled, so your nervous system learns that movement doesn\'t equal harm. I\'ll be with you the whole time.',
+    note: 'Fear-avoidance is one of the strongest predictors of delayed recovery. This script addresses the nervous system — not just the joint. PTCommLab includes explanation cards to leave with patients.'
+  },
+  {
+    tag: 'Expectations',
+    patient: 'Can I get an MRI to see what\'s going on?',
+    feeling: 'You know imaging often won\'t change the plan — but they need to feel heard, not dismissed.',
+    response: 'That\'s a completely understandable ask — you want answers. Here\'s what the research tells us: for most musculoskeletal conditions, what shows up on an MRI often doesn\'t predict pain levels or recovery. Many people with significant MRI findings have no pain at all. What I\'m treating is you — your movement, your function, your daily life. That said, if I see something clinically that warrants imaging, I\'ll tell you.',
+    note: 'This script respects patient autonomy while keeping clinical reasoning transparent. It builds trust rather than dismissing their concern.'
+  },
+  {
+    tag: 'Frustration',
+    patient: 'The exercises aren\'t working. This is pointless.',
+    feeling: 'This one stings. You\'ve put care into the plan — and they\'re ready to walk away.',
+    response: 'I hear that — and I don\'t want to brush past it. Frustration at this stage usually means the process isn\'t matching expectations, and that\'s something I can help with. Let\'s slow down. What does "not working" look like for you specifically? I want to make sure we\'re measuring the right things — and that the plan is built around what matters most to you.',
+    note: 'This script turns a rupture moment into a realignment conversation. It keeps the patient in the room — and in the process. PTCommLab has 35 scripts for the hardest PT conversations.'
+  }
+];
+
+function openConvModal(index) {
+  var d = CONV_DATA[index];
+  document.getElementById('convModalTag').textContent = d.tag;
+  document.getElementById('convModalPatient').textContent = d.patient;
+  document.getElementById('convModalFeeling').textContent = d.feeling;
+  document.getElementById('convModalResponse').textContent = d.response;
+  document.getElementById('convModalNote').textContent = d.note;
+  document.getElementById('convModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeConvModal(event) {
+  if (event && event.target !== document.getElementById('convModalOverlay')) return;
+  document.getElementById('convModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeConvModal(null);
+});
+
 </script>
-</body>
-</html>
